@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserInformation"
+    android:background="#F7FFFFFF"
+    android:focusableInTouchMode="true"
+    android:layout_gravity="center"
+    android:keepScreenOn="true">
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/item_guide_1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_percent="0.1"/>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/item_guide_3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.036"/>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/item_guide_4"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/item_guide_2"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@id/item_guide_1"-->
+<!--        app:layout_constraintTop_toTopOf="@id/item_guide_3"-->
+<!--        app:layout_constraintVertical_bias="0.048">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:src="@drawable/user_icon" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/user_name"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:text=""-->
+<!--            android:textColor="#02947B"-->
+<!--            android:textSize="30sp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--    </LinearLayout>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/item_guide_4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.43" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/item_guide_5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.43"/>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/item_guide_10"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/item_guide_2"-->
+<!--        app:layout_constraintStart_toStartOf="@id/item_guide_1"-->
+<!--        app:layout_constraintTop_toTopOf="@id/item_guide_4">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:background="@drawable/cus_val_dis"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:text="Giới tính"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/user_gender"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:text=""-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:background="@drawable/cus_val_dis"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:text="Ngày tháng năm sinh"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/user_date_of_birth"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_marginTop="50dp"-->
+<!--            android:background="@drawable/cus_val_dis"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:text="Email"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textStyle="bold" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/user_email"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text=""-->
+<!--                android:layout_gravity="center"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textStyle="bold" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/item_guide_6"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.51"/>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/item_guide_7"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.56"/>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/item_guide_8"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.64"/>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/item_guide_9"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.69"/>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/item_guide_10"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_percent="0.9"/>-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/item_guide_2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_percent="0.9"/>-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/back_guide_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/back_guide_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03"/>
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/back_to_home_button"
+        android:textSize="20dp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@id/back_guide_4"
+        app:layout_constraintEnd_toEndOf="@id/back_guide_2"
+        app:layout_constraintStart_toStartOf="@id/back_guide_1"
+        app:layout_constraintTop_toTopOf="@id/back_guide_3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/back_guide_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/back_guide_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/val_guide_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/val_guide_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@id/val_guide_4"
+            app:layout_constraintEnd_toEndOf="@id/val_guide_2"
+            app:layout_constraintStart_toStartOf="@id/val_guide_1"
+            app:layout_constraintTop_toTopOf="@id/val_guide_3">
+
+                <!-- Avatar Icon -->
+            <ImageView
+                android:id="@+id/avatarIcon"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="55dp"
+                android:src="@drawable/ic_user"
+                android:contentDescription="User Icon" />
+
+            <!-- Username -->
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Huy4"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp" />
+
+            <!-- Info Box 1: Giới tính -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/rounded_box"
+                android:layout_marginTop="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="4dp"
+                    android:text="Giới tính"
+                    android:textSize="16sp"
+                    android:textColor="#555555"
+                    android:gravity="start" />
+
+                <TextView
+                    android:id="@+id/user_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="4dp"
+                    android:text="Nam"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="start" />
+            </LinearLayout>
+
+            <!-- Info Box 2: Ngày sinh -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="@drawable/rounded_box"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="4dp"
+                    android:text="Ngày tháng năm sinh"
+                    android:textSize="16sp"
+                    android:textColor="#555555"
+                    android:gravity="start" />
+
+                <TextView
+                    android:id="@+id/user_date_of_birth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="4dp"
+                    android:text="5/6/2011"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="start" />
+            </LinearLayout>
+
+            <!-- Info Box 3: Email -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@drawable/rounded_box"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="4dp"
+                    android:text="Email"
+                    android:textSize="16sp"
+                    android:textColor="#555555"
+                    android:gravity="start" />
+
+                <TextView
+                    android:id="@+id/user_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="4dp"
+                    android:text="giahuysaidepchieu@gmail.com"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="start" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/val_guide_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/val_guide_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="1"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

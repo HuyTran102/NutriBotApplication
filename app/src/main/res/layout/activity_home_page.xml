@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePage"
+    android:background="#F7FFFFFF"
+    android:focusableInTouchMode="true"
+    android:layout_gravity="center"
+    android:keepScreenOn="true"
+    tools:openDrawer="start">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/nav_guide_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="0dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/nav_guide_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.03"/>
+
+        <Button
+            android:id="@+id/drawer_menu_button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/drawer_menu"
+            android:ems="10"
+            android:gravity="center_vertical"
+            app:backgroundTint="@null"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/nav_guide_4"
+            app:layout_constraintEnd_toEndOf="@id/nav_guide_2"
+            app:layout_constraintStart_toStartOf="@id/nav_guide_1"
+            app:layout_constraintTop_toTopOf="@id/nav_guide_3"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/nav_guide_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/nav_guide_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.06"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/chat_guide_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.94" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/chat_guide_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.03"/>
+
+        <Button
+            android:id="@+id/chat_bot_button"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ai_button"
+            android:ems="10"
+            android:gravity="center_vertical"
+            app:backgroundTint="@null"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/chat_guide_4"
+            app:layout_constraintEnd_toEndOf="@id/chat_guide_1"
+            app:layout_constraintStart_toStartOf="@id/chat_guide_2"
+            app:layout_constraintTop_toTopOf="@id/chat_guide_3"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/chat_guide_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/chat_guide_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.06"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/value_guide_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/value_guide_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.15"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/value_guide_4"
+            app:layout_constraintEnd_toEndOf="@id/value_guide_2"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="@id/value_guide_1"
+            app:layout_constraintTop_toTopOf="@id/value_guide_3"
+            app:layout_constraintVertical_bias="0.209">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/cus_val_dis"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.249"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.248">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cân nặng"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center">
+
+                        <ProgressBar
+                            android:id="@+id/weight_progres_bar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/circle_shape"
+                            android:indeterminate="false"
+                            android:progressDrawable="@drawable/weight_circle_progress_bar"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/weight_progres_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/weight_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:background="@drawable/cus_val_dis"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chiều cao"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center">
+
+                        <ProgressBar
+                            android:id="@+id/height_progres_bar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/circle_shape"
+                            android:indeterminate="false"
+                            android:progressDrawable="@drawable/height_circle_progress_bar"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/height_progres_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/height_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical"
+                android:background="@drawable/cus_val_dis"
+                android:layout_marginEnd="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Kcal"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center">
+
+                        <ProgressBar
+                            android:id="@+id/kcalo_progres_bar"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/circle_shape"
+                            android:indeterminate="false"
+                            android:progressDrawable="@drawable/kcalo_circle_progress_bar"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/kcalo_progres_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="#FFFFFF"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/kcalo_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/value_guide_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/value_guide_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.45"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/name_guide_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.32"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/name_guide_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.043"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/firasans_bolditalic"
+            android:text="NutriBot"
+            android:textAlignment="center"
+            android:textColor="#02947B"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintBottom_toBottomOf="@id/name_guide_4"
+            app:layout_constraintEnd_toEndOf="@id/name_guide_2"
+            app:layout_constraintStart_toStartOf="@id/name_guide_1"
+            app:layout_constraintTop_toTopOf="@id/name_guide_3"
+            app:layout_constraintVertical_bias="0.069" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/name_guide_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.68"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/name_guide_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.48"/>
+
+        <LinearLayout
+            android:id="@+id/nutritional_status_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@drawable/custom_button"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="@id/button_guide_4"
+            app:layout_constraintEnd_toEndOf="@id/button_guide_2"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="@id/button_guide_1"
+            app:layout_constraintTop_toTopOf="@id/button_guide_3"
+            app:layout_constraintVertical_bias="0.558">
+
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/nutrition_status"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F7FFFFFF"
+                android:text="Dinh dưỡng"
+                android:textColor="#018B73"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                app:backgroundTint="@null"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.62"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.65"/>
+
+        <LinearLayout
+            android:id="@+id/dietary_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@drawable/custom_button"
+            app:backgroundTint="@null"
+            app:layout_constraintTop_toTopOf="@id/button_guide_5"
+            app:layout_constraintEnd_toEndOf="@id/button_guide_2"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="@id/button_guide_1"
+            app:layout_constraintBottom_toBottomOf="@id/button_guide_6">
+
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/dietary"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F7FFFFFF"
+                android:text="Khẩu phần"
+                android:textColor="#018B73"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                app:backgroundTint="@null"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.79"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.47"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.53"/>
+
+        <LinearLayout
+            android:id="@+id/physical_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@drawable/custom_button"
+            app:backgroundTint="@null"
+            app:layout_constraintTop_toTopOf="@id/button_guide_3"
+            app:layout_constraintEnd_toEndOf="@id/button_guide_11"
+            app:layout_constraintStart_toStartOf="@id/button_guide_12"
+            app:layout_constraintBottom_toBottomOf="@id/button_guide_4">
+
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/physical_activity"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F7FFFFFF"
+                android:text="Luyện tập"
+                android:textColor="#018B73"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                app:backgroundTint="@null"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.82"/>
+
+
+        <LinearLayout
+            android:id="@+id/recommend_menu_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@drawable/custom_button"
+            app:backgroundTint="@null"
+            app:layout_constraintTop_toTopOf="@id/button_guide_7"
+            app:layout_constraintEnd_toEndOf="@id/button_guide_2"
+            app:layout_constraintStart_toStartOf="@id/button_guide_1"
+            app:layout_constraintBottom_toBottomOf="@id/button_guide_8">
+
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/recommend_menu"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F7FFFFFF"
+                android:text="Thực đơn"
+                android:textColor="#018B73"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                app:backgroundTint="@null"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/water_demand_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@drawable/custom_button"
+            app:backgroundTint="@null"
+            app:layout_constraintTop_toTopOf="@id/button_guide_7"
+            app:layout_constraintEnd_toEndOf="@id/button_guide_11"
+            app:layout_constraintStart_toStartOf="@id/button_guide_12"
+            app:layout_constraintBottom_toBottomOf="@id/button_guide_8" >
+
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/water_demand"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F7FFFFFF"
+                android:text="Nhu cầu nước"
+                android:textColor="#018B73"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                app:backgroundTint="@null"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.96"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.88"/>
+
+        <LinearLayout
+            android:id="@+id/temp_menu_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@drawable/custom_button"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="@id/button_guide_6"
+            app:layout_constraintEnd_toEndOf="@id/button_guide_11"
+            app:layout_constraintStart_toStartOf="@id/button_guide_12"
+            app:layout_constraintTop_toTopOf="@id/button_guide_5">
+
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/template_menu"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#F7FFFFFF"
+                android:text="Thực đơn mẫu"
+                android:textColor="#018B73"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                app:backgroundTint="@null"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/button_guide_11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu"
+        android:layout_gravity="start"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

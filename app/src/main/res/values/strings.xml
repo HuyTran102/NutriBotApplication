@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">GoodLife</string>
+    <string name="s_i_n_tho_i">Số điện thoại</string>
+    <string name="ng_nh_p">Đăng Nhập</string>
+    <string name="ng_y_sinh">Ngày Sinh:</string>
+    <string name="t_n">Tên:</string>
+    <string name="ng_nh_p_t_i_kho_n">Đăng Nhập Tài Khoản</string>
+    <string name="m_t_kh_u">Mật Khẩu</string>
+    <string name="ng_y_sinh_jan_01_2020">Ngày sinh: JAN 01 2020</string>
+    <string name="ng_k_t_i_kho_n">Đăng Ký Tài Khoản</string>
+    <string name="ng_k">Đăng Kí</string>
+    <string name="kh_ng_c_t_i_kho_n">Không có tài khoản?</string>
+    <string name="c_t_i_kho_n">Đã có tài khoản?</string>
+    <string name="goodlife">GoodLife</string>
+    <string name="gi_i_thi_u">Giới Thiệu</string>
+    <string name="gi_i_t_nh">Giới tính</string>
+    <string name="t_nh_tr_ng_dinh_d_ng">Tình trạng dinh dưỡng</string>
+    <string name="kh_u_ph_n_n">Khẩu phần ăn</string>
+    <string name="t_p_luy_n">Tập luyện</string>
+    <string name="home_page">Home Page</string>
+    <string name="ch_t_p_luy_n">Chế độ tập luyện</string>
+    <string name="nh_p_chi_u_cao">Nhập chiều cao</string>
+    <string name="nh_p_c_n_n_ng">Nhập cân nặng</string>
+    <string name="chi_u_cao">Chiều cao</string>
+    <string name="c_n_n_ng">Cân nặng</string>
+    <string name="k_t_qu">Kết quả</string>
+    <string name="back">Back</string>
+    <string name="chi_u_cao_cm">Chiều cao (cm)</string>
+    <string name="c_n_n_ng_kg">Cân nặng (kg)</string>
+    <string name="chi_u_cao_m">Chiều cao (m)</string>
+    <string name="k_t_qu_v_t_nh_tr_ng_dinh_d_ng">Kết quả về tình trạng dinh dưỡng</string>
+    <string name="k_t_qu_t_nh_tr_ng_dinh_d_ng">Kết quả tình trạng dinh dưỡng</string>
+    <string name="ch_s_bmi_theo_tu_i">Chỉ số BMI theo tuổi:</string>
+    <string name="ch_s_chi_u_cao_theo_tu_i">Chỉ số chiều cao theo tuổi:</string>
+    <string name="m_n_n">Món ăn</string>
+    <string name="th_c_ph_m">Thực phẩm</string>
+    <string name="s_a_u_ng">Sữa / Đồ uống</string>
+    <string name="nh_t_k">Nhật ký</string>
+
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="minimum_password">Mật khẩu chưa đủ độ dài!</string>
+    <string name="number_videos">20</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_1">TAB_1</string>
+    <string name="tab_2">TAB_2</string>
+    <string name="tab_3">TAB_3</string>
+    <string name="tab_4">TAB_4</string>
+</resources>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactWithNutritionist"
+    android:background="#F7FFFFFF"
+    android:focusableInTouchMode="true"
+    android:layout_gravity="center"
+    android:keepScreenOn="true">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/name_guide_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.17"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/name_guide_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.043"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Tư vấn với chuyên gia"
+        android:textColor="#02947B"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@id/name_guide_4"
+        app:layout_constraintEnd_toEndOf="@id/name_guide_2"
+        app:layout_constraintStart_toStartOf="@id/name_guide_1"
+        app:layout_constraintTop_toTopOf="@id/name_guide_3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/name_guide_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.83"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/name_guide_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/profile_guide_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/profile_guide_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/profile_guide_4"
+        app:layout_constraintEnd_toEndOf="@id/profile_guide_2"
+        app:layout_constraintStart_toStartOf="@id/profile_guide_1"
+        app:layout_constraintTop_toTopOf="@id/profile_guide_3"
+        app:layout_constraintVertical_bias="0.217">
+
+        <ImageView
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_gravity="center"
+            android:src="@drawable/nutritionist"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.177" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="TS.Vũ Thị Quỳnh Chi"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#02AC8F"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.479" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/profile_guide_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/profile_guide_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/place_guide_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/place_guide_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.57"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Trường Y Dược - Đại học Đà Nẵng"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#259E8A"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@id/place_guide_4"
+        app:layout_constraintEnd_toEndOf="@id/place_guide_2"
+        app:layout_constraintStart_toStartOf="@id/place_guide_1"
+        app:layout_constraintTop_toTopOf="@id/place_guide_3"
+        app:layout_constraintVertical_bias="0.576" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/place_guide_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/place_guide_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/exp_guide_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/exp_guide_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:justificationMode="inter_word"
+        android:text="Kinh nghiệm: Hơn 15 năm nghiên cứu chuyên sâu về Dinh dưỡng, và tham gia triển khai các chương trình dinh dưỡng học đường."
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#259E8A"
+        app:layout_constraintBottom_toBottomOf="@id/exp_guide_4"
+        app:layout_constraintEnd_toEndOf="@id/exp_guide_2"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="@id/exp_guide_1"
+        app:layout_constraintTop_toTopOf="@id/exp_guide_3"
+        app:layout_constraintVertical_bias="0.74" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/exp_guide_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/exp_guide_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.935">
+
+        <ImageView
+            android:id="@+id/contact_phone"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/phone" />
+
+        <ImageView
+            android:id="@+id/contact_video_call"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/video_call" />
+
+        <ImageView
+            android:id="@+id/contact_text"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/text" />
+
+        <ImageView
+            android:id="@+id/contact_email"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/email" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/back_guide_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/back_guide_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03"/>
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/back_to_home_button"
+        android:textSize="20dp"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@id/back_guide_4"
+        app:layout_constraintEnd_toEndOf="@id/back_guide_2"
+        app:layout_constraintStart_toStartOf="@id/back_guide_1"
+        app:layout_constraintTop_toTopOf="@id/back_guide_3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/back_guide_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/back_guide_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

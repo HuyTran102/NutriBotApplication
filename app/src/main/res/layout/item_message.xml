@@ -1,0 +1,98 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Bot Message -->
+    <LinearLayout
+        android:id="@+id/botLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="start"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/botText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bubble_bot"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:textColor="#212121"
+            android:text="Bot message" />
+
+        <LinearLayout
+            android:id="@+id/botActions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            android:gravity="start"
+            android:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/btnCopyBot"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_menu_copy"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Sao chép"
+                app:tint="#888888" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- User Message -->
+    <LinearLayout
+        android:id="@+id/userLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/userText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bubble_user"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:textColor="#212121"
+            android:text="User message" />
+
+        <LinearLayout
+            android:id="@+id/userActions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            android:gravity="end"
+            android:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/btnEditUser"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_edit"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Chỉnh sửa"
+                app:tint="#888888" />
+
+            <ImageButton
+                android:id="@+id/btnCopyUser"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_menu_copy"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Sao chép"
+                app:tint="#888888" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

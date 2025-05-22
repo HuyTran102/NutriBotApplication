@@ -1,0 +1,33 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="150dp"
+    android:height="150dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Lớp ngoài cùng (từng là màu đỏ) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,5
+                          C40,20 25,35 28,55
+                          C30,65 35,75 45,85
+                          C50,90 60,90 65,85
+                          C75,75 80,65 75,55
+                          C70,40 60,25 50,5Z" />
+
+    <!-- Lớp giữa (từng là màu cam) -->
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M50,20
+                          C42,30 35,40 37,55
+                          C39,65 45,75 50,78
+                          C55,75 61,65 63,55
+                          C64,45 58,30 50,20Z" />
+
+    <!-- Lớp trong cùng (từng là màu vàng) -->
+    <path
+        android:fillColor="#888888"
+        android:pathData="M50,40
+                          C47,45 45,50 47,58
+                          C48,62 50,65 53,58
+                          C55,50 53,45 50,40Z" />
+</vector>
