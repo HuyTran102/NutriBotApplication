@@ -724,7 +724,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:src="@drawable/ai_icon"
-            app:backgroundTint="@color/teal_700"
+            app:backgroundTint="#009688"
             app:tint="@null"
             app:maxImageSize="40dp"
             app:layout_constraintBottom_toBottomOf="parent"

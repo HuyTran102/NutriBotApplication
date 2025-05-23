@@ -8,7 +8,7 @@
     <path
         android:fillColor="#009688"
         android:pathData="M12,4h24a8,8 0 0 1 8,8v24a8,8 0 0 1 -8,8h-24a8,8 0 0 1 -8,-8v-24a8,8 0 0 1 8,-8z"
-        android:strokeColor="#4A908A"
+        android:strokeColor="#009688"
         android:strokeWidth="1"/>
 
     <!-- AI Text -->
@@ -18,7 +18,7 @@
 
     <!-- Brain-like pattern -->
     <path
-        android:fillColor="#BDFAF4"
+        android:fillColor="#C0F6F1"
         android:pathData="M34,24c1.2,-0.6 2,-1.8 2,-3s-0.8,-2.4 -2,-3v2c0.6,0.4 1,1 1,1.6s-0.4,1.2 -1,1.6v2z" />
 
 </vector>
