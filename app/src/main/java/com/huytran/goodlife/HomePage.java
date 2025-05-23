@@ -30,6 +30,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -49,7 +50,8 @@ import java.util.Calendar;
 
 public class HomePage extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
-    private Button drawerMenuButton, chatBotButton;
+    private Button drawerMenuButton;
+    private FloatingActionButton chatBotButton;
     private LinearLayout nutritionalStatusButton, physicalButton, dietaryButton, tempMenuButton, recommendMenuButton, waterDemandButton;
     private ProgressBar weightProgressBar, heightProgressBar, kcaloProgressBar;
     private TextView weightProgressText, heightProgressText, kcaloProgressText, weightView, heightView, kcaloView;
@@ -99,6 +101,7 @@ public class HomePage extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         drawerMenuButton = findViewById(R.id.drawer_menu_button);
+
         chatBotButton = findViewById(R.id.chat_bot_button);
 
         drawerLayout.bringToFront();

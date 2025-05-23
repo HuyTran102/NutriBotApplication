@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Outer chip shape -->
+    <path
+        android:fillColor="#009688"
+        android:pathData="M12,4h24a8,8 0 0 1 8,8v24a8,8 0 0 1 -8,8h-24a8,8 0 0 1 -8,-8v-24a8,8 0 0 1 8,-8z"
+        android:strokeColor="#4A908A"
+        android:strokeWidth="1"/>
+
+    <!-- AI Text -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M18,32h2.2l1.2,-4h4.9l1.2,4h2.2l-4.5,-14h-2.7L18,32zM22.6,26l1.7,-6 1.7,6h-3.4zM30,32h2v-14h-2v14z"/>
+
+    <!-- Brain-like pattern -->
+    <path
+        android:fillColor="#BDFAF4"
+        android:pathData="M34,24c1.2,-0.6 2,-1.8 2,-3s-0.8,-2.4 -2,-3v2c0.6,0.4 1,1 1,1.6s-0.4,1.2 -1,1.6v2z" />
+
+</vector>
