@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -18,6 +19,7 @@ public class Dietary extends AppCompatActivity {
     private Button backButton;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private LoadingDialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class Dietary extends AppCompatActivity {
         backButton = findViewById(R.id.back_button);
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.pageViewer);
+
+        loadingDialog = new LoadingDialog(this);
 
         tabLayout.setupWithViewPager(viewPager);
 
@@ -88,5 +92,17 @@ public class Dietary extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public void showLoading() {
+        if (loadingDialog != null) {
+            loadingDialog.show("Đang chạy...");
+        }
+    }
+
+    public void hideLoading() {
+        if (loadingDialog != null) {
+            loadingDialog.hide();
+        }
     }
 }

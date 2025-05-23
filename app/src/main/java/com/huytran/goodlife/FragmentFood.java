@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,23 +39,28 @@ public class FragmentFood extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_food, container, false);
+        View view = inflater.inflate(R.layout.fragment_food, container, false);
+
+        return view;
 
     }
 
     public void loadData() {
-        if (items.isEmpty()) { // Chỉ tải dữ liệu nếu danh sách rỗng
+        if (items.isEmpty()) {
             new Thread(() -> {
-                // Thực hiện lấy dữ liệu (ví dụ: đọc file Excel)
                 readExcelFile();
 
-                // Cập nhật giao diện trên luồng chính
                 requireActivity().runOnUiThread(() -> {
                     viewAdapter.notifyDataSetChanged();
+
+                    if (getActivity() instanceof Dietary) {
+                        ((Dietary) getActivity()).hideLoading();
+                    }
                 });
             }).start();
         }
     }
+
     public void readExcelFile() {
         String path = "Diary.xlsx";
 
@@ -164,12 +171,15 @@ public class FragmentFood extends Fragment {
 
         recyclerView = view.findViewById(R.id.recycleView);
         searchView = view.findViewById(R.id.search_bar);
-        loadData();
-
-
         viewAdapter = new ViewAdapter(getContext(), items);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(viewAdapter);
+
+        if (getActivity() instanceof Dietary) {
+            ((Dietary) getActivity()).showLoading();
+        }
+
+        loadData();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

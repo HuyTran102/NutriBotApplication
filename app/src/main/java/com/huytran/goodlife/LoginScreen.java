@@ -90,6 +90,10 @@ public class LoginScreen extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                LoadingDialog loadingDialog = new LoadingDialog(LoginScreen.this);
+                loadingDialog.show("Đang chạy...");
+
+
                 if(validDataUsername() || !validDataUserPassword()) {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("Name", String.valueOf(editTextName.getText()));
