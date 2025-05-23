@@ -60,49 +60,6 @@
             app:layout_constraintGuide_percent="0.06"/>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/chat_guide_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.98" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/chat_guide_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.9"/>
-
-
-        <!--        <Button-->
-<!--            android:id="@+id/chat_bot_button"-->
-<!--            android:layout_width="35dp"-->
-<!--            android:layout_height="35dp"-->
-<!--            android:background="@drawable/ai_button"-->
-<!--            android:ems="10"-->
-<!--            android:gravity="center_vertical"-->
-<!--            app:backgroundTint="@null"-->
-<!--            android:layout_marginStart="10dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="@id/chat_guide_4"-->
-<!--            app:layout_constraintEnd_toEndOf="@id/chat_guide_1"-->
-<!--            app:layout_constraintStart_toStartOf="@id/chat_guide_2"-->
-<!--            app:layout_constraintTop_toTopOf="@id/chat_guide_3"/>-->
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/chat_guide_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/chat_guide_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.98"/>
-
-        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/value_guide_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -561,7 +518,7 @@
             app:layout_constraintStart_toStartOf="@id/button_guide_12"
             app:layout_constraintBottom_toBottomOf="@id/button_guide_4">
 
-            <ImageView
+        <ImageView
                 android:layout_marginTop="5dp"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
