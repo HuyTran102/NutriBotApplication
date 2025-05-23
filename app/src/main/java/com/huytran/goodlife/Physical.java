@@ -8,9 +8,15 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextWatcher;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -210,7 +216,21 @@ public class Physical extends AppCompatActivity {
 
         // Set item click listener
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
-            activityLevel.setText("🔥 Mức độ hoạt động " + adapter.getItem(i));
+            String fullText = "🔥 Mức độ hoạt động " + adapter.getItem(i);
+            Spannable spannable = new SpannableString("🔥 Mức độ hoạt động " + adapter.getItem(i));
+
+            int start = fullText.indexOf(adapter.getItem(i));
+            int end = start + adapter.getItem(i).length();
+
+            if(adapter.getItem(i).equals("Nhẹ")) {
+                spannable.setSpan(new ForegroundColorSpan(Color.parseColor("#D0D0D0")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            } else if(adapter.getItem(i).equals("Vừa")) {
+                spannable.setSpan(new ForegroundColorSpan(Color.parseColor("#7B7B7B")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            } else if(adapter.getItem(i).equals("Nặng")) {
+                spannable.setSpan(new ForegroundColorSpan(Color.parseColor("#454545")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            }
+
+            activityLevel.setText(spannable);
             dialog.dismiss();
 
             if(adapter.getItem(i) == "") {
