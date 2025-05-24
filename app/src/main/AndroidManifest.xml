@@ -36,110 +36,110 @@
         tools:targetApi="31"
         android:requestLegacyExternalStorage="true">
         <activity
-            android:name=".ChatBot"
+            android:name=".pages.chat_bot.ChatBot"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".RecommendMenuNum5"
+            android:name=".pages.recommend_menu.RecommendMenuNum5"
             android:exported="false" />
         <activity
-            android:name=".RecommendMenuNum4"
+            android:name=".pages.recommend_menu.RecommendMenuNum4"
             android:exported="false" />
         <activity
-            android:name=".OverWeight"
+            android:name=".pages.question_and_answer.OverWeight"
             android:exported="false" />
         <activity
-            android:name=".NutritionPubertyPeriod"
+            android:name=".pages.question_and_answer.NutritionPubertyPeriod"
             android:exported="false" />
         <activity
-            android:name=".Malnutrition"
+            android:name=".pages.question_and_answer.Malnutrition"
             android:exported="false" />
         <activity
-            android:name=".NutritionMentalHealth"
+            android:name=".pages.question_and_answer.NutritionMentalHealth"
             android:exported="false" />
         <activity
-            android:name=".NutritionPhysicalActivity"
+            android:name=".pages.question_and_answer.NutritionPhysicalActivity"
             android:exported="false" />
         <activity
-            android:name=".ExamSeasonNutrition"
+            android:name=".pages.question_and_answer.ExamSeasonNutrition"
             android:exported="false" />
         <activity
-            android:name=".NutritionSchoolHealth"
+            android:name=".pages.question_and_answer.NutritionSchoolHealth"
             android:exported="false" />
         <activity
-            android:name=".BasicNutrition"
+            android:name=".pages.question_and_answer.BasicNutrition"
             android:exported="false" />
         <activity
-            android:name=".RecommendMenuNum3"
+            android:name=".pages.recommend_menu.RecommendMenuNum3"
             android:exported="false" />
         <activity
-            android:name=".RecommendMenuNum2"
+            android:name=".pages.recommend_menu.RecommendMenuNum2"
             android:exported="false" />
         <activity
-            android:name=".RecommendMenuNum1"
+            android:name=".pages.recommend_menu.RecommendMenuNum1"
             android:exported="false" />
         <activity
-            android:name=".NotificationData"
+            android:name=".pages.notification.NotificationData"
             android:exported="false"
             tools:ignore="Instantiatable" />
 
-        <receiver android:name=".NotificationReceiver" />
+        <receiver android:name=".pages.notification.NotificationReceiver" />
 
         <activity
-            android:name=".RecommendMenu"
+            android:name=".pages.recommend_menu.RecommendMenu"
             android:exported="false" />
         <activity
-            android:name=".WaterDemand"
+            android:name=".pages.water_demand.WaterDemand"
             android:exported="false" />
         <activity
-            android:name=".ContactWithNutritionist"
+            android:name=".pages.contact.ContactWithNutritionist"
             android:exported="true" />
         <activity
-            android:name=".QuestionAndAnswer"
+            android:name=".pages.question_and_answer.QuestionAndAnswer"
             android:exported="false" />
         <activity
-            android:name=".ContactSupportTeam"
+            android:name=".pages.contact.ContactSupportTeam"
             android:exported="false" />
         <activity
-            android:name=".AppRanking"
+            android:name=".pages.app_ranking.AppRanking"
             android:exported="false" />
         <activity
-            android:name=".AboutUs"
+            android:name=".pages.about_us.AboutUs"
             android:exported="false" />
         <activity
-            android:name=".TrackingDiagram"
+            android:name=".pages.tracking_diagram.TrackingDiagram"
             android:exported="false" />
         <activity
-            android:name=".Notification"
+            android:name=".pages.notification.Notification"
             android:exported="false" />
         <activity
-            android:name=".UserInformation"
+            android:name=".pages.user_info.UserInformation"
             android:exported="false" />
         <activity
-            android:name=".TempMenuData"
+            android:name=".pages.template_menu.TempMenuData"
             android:exported="false" />
         <activity
-            android:name=".TemplateMenuView"
+            android:name=".pages.template_menu.TemplateMenuView"
             android:exported="false" />
         <activity
-            android:name=".DiaryItemData"
+            android:name=".pages.dietary.DiaryItemData"
             android:exported="false" />
         <activity
-            android:name=".ItemData"
+            android:name=".pages.dietary.ItemData"
             android:exported="false" />
         <activity
-            android:name=".Physical"
+            android:name=".pages.physical.Physical"
             android:exported="false" />
         <activity
-            android:name=".Dietary"
+            android:name=".pages.dietary.Dietary"
             android:exported="false" />
         <activity
-            android:name=".CalculateNutritionalStatus"
+            android:name=".pages.calculate_nutritional_status.CalculateNutritionalStatus"
             android:exported="false" />
         <activity
-            android:name=".HomePage"
+            android:name=".pages.home.HomePage"
             android:exported="false" />
         <activity
-            android:name=".LoginScreen"
+            android:name=".pages.login.LoginScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -148,7 +148,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterPage"
+            android:name=".pages.register.RegisterPage"
             android:exported="false" />
 
         <meta-data

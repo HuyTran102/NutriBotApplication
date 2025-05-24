@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Physical"
+    tools:context=".pages.physical.Physical"
     android:background="#F7FFFFFF"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
@@ -40,23 +40,30 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
         android:background="#FFFFFF"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintBottom_toBottomOf="@id/name_guide_4"
         app:layout_constraintEnd_toEndOf="@id/name_guide_2"
         app:layout_constraintStart_toStartOf="@id/name_guide_1"
         app:layout_constraintTop_toTopOf="@id/name_guide_3">
 
-        <Button
+        <ImageButton
             android:id="@+id/back_button"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:background="@drawable/back_to_home_button"
-            android:textSize="20dp"
-            app:backgroundTint="@null"
-            android:padding="16dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_to_home_button"
+            android:background="#FFFFFF"
+            android:padding="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -68,6 +75,14 @@
             android:layout_gravity="center"/>
 
     </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BBBBBB"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/name_guide_2"

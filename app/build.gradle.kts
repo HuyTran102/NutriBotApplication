@@ -52,5 +52,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
     implementation("com.github.leandroborgesferreira:loading-button-android:2.3.0")
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
-
+    implementation("com.github.phuquy2114:Libraries_android:1.0.9")
 }

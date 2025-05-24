@@ -21,18 +21,18 @@
 -renamesourcefileattribute SourceFile
 -keep class android.content.Intent { *; }
 -keep class android.net.Uri { *; }
--keep class com.huytran.goodlife.HomePage { *; }
+-keep class com.huytran.goodlife.pages.home.HomePage { *; }
 # Giữ lại Activity Dietary
--keep class com.huytran.goodlife.Dietary { *; }
+-keep class com.huytran.goodlife.pages.dietary.Dietary { *; }
 
 # Giữ lại ViewPager Adapter
--keep class com.huytran.goodlife.VPAdapter { *; }
+-keep class com.huytran.goodlife.adapter.VPAdapter { *; }
 
 # Giữ lại các Fragment được sử dụng trong Dietary
--keep class com.huytran.goodlife.FragmentFood { *; }
--keep class com.huytran.goodlife.FragmentGroceries { *; }
--keep class com.huytran.goodlife.FragmentDrinks { *; }
--keep class com.huytran.goodlife.FragmentDiary { *; }
+-keep class com.huytran.goodlife.fragment.FragmentFood { *; }
+-keep class com.huytran.goodlife.fragment.FragmentGroceries { *; }
+-keep class com.huytran.goodlife.fragment.FragmentDrinks { *; }
+-keep class com.huytran.goodlife.fragment.FragmentDiary { *; }
 
 # Nếu bạn dùng ViewBinding hoặc DataBinding
 -keep class **.databinding.* { *; }

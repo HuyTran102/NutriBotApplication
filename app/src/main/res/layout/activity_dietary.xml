@@ -8,7 +8,7 @@
     android:background="#F7FFFFFF"
     android:focusableInTouchMode="true"
     android:keepScreenOn="true"
-    tools:context=".Dietary">
+    tools:context=".pages.dietary.Dietary">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/name_guide_1"

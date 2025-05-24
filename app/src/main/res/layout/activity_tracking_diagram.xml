@@ -8,7 +8,7 @@
     android:background="#F7FFFFFF"
     android:focusableInTouchMode="true"
     android:keepScreenOn="true"
-    tools:context=".TrackingDiagram">
+    tools:context=".pages.tracking_diagram.TrackingDiagram">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/name_guide_1"

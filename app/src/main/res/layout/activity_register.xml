@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterPage"
+    tools:context=".pages.register.RegisterPage"
     android:gravity="center"
     android:background="#00C8A6"
     android:focusableInTouchMode="true"
