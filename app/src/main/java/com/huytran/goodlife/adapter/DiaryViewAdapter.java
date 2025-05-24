@@ -21,11 +21,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.huytran.goodlife.pages.dietary.DiaryItemData;
-import com.huytran.goodlife.view.DiaryViewHolder;
-import com.huytran.goodlife.pages.dietary.Dietary;
+import com.huytran.goodlife.pages.dietary.DiaryItemDataActivity;
+import com.huytran.goodlife.pages.dietary.DietaryActivity;
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.view.SplitViewHolder;
 import com.huytran.goodlife.model.DiaryItem;
 
 import java.text.DecimalFormat;
@@ -148,7 +146,7 @@ public class DiaryViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                                 }
                             });
 
-                    Intent intent = new Intent(context, Dietary.class);
+                    Intent intent = new Intent(context, DietaryActivity.class);
                     context.startActivity(intent);
                 }
             });
@@ -156,7 +154,7 @@ public class DiaryViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             itemHolder.infomation.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context, DiaryItemData.class);
+                    Intent intent = new Intent(context, DiaryItemDataActivity.class);
                     intent.putExtra("Name", itemAtPosition.name);
                     intent.putExtra("Amount", itemAtPosition.amount);
                     intent.putExtra("Kcal", itemAtPosition.kcal);

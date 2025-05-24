@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.pages.template_menu.TempMenuData;
+import com.huytran.goodlife.pages.template_menu.TempMenuDataActivity;
 import com.huytran.goodlife.model.TempMenuItem;
 
 import java.util.List;
@@ -43,7 +43,7 @@ public class TempMenuViewAdapter extends RecyclerView.Adapter<TempMenuViewAdapte
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, TempMenuData.class);
+                Intent intent = new Intent(context, TempMenuDataActivity.class);
                 intent.putExtra("Image", itemAtPosition.getData_image());
                 context.startActivity(intent);
             }

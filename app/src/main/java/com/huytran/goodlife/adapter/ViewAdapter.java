@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.huytran.goodlife.pages.dietary.ItemData;
+import com.huytran.goodlife.pages.dietary.ItemDataActivity;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.model.Item;
 
@@ -42,7 +42,7 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ItemData.class);
+                Intent intent = new Intent(context, ItemDataActivity.class);
                 intent.putExtra("Name", itemAtPosition.name);
                 intent.putExtra("Kcal", itemAtPosition.kcal);
                 intent.putExtra("Protein", itemAtPosition.protein);

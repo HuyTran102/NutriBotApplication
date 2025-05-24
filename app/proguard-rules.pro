@@ -21,9 +21,9 @@
 -renamesourcefileattribute SourceFile
 -keep class android.content.Intent { *; }
 -keep class android.net.Uri { *; }
--keep class com.huytran.goodlife.pages.home.HomePage { *; }
+-keep class com.huytran.goodlife.pages.home.HomePageActivity { *; }
 # Giữ lại Activity Dietary
--keep class com.huytran.goodlife.pages.dietary.Dietary { *; }
+-keep class com.huytran.goodlife.pages.dietary.DietaryActivity { *; }
 
 # Giữ lại ViewPager Adapter
 -keep class com.huytran.goodlife.adapter.VPAdapter { *; }

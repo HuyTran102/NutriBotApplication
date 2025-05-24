@@ -15,7 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.huytran.goodlife.pages.dietary.Dietary;
+import com.huytran.goodlife.pages.dietary.DietaryActivity;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.adapter.ViewAdapter;
 import com.huytran.goodlife.model.Item;
@@ -56,8 +56,8 @@ public class FragmentFood extends Fragment {
                 requireActivity().runOnUiThread(() -> {
                     viewAdapter.notifyDataSetChanged();
 
-                    if (getActivity() instanceof Dietary) {
-                        ((Dietary) getActivity()).hideLoading();
+                    if (getActivity() instanceof DietaryActivity) {
+                        ((DietaryActivity) getActivity()).hideLoading();
                     }
                 });
             }).start();
@@ -178,8 +178,8 @@ public class FragmentFood extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(viewAdapter);
 
-        if (getActivity() instanceof Dietary) {
-            ((Dietary) getActivity()).showLoading();
+        if (getActivity() instanceof DietaryActivity) {
+            ((DietaryActivity) getActivity()).showLoading();
         }
 
         loadData();

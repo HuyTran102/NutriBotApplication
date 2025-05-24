@@ -9,16 +9,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.huytran.goodlife.pages.notification.NotificationData;
+import com.huytran.goodlife.pages.notification.NotificationDataActivity;
 import com.huytran.goodlife.R;
 
 import java.util.List;
 
 public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapter.NotificationHolder> {
     Context context;
-    List<NotificationData> items;
+    List<NotificationDataActivity> items;
 
-    public NotificationAdapter(Context context, List<NotificationData> items) {
+    public NotificationAdapter(Context context, List<NotificationDataActivity> items) {
         this.context = context;
         this.items = items;
     }
@@ -31,7 +31,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
     @Override
     public void onBindViewHolder(@NonNull NotificationHolder holder, int position) {
-        NotificationData itemAtPosition = items.get(position);
+        NotificationDataActivity itemAtPosition = items.get(position);
         holder.name.setText(itemAtPosition.getName());
         holder.information.setText(itemAtPosition.getInformation());
         holder.time.setText(itemAtPosition.getTime());

@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.home.HomePage"
+    tools:context=".pages.home.HomePageActivity"
     android:background="#F7FFFFFF"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.chat_bot.ChatBot"
+    tools:context=".pages.chat_bot.ChatBotActivity"
     android:background="#F7FFFFFF"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
