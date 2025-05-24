@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,7 +37,8 @@ import java.util.Objects;
 public class DiaryItemDataActivity extends AppCompatActivity {
     private TextView viewItemName, itemKcalo, itemProtein, itemLipid, itemGlucid, itemUnitType, itemUnitName;
     private TextInputEditText itemAmount;
-    private Button backButton, saveButton;
+    private ImageButton backButton;
+    private Button saveButton;
     private ImageView itemImage;
     private String glucidValue , lipidValue, proteinValue, kcalValue, name;
     private FirebaseFirestore firebaseFirestore;
