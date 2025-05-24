@@ -93,7 +93,7 @@
                 android:background="@drawable/custom_button"
                 android:dropDownHeight="wrap_content"
                 android:text="🔥 Mức độ hoạt động"
-                android:textColor="#D0D0D0"
+                android:textColor="#515151"
                 android:textSize="18sp"
                 app:backgroundTint="@null" />
 
@@ -112,7 +112,7 @@
                 android:background="@drawable/custom_button"
                 android:dropDownHeight="wrap_content"
                 android:text="🏋🏻‍ Hoạt động"
-                android:textColor="#D0D0D0"
+                android:textColor="#515151"
                 android:textSize="18sp"
                 app:backgroundTint="@null" />
 
@@ -130,7 +130,7 @@
                 android:background="@drawable/custom_button"
                 android:onClick="openTimePicker"
                 android:text="🕖 Thời gian luyện tập"
-                android:textColor="#D0D0D0"
+                android:textColor="#515151"
                 android:textSize="18sp"
                 app:backgroundTint="@null" />
 
