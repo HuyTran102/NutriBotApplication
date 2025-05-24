@@ -30,6 +30,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.R;
+import com.uits.baseproject.widget.PFDialog;
+import com.uits.baseproject.widget.PFLoadingDialog;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -52,6 +54,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
     private TextView bmiStatusView, hfaStatusView, heightView, weightView;
     private ImageView bmiAge, heightAge, imgWeightAge, imgHeightAge;
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    private PFDialog pfDialog;
     private static final String TAG = "ExcelRead";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +87,8 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
         imgWeightAge = findViewById(R.id.img_weight);
         imgHeightAge = findViewById(R.id.img_height);
 
+        pfDialog = new PFLoadingDialog(this);
+
         final double[] userRecommendWeight = new double[1];
         final double[] userRecommendHeight = new double[1];
         final double[] userActualWeight = new double[1];
@@ -98,6 +103,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(validUserHeight() && validUserWeight()) {
+                    pfDialog.show();
                     height = String.valueOf(userHeight.getText());
                     weight = String.valueOf(userWeight.getText());
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user");
@@ -139,12 +145,12 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                             WriteDataFireBase(String.valueOf(userActualHeight[0]), String.valueOf(userActualWeight[0])
                                     , String.valueOf(userRecommendHeight[0]), String.valueOf(userRecommendWeight[0]));
 
-
+                            pfDialog.dismiss();
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-
+                            pfDialog.dismiss();
                         }
                     });
                 }
