@@ -8,18 +8,20 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.R;
 
 public class AppRankingActivity extends AppCompatActivity {
     private RatingBar ratingBar;
     private TextView message;
     private ImageView ratingIcon;
-    private Button backButton, submitButton;
+    private ImageButton backButton;
+    private Button submitButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +75,7 @@ public class AppRankingActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AppRankingActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(AppRankingActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -18,14 +18,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 
 import java.util.Random;
 
 public class ContactWithNutritionistActivity extends AppCompatActivity {
     private static final int REQUEST_PHONE_CALL = 1;
-    private ImageView phoneButton, videoCallButton, textButton, emailButton;
-    private Button backButton;
+    private ImageView phoneButton, videoCallButton, textButton, emailButton, backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,7 +122,7 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ContactWithNutritionistActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(ContactWithNutritionistActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

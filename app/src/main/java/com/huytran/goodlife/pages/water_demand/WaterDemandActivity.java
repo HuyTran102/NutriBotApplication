@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.Task;
@@ -18,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 
 
 public class WaterDemandActivity extends AppCompatActivity {
@@ -28,7 +28,7 @@ public class WaterDemandActivity extends AppCompatActivity {
     private int addWater;
     private String name;
     private double recommendWeight, recommendWaterAmount;
-    private Button backButton;
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +104,7 @@ public class WaterDemandActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(WaterDemandActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(WaterDemandActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.R;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -44,7 +45,8 @@ import java.util.Map;
 import java.util.Objects;
 
 public class CalculateNutritionalStatusActivity extends AppCompatActivity {
-    private Button backButton, resultButton;
+    private Button resultButton;
+    private ImageButton backButton;
     private TextInputEditText userHeight, userWeight;
     private String name, signInDate, gender, password, date, height, weight;
     private TextView bmiStatusView, hfaStatusView, heightView, weightView;
@@ -152,7 +154,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CalculateNutritionalStatusActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(CalculateNutritionalStatusActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

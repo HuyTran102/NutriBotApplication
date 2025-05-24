@@ -14,12 +14,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.local_helper.LocaleHelper;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.adapter.ChatAdapter;
@@ -46,8 +45,7 @@ public class ChatBotActivity extends AppCompatActivity {
     private final String ENDPOINT = "https://api.together.xyz/v1/chat/completions";
     private final MediaType JSON = MediaType.get("application/json; charset=utf-8");
     private OkHttpClient client = new OkHttpClient();
-    private Button backButton;
-    private ImageButton sendButton;
+    private ImageButton sendButton, backButton;
     private RecyclerView recyclerView;
     private EditText inputMessage;
     private ChatAdapter adapter;
@@ -142,7 +140,7 @@ public class ChatBotActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ChatBotActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(ChatBotActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

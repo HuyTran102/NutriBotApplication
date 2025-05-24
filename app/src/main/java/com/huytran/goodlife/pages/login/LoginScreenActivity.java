@@ -23,7 +23,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.register.RegisterActivity;
 import com.uits.baseproject.widget.PFDialog;
@@ -214,7 +214,7 @@ public class LoginScreenActivity extends AppCompatActivity {
                                 Toast.makeText(LoginScreenActivity.this, "Lỗi đăng nhập", Toast.LENGTH_SHORT).show();
                             }
                         }
-                        Intent intent = new Intent(LoginScreenActivity.this, HomePageActivity.class);
+                        Intent intent = new Intent(LoginScreenActivity.this, HomeActivity.class);
                         startActivity(intent);
                         finish();
                     } else {

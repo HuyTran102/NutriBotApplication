@@ -8,12 +8,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 
 public class ContactSupportTeamActivity extends AppCompatActivity {
-    private Button backButton;
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class ContactSupportTeamActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ContactSupportTeamActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(ContactSupportTeamActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

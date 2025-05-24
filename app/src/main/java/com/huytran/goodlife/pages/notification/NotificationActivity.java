@@ -8,19 +8,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.adapter.NotificationAdapter;
 
@@ -38,7 +40,7 @@ public class NotificationActivity extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore;
     private List<NotificationDataActivity> list_items = new ArrayList<>();
     private String name;
-    private Button backButton;
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +73,7 @@ public class NotificationActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NotificationActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(NotificationActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

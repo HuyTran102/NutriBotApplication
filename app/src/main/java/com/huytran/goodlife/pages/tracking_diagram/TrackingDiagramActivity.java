@@ -8,12 +8,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -39,7 +41,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.R;
 
 import java.time.DayOfWeek;
@@ -60,7 +62,7 @@ public class TrackingDiagramActivity extends AppCompatActivity {
     private LocalDate startOfWeek;
     private LocalDate endOfWeek;
     private String name;
-    private Button backButton;
+    private ImageButton backButton;
     private LineDataSet dataSet1, dataSet2;
 
     private double actualWeight, actualHeight, usedEnergy, addEnergy, actualEnergy, recommendWeight, recommendHeight, recommendEnergy, statusWeight, statusHeight, statusEnergy;
@@ -112,7 +114,7 @@ public class TrackingDiagramActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TrackingDiagramActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(TrackingDiagramActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

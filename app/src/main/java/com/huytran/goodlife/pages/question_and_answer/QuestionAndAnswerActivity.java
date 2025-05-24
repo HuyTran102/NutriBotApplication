@@ -3,20 +3,22 @@ package com.huytran.goodlife.pages.question_and_answer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.R;
 
 public class QuestionAndAnswerActivity extends AppCompatActivity {
     private LinearLayout basicNutrition, nutritionSchoolHealth, examSeasonNutrition, nutritionPhysicalActivity, nutritionMentalHealth
             , nutritionPubertyPeriod, malnutrition, overWeight;
-    private Button backButton;
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +122,7 @@ public class QuestionAndAnswerActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(QuestionAndAnswerActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(QuestionAndAnswerActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

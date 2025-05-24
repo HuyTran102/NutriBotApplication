@@ -136,7 +136,7 @@
             android:name=".pages.calculate_nutritional_status.CalculateNutritionalStatusActivity"
             android:exported="false" />
         <activity
-            android:name=".pages.home.HomePageActivity"
+            android:name=".pages.home.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".pages.login.LoginScreenActivity"

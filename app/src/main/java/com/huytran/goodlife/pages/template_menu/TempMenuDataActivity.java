@@ -8,12 +8,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.huytran.goodlife.R;
 
 public class TempMenuDataActivity extends AppCompatActivity {
-    private Button backButton;
+    private ImageButton backButton;
     private ImageView menuImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

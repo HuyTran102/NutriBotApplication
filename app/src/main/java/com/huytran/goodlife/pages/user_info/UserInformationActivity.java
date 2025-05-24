@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,13 +21,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 
 import java.util.Objects;
 
 public class UserInformationActivity extends AppCompatActivity {
     private String name, date, gender, email;
-    private Button backButton;
+    private ImageButton backButton;
     private TextView userName, userGender, userDateOfBirth, userEmail;
     
     @Override
@@ -82,7 +83,7 @@ public class UserInformationActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(UserInformationActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(UserInformationActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -36,7 +36,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -152,7 +152,7 @@ public class PhysicalActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PhysicalActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(PhysicalActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

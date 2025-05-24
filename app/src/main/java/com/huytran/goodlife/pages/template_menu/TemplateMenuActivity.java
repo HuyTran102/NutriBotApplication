@@ -11,17 +11,18 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.adapter.TempMenuViewAdapter;
 import com.huytran.goodlife.model.TempMenuItem;
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TemplateMenuActivity extends AppCompatActivity {
-    private Button backButton;
+    private ImageButton backButton;
     private SearchView searchView;
     private RecyclerView recyclerView;
     private TempMenuViewAdapter viewAdapter;
@@ -29,7 +30,7 @@ public class TemplateMenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_template_menu_view);
+        setContentView(R.layout.activity_template_menu);
 
         // Make status bar fully transparent
         Window window = getWindow();
@@ -84,7 +85,7 @@ public class TemplateMenuActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TemplateMenuActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(TemplateMenuActivity.this, HomeActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
                 finish();

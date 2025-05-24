@@ -8,14 +8,15 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.R;
 
 public class RecommendMenuActivity extends AppCompatActivity {
     private LinearLayout menu1, menu2, menu3, menu4, menu5;
-    private Button backButton;
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +90,7 @@ public class RecommendMenuActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RecommendMenuActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(RecommendMenuActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }
