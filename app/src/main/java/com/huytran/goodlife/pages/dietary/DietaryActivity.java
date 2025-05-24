@@ -9,10 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.material.tabs.TabLayout;
-import com.huytran.goodlife.pages.home.HomePageActivity;
+import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.loading_dialog.LoadingDialog;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.adapter.VPAdapter;
@@ -20,12 +20,14 @@ import com.huytran.goodlife.fragment.FragmentDiary;
 import com.huytran.goodlife.fragment.FragmentDrinks;
 import com.huytran.goodlife.fragment.FragmentFood;
 import com.huytran.goodlife.fragment.FragmentGroceries;
+import com.uits.baseproject.widget.PFDialog;
+import com.uits.baseproject.widget.PFLoadingDialog;
 
 public class DietaryActivity extends AppCompatActivity {
-    private Button backButton;
+    private ImageButton backButton;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private LoadingDialog loadingDialog;
+    private PFDialog pfDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,7 @@ public class DietaryActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.pageViewer);
 
-        loadingDialog = new LoadingDialog(this);
+        pfDialog = new PFLoadingDialog(this);
 
         tabLayout.setupWithViewPager(viewPager);
 
@@ -92,7 +94,7 @@ public class DietaryActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DietaryActivity.this, HomePageActivity.class);
+                Intent intent = new Intent(DietaryActivity.this, HomeActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(intent);
                 finish();
@@ -101,14 +103,10 @@ public class DietaryActivity extends AppCompatActivity {
     }
 
     public void showLoading() {
-        if (loadingDialog != null) {
-            loadingDialog.show("Đang chạy...");
-        }
+        pfDialog.show();
     }
 
     public void hideLoading() {
-        if (loadingDialog != null) {
-            loadingDialog.hide();
-        }
+        pfDialog.dismiss();
     }
 }
