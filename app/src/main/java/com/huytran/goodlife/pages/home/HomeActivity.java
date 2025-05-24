@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -21,6 +24,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -66,7 +72,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 
-public class HomePageActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private Button drawerMenuButton;
     private FloatingActionButton chatBotButton;
@@ -156,11 +162,31 @@ public class HomePageActivity extends AppCompatActivity {
             }
         });
 
+        ScaleAnimation bounceAnim = new ScaleAnimation(
+                0.7f, 1.1f,  // X scale from 70% to 110%
+                0.7f, 1.1f,  // Y scale
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f
+        );
+
+        bounceAnim.setDuration(800); // slower for more visible bounce
+        bounceAnim.setRepeatMode(Animation.REVERSE); // Reverse to shrink back
+        bounceAnim.setRepeatCount(Animation.INFINITE); // Repeat forever
+        bounceAnim.setInterpolator(new BounceInterpolator()); // Bouncy effect
+
+        chatBotButton.post(new Runnable() {
+            @Override
+            public void run() {
+                chatBotButton.startAnimation(bounceAnim);
+            }
+        });
+
         chatBotButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(HomePageActivity.this, ChatBotActivity.class);
+                        chatBotButton.startAnimation(bounceAnim);
+                        Intent intent = new Intent(HomeActivity.this, ChatBotActivity.class);
                         startActivity(intent);
                         finish();
                     }
@@ -172,35 +198,35 @@ public class HomePageActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 if (id == R.id.user_information) {
-                    Intent intent = new Intent(HomePageActivity.this, UserInformationActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, UserInformationActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.notification) {
-                    Intent intent = new Intent(HomePageActivity.this, NotificationActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, NotificationActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.tracking_diagram) {
-                    Intent intent = new Intent(HomePageActivity.this, TrackingDiagramActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, TrackingDiagramActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.about_us) {
-                    Intent intent = new Intent(HomePageActivity.this, AboutUsActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, AboutUsActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.app_ranking) {
-                    Intent intent = new Intent(HomePageActivity.this, AppRankingActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, AppRankingActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.question_and_answer) {
-                    Intent intent = new Intent(HomePageActivity.this, QuestionAndAnswerActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, QuestionAndAnswerActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.contact_with_nutritionist) {
-                    Intent intent = new Intent(HomePageActivity.this, ContactWithNutritionistActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, ContactWithNutritionistActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.contact_support_team) {
-                    Intent intent = new Intent(HomePageActivity.this, ContactSupportTeamActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, ContactSupportTeamActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.logout) {
@@ -212,8 +238,8 @@ public class HomePageActivity extends AppCompatActivity {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    Toast.makeText(HomePageActivity.this, "Đăng xuất", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(HomePageActivity.this, LoginScreenActivity.class);
+                    Toast.makeText(HomeActivity.this, "Đăng xuất", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(HomeActivity.this, LoginScreenActivity.class);
                     startActivity(intent);
                     finish();
                 }
@@ -245,7 +271,7 @@ public class HomePageActivity extends AppCompatActivity {
         nutritionalStatusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePageActivity.this, CalculateNutritionalStatusActivity.class);
+                Intent intent = new Intent(HomeActivity.this, CalculateNutritionalStatusActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -254,7 +280,7 @@ public class HomePageActivity extends AppCompatActivity {
         physicalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePageActivity.this, PhysicalActivity.class);
+                Intent intent = new Intent(HomeActivity.this, PhysicalActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -263,7 +289,7 @@ public class HomePageActivity extends AppCompatActivity {
         dietaryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePageActivity.this, DietaryActivity.class);
+                Intent intent = new Intent(HomeActivity.this, DietaryActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -272,7 +298,7 @@ public class HomePageActivity extends AppCompatActivity {
         tempMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePageActivity.this, TemplateMenuActivity.class);
+                Intent intent = new Intent(HomeActivity.this, TemplateMenuActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -281,7 +307,7 @@ public class HomePageActivity extends AppCompatActivity {
         recommendMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePageActivity.this, RecommendMenuActivity.class);
+                Intent intent = new Intent(HomeActivity.this, RecommendMenuActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -290,7 +316,7 @@ public class HomePageActivity extends AppCompatActivity {
         waterDemandButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePageActivity.this, WaterDemandActivity.class);
+                Intent intent = new Intent(HomeActivity.this, WaterDemandActivity.class);
                 startActivity(intent);
                 finish();
             }

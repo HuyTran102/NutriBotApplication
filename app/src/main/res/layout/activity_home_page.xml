@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.home.HomePageActivity"
+    tools:context=".pages.home.HomeActivity"
     android:background="#F7FFFFFF"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
@@ -16,48 +16,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/nav_guide_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="0dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/nav_guide_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.03"/>
-
-        <Button
-            android:id="@+id/drawer_menu_button"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/drawer_menu"
-            android:ems="10"
-            android:gravity="center_vertical"
-            app:backgroundTint="@null"
-            android:layout_marginStart="10dp"
-            app:layout_constraintBottom_toBottomOf="@id/nav_guide_4"
-            app:layout_constraintEnd_toEndOf="@id/nav_guide_2"
-            app:layout_constraintStart_toStartOf="@id/nav_guide_1"
-            app:layout_constraintTop_toTopOf="@id/nav_guide_3"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/nav_guide_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.1"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/nav_guide_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.06"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/value_guide_1"
@@ -357,22 +315,53 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.043"/>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/firasans_bolditalic"
-            android:text="NutriBot"
-            android:textAlignment="center"
-            android:textColor="#02947B"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintBottom_toBottomOf="@id/name_guide_4"
-            app:layout_constraintEnd_toEndOf="@id/name_guide_2"
-            app:layout_constraintStart_toStartOf="@id/name_guide_1"
-            app:layout_constraintTop_toTopOf="@id/name_guide_3"
-            app:layout_constraintVertical_bias="0.069" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="#FFFFFF"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/drawer_menu_button"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/drawer_menu"
+                android:ems="10"
+                android:gravity="center_vertical"
+                app:backgroundTint="@null"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NutriBot"
+                android:fontFamily="@font/firasans_bolditalic"
+                android:textColor="#02947B"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#BBBBBB"
+            app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/name_guide_2"
