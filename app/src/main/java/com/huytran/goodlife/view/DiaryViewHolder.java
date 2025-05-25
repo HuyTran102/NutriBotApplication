@@ -3,6 +3,7 @@ package com.huytran.goodlife.view;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,7 +13,7 @@ import com.huytran.goodlife.R;
 
 public class DiaryViewHolder extends RecyclerView.ViewHolder {
     TextView name, unit_type, unit_name, kcal, amount, protein, lipid, glucid;
-    Button delete, infomation;
+    ImageButton delete, infomation;
 
     private final int viewType;
 
@@ -32,9 +33,6 @@ public class DiaryViewHolder extends RecyclerView.ViewHolder {
 
         delete = itemView.findViewById(R.id.delete_item_button);
         infomation = itemView.findViewById(R.id.item_info_button);
-
-        delete.setGravity(Gravity.CENTER);
-        infomation.setGravity(Gravity.CENTER);
     }
 
     public int getViewType() {

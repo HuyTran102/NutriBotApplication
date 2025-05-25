@@ -150,8 +150,7 @@ public class FragmentDiary extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new DiaryViewAdapter(getContext(), items));
 
-        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
-        recyclerView.addItemDecoration(itemDecoration);
+
     }
 
     // Load Data to Recycle Item
