@@ -47,7 +47,7 @@
     <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:textColorHint">#D0D0D0</item>
         <item name="boxStrokeColor">@color/teal_700</item>
-        <item name="boxBackgroundMode">outline</item>
+        <item name="boxBackgroundMode">none</item>
         <item name="boxCornerRadiusTopStart">8dp</item>
         <item name="boxCornerRadiusTopEnd">8dp</item>
         <item name="boxCornerRadiusBottomStart">8dp</item>
