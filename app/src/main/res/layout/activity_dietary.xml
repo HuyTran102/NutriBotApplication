@@ -68,22 +68,23 @@
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F7FFFFFF"
             android:layout_marginTop="15dp"
-            app:tabSelectedTextColor="#02AC8F"
+            android:background="#F7FFFFFF"
+            app:tabTextAppearance="@style/CustomTabText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.188">
+            app:layout_constraintVertical_bias="0.188"
+            app:tabSelectedTextColor="#02977E">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/m_n_n"
                 android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textSize="45sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.tabs.TabItem
@@ -91,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/th_c_ph_m"
                 android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textSize="45sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.tabs.TabItem
@@ -99,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/s_a_u_ng"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="45sp"
                 android:textStyle="bold" />
 
             <com.google.android.material.tabs.TabItem
@@ -107,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/nh_t_k"
                 android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textSize="45sp"
                 android:textStyle="bold" />
         </com.google.android.material.tabs.TabLayout>
 

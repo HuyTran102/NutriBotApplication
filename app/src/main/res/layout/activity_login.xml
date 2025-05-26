@@ -60,7 +60,6 @@
                     android:id="@+id/editEditTextMail"
                     style="@style/modifiedEditText"
                     android:hint="Tên"
-                    android:background="@drawable/input_card"
                     android:textStyle="bold"
                     android:textSize="16dp"
                     android:inputType="textPersonName"
@@ -81,7 +80,6 @@
                     android:hint="Mật khẩu"
                     android:textStyle="bold"
                     android:textSize="16dp"
-                    android:background="@drawable/input_card"
                     android:inputType="textPassword"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>

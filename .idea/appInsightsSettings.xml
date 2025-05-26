@@ -9,7 +9,7 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.huytran.goodlife" />
+                  <option name="appId" value="com.huytran.goodlifes" />
                   <option name="mobileSdkAppId" value="1:1079093227370:android:a561a37020a3d0378fbf13" />
                   <option name="projectId" value="goodlife-database" />
                   <option name="projectNumber" value="1079093227370" />

@@ -6,8 +6,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <size android:width="295dp"
-        android:height="50dp"/>
-    <corners android:radius="1.5dp"/>
-    <stroke android:color="#9E9E9E"
+        android:height="100dp"/>
+    <corners android:radius="8dp"/>
+    <stroke android:color="#818181"
         android:width="1.1dp"/>
 </shape>

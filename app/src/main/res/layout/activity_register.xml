@@ -64,7 +64,6 @@
 
                         <EditText
                             android:id="@+id/acc_name"
-                            android:background="@drawable/input_card"
                             style="@style/modifiedEditText"
                             android:textColorHint="#9E9D9D"
                             android:hint="Tên"
@@ -80,9 +79,9 @@
                         android:id="@+id/datePickerButton"
                         style="?android:spinnerStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="55dp"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/input_card"
+                        android:background="@drawable/date_background_button"
                         android:ems="10"
                         android:text="Ngày sinh"
                         android:textStyle="bold"
@@ -106,7 +105,6 @@
                         <EditText
                             android:id="@+id/editTextMail"
                             style="@style/modifiedEditText"
-                            android:background="@drawable/input_card"
                             android:textColorHint="#9E9D9D"
                             android:hint="Email"
                             android:textStyle="bold"
@@ -129,7 +127,6 @@
                             android:id="@+id/editTextPassword"
                             style="@style/modifiedEditText"
                             android:textColorHint="#9E9D9D"
-                            android:background="@drawable/input_card"
                             android:hint="Mật khẩu"
                             android:textStyle="bold"
                             android:textSize="16dp"
