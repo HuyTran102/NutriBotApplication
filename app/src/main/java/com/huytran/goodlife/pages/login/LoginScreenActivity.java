@@ -75,11 +75,11 @@ public class LoginScreenActivity extends AppCompatActivity {
         // check login
         File directory = contextWrapper.getDir(filepath, Context.MODE_PRIVATE);
         myInternalFile = new File(directory, filename);
-        if(check_is_login()){
-            checkUserData(username_tmp, password_tmp);
-        } else{
-            Log.d("wtf","wtf");
-        }
+//        if(check_is_login()){
+//            checkUserData(username_tmp, password_tmp);
+//        } else{
+//            Log.d("wtf","wtf");
+//        }
 
         setContentView(R.layout.activity_login);
 

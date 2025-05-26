@@ -47,10 +47,12 @@ dependencies {
     implementation("org.apache.poi:poi:5.2.3")
     implementation("org.apache.poi:poi-ooxml:5.2.3")
     implementation("com.google.firebase:firebase-firestore:25.1.4")
+    implementation("androidx.activity:activity:1.8.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
     implementation("com.github.leandroborgesferreira:loading-button-android:2.3.0")
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation("androidx.core:core-splashscreen:1.0.0")
     implementation("com.github.phuquy2114:Libraries_android:1.0.9")
 }

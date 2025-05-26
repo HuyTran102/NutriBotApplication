@@ -672,6 +672,7 @@
             android:src="@drawable/chat_ic"
             app:backgroundTint="#FFFFFF"
             app:tint="@null"
+            android:layout_margin="20dp"
             app:maxImageSize="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
