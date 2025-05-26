@@ -163,7 +163,7 @@ public class ChatBotActivity extends AppCompatActivity {
             JSONArray messages = new JSONArray();
             JSONObject systemMsg = new JSONObject();
             systemMsg.put("role", "system");
-            systemMsg.put("content", "Bạn là chuyên gia dinh dưỡng thân thiện, luôn trả lời ngắn gọn, chính xác, bằng tiếng Việt. Không đưa ra thông tin kỳ lạ hay giả tưởng. Trả lời đúng trọng tâm.");
+            systemMsg.put("content", "Bạn là chuyên gia dinh dưỡng thân thiện, luôn trả lời ngắn gọn, Chính xác, Chỉ trả lời bằng Tiếng Việt. Không sử dụng từ 'Anh' và 'Việt' trong nội dung phản hồi. Không đưa ra thông tin kỳ lạ hay giả tưởng. Trả lời đúng trọng tâm.");
             messages.put(systemMsg);
 
             JSONObject userMsg = new JSONObject();
