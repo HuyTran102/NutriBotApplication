@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.template_menu.TemplateMenuActivity"
-    android:background="#F7FFFFFF"
+    android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
     android:keepScreenOn="true">
@@ -67,7 +67,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#F7FFFFFF"
             app:layout_constraintBottom_toBottomOf="@id/search_guide_4"
             app:layout_constraintEnd_toEndOf="@id/search_guide_2"
             app:layout_constraintHorizontal_bias="0.333"
@@ -112,35 +111,5 @@
         </RelativeLayout>
 
     </LinearLayout>
-
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/search_guide_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.0"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/search_guide_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/search_guide_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="1"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/search_guide_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.98"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

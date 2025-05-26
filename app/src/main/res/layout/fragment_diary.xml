@@ -9,7 +9,7 @@
     android:focusableInTouchMode="true"
     android:keepScreenOn="true"
     android:orientation="vertical"
-    tools:context=".fragment.FragmentDiary">
+    tools:context=".fragment.DiaryFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView

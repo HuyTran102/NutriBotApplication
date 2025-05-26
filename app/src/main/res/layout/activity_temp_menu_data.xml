@@ -5,21 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.template_menu.TempMenuDataActivity"
-    android:background="#F7FFFFFF"
+    android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
     android:keepScreenOn="true">
-
-    <ImageView
-        android:id="@+id/item_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:layout_gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
@@ -56,5 +45,16 @@
         app:layout_constraintTop_toBottomOf="@id/my_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/my_toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

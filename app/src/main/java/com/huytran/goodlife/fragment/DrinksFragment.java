@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class FragmentDrinks extends Fragment {
+public class DrinksFragment extends Fragment {
     private RecyclerView recyclerView;
     private List<Item> items = new ArrayList<>();
     private SearchView searchView;

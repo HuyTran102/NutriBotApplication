@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.app_ranking.AppRankingActivity"
-    android:background="#F7FFFFFF"
+    android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
     android:keepScreenOn="true">
@@ -71,13 +71,11 @@
         android:id="@+id/main_text_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="44dp"
         android:gravity="center"
         android:text="Bạn cảm thấy ứng dụng của chúng tôi như thế nào?"
         android:textAlignment="center"
-        android:textColor="#02AC8F"
         android:textSize="23sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/app_rating"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -102,26 +100,35 @@
         android:gravity="center"
         android:text=""
         android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/submit_button"
+        app:layout_constraintBottom_toTopOf="@+id/button_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/submit_button"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/button_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="30dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardElevation="4dp"
         android:layout_marginBottom="136dp"
-        android:background="@drawable/cus_val_dis"
-        android:gravity="center"
-        android:text="Gửi"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cus_val_dis"
+            android:id="@+id/submit_button"
+            android:gravity="center"
+            android:text="Gửi"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            app:backgroundTint="@null"/>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.question_and_answer.NutritionMentalHealthActivity"
-    android:background="#F7FFFFFF"
+    android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
     android:keepScreenOn="true">
@@ -48,6 +48,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <View
+        android:id="@id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#BBBBBB"
@@ -85,21 +86,21 @@
 
 
     <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#F7FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@id/search_guide_4"
-        app:layout_constraintEnd_toEndOf="@id/search_guide_2"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="@id/search_guide_1"
-        app:layout_constraintTop_toTopOf="@id/search_guide_3">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/view"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_marginTop="10dp"
             android:background="@drawable/custom_button"
-            android:layout_marginTop="10dp">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -109,23 +110,21 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
                     android:justificationMode="inter_word"
                     android:text="Câu hỏi 1: Ăn uống ảnh hưởng như thế nào đến tâm trạng?"
-                    android:layout_marginStart="5dp"
                     android:textColor="#02AC8F"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
                     android:justificationMode="inter_word"
                     android:text="Đáp án: Chế độ ăn cân bằng giúp cải thiện tâm trạng. Thiếu hụt các chất như omega-3, vitamin B và sắt có thể gây mệt mỏi, lo âu hoặc trầm cảm."
-                    android:layout_marginStart="5dp"
-                    android:textColor="#C7C5C5"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"
                     android:textSize="17sp"/>
 
             </LinearLayout>
@@ -133,30 +132,28 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/custom_button"
-                android:layout_marginTop="20dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
                     android:justificationMode="inter_word"
                     android:text="Câu hỏi 2: Thực phẩm nào giúp giảm căng thẳng?"
-                    android:layout_marginStart="5dp"
                     android:textColor="#02AC8F"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
                     android:justificationMode="inter_word"
                     android:text="Đáp án: Các thực phẩm như chuối, hạnh nhân, sô-cô-la đen, cá hồi và sữa chua có thể giúp cơ thể giảm căng thẳng nhờ cung cấp các chất dinh dưỡng như vitamin B, magie và tryptophan."
-                    android:layout_marginStart="5dp"
-                    android:textColor="#C7C5C5"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"
                     android:textSize="17sp"/>
 
             </LinearLayout>
@@ -164,31 +161,29 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/custom_button"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp">
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/custom_button"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
                     android:justificationMode="inter_word"
                     android:text="Câu hỏi 3: Uống nhiều cà phê hoặc trà có ảnh hưởng gì đến học tập không?"
-                    android:layout_marginStart="5dp"
                     android:textColor="#02AC8F"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
                     android:justificationMode="inter_word"
                     android:text="Đáp án: Uống nhiều caffeine có thể gây mất ngủ, lo lắng, làm giảm khả năng tập trung. Học sinh nên hạn chế uống nhiều cà phê hoặc trà."
-                    android:layout_marginStart="5dp"
-                    android:textColor="#C7C5C5"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"
                     android:textSize="17sp"/>
 
             </LinearLayout>

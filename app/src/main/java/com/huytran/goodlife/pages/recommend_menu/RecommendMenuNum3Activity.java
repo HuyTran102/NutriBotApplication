@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.Task;
@@ -29,7 +30,7 @@ public class RecommendMenuNum3Activity extends AppCompatActivity {
             , tongSang, tongTrua, tongToi;
     private String name;
     private double recommendWeight, recommendEnergy;
-    private Button backButton;
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

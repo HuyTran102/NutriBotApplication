@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.home.HomeActivity"
-    android:background="#F7FFFFFF"
+    android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
     android:keepScreenOn="true"

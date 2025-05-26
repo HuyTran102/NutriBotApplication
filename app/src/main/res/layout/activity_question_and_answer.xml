@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.question_and_answer.QuestionAndAnswerActivity"
-    android:background="#F7FFFFFF"
+    android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
     android:keepScreenOn="true">
@@ -48,68 +48,35 @@
     </androidx.appcompat.widget.Toolbar>
 
     <View
+        android:id="@id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#BBBBBB"
         app:layout_constraintTop_toBottomOf="@id/my_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/search_guide_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.0"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/search_guide_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/search_guide_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="1"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/search_guide_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.98"/>
-
     <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#F7FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@id/search_guide_4"
-        app:layout_constraintEnd_toEndOf="@id/search_guide_2"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="@id/search_guide_1"
-        app:layout_constraintTop_toTopOf="@id/search_guide_3">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
-            android:layout_width="356dp"
-            android:layout_height="475dp"
-            android:background="#F7FFFFFF"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.604">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/basic_nutrition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -120,10 +87,10 @@
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="96dp"
-                    android:text="Dinh dưỡng cơ bản"
                     android:layout_marginStart="15dp"
-                    android:textColor="@color/black"
                     android:gravity="center_vertical"
+                    android:text="Dinh dưỡng cơ bản"
+                    android:textColor="@color/black"
                     android:textSize="17sp" />
 
             </LinearLayout>
@@ -133,7 +100,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -144,10 +112,10 @@
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="96dp"
-                    android:text="Dinh dưỡng và sức khoẻ học đường"
                     android:layout_marginStart="15dp"
-                    android:textColor="@color/black"
                     android:gravity="center_vertical"
+                    android:text="Dinh dưỡng và sức khoẻ học đường"
+                    android:textColor="@color/black"
                     android:textSize="17sp" />
 
             </LinearLayout>
@@ -157,7 +125,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -168,10 +137,10 @@
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="96dp"
-                    android:text="Dinh dưỡng mùa thi"
                     android:layout_marginStart="15dp"
-                    android:textColor="@color/black"
                     android:gravity="center_vertical"
+                    android:text="Dinh dưỡng mùa thi"
+                    android:textColor="@color/black"
                     android:textSize="17sp" />
 
             </LinearLayout>
@@ -181,7 +150,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -192,10 +162,10 @@
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="96dp"
-                    android:text="Dinh dưỡng và hoạt động thể chất"
                     android:layout_marginStart="15dp"
-                    android:textColor="@color/black"
                     android:gravity="center_vertical"
+                    android:text="Dinh dưỡng và hoạt động thể chất"
+                    android:textColor="@color/black"
                     android:textSize="17sp" />
 
             </LinearLayout>
@@ -205,7 +175,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -216,10 +187,10 @@
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="96dp"
-                    android:text="Dinh dưỡng và sức khoẻ tâm lý"
                     android:layout_marginStart="15dp"
-                    android:textColor="@color/black"
                     android:gravity="center_vertical"
+                    android:text="Dinh dưỡng và sức khoẻ tâm lý"
+                    android:textColor="@color/black"
                     android:textSize="17sp" />
 
             </LinearLayout>
@@ -229,7 +200,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -240,10 +212,10 @@
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="96dp"
-                    android:text="Dinh dưỡng và giai đoạn dạy thì"
                     android:layout_marginStart="15dp"
-                    android:textColor="@color/black"
                     android:gravity="center_vertical"
+                    android:text="Dinh dưỡng và giai đoạn dạy thì"
+                    android:textColor="@color/black"
                     android:textSize="17sp" />
 
             </LinearLayout>
@@ -253,7 +225,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -264,10 +237,10 @@
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="96dp"
-                    android:text="Suy dinh dưỡng"
                     android:layout_marginStart="15dp"
-                    android:textColor="@color/black"
                     android:gravity="center_vertical"
+                    android:text="Suy dinh dưỡng"
+                    android:textColor="@color/black"
                     android:textSize="17sp" />
 
             </LinearLayout>
@@ -277,7 +250,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="80dp"
+                android:background="#FFFFFF">
 
                 <ImageView
                     android:layout_width="100dp"
@@ -288,10 +263,10 @@
                 <TextView
                     android:layout_width="300dp"
                     android:layout_height="96dp"
-                    android:text="Thừa cân béo phì"
                     android:layout_marginStart="15dp"
-                    android:textColor="@color/black"
                     android:gravity="center_vertical"
+                    android:text="Thừa cân béo phì"
+                    android:textColor="@color/black"
                     android:textSize="17sp" />
 
             </LinearLayout>

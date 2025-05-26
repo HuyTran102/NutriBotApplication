@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.user_info.UserInformationActivity"
-    android:background="#F7FFFFFF"
+    android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
     android:keepScreenOn="true">
@@ -46,51 +46,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp"
+        android:layout_marginTop="65dp">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/val_guide_1"
+        <!-- Avatar Icon -->
+        <ImageView
+            android:id="@+id/avatarIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="55dp"
+            android:src="@drawable/ic_user"
+            android:contentDescription="User Icon" />
+
+        <!-- Username -->
+        <TextView
+            android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0"/>
+            android:text="Huy4"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/val_guide_3"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1"/>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:padding="24dp"
-            android:background="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="@id/val_guide_4"
-            app:layout_constraintEnd_toEndOf="@id/val_guide_2"
-            app:layout_constraintStart_toStartOf="@id/val_guide_1"
-            app:layout_constraintTop_toTopOf="@id/val_guide_3">
-
-                <!-- Avatar Icon -->
-            <ImageView
-                android:id="@+id/avatarIcon"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="55dp"
-                android:src="@drawable/ic_user"
-                android:contentDescription="User Icon" />
-
-            <!-- Username -->
-            <TextView
-                android:id="@+id/user_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Huy4"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_marginTop="12dp" />
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginTop="35dp">
 
             <!-- Info Box 1: Giới tính -->
             <LinearLayout
@@ -98,8 +86,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp"
-                android:background="@drawable/rounded_box"
-                android:layout_marginTop="24dp">
+                android:background="@drawable/rounded_box">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -121,14 +108,22 @@
                     android:gravity="start" />
             </LinearLayout>
 
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginTop="45dp">
+
             <!-- Info Box 2: Ngày sinh -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="20dp"
-                android:background="@drawable/rounded_box"
-                android:layout_marginTop="30dp">
+                android:background="@drawable/rounded_box">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -150,15 +145,22 @@
                     android:gravity="start" />
             </LinearLayout>
 
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginTop="45dp">
+
             <!-- Info Box 3: Email -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp"
-                android:background="@drawable/rounded_box"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="24dp">
+                android:background="@drawable/rounded_box">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -180,22 +182,8 @@
                     android:gravity="start" />
             </LinearLayout>
 
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-
-    <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/val_guide_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="1"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/val_guide_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="1"/>
-
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

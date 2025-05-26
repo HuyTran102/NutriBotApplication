@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.physical.PhysicalActivity"
-    android:background="#F7FFFFFF"
+    android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
     android:keepScreenOn="true">
@@ -48,275 +48,190 @@
     </androidx.appcompat.widget.Toolbar>
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#BBBBBB"
-        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/value_guide_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/value_guide_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.17"/>
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/select_val"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@id/value_guide_4"
-        app:layout_constraintEnd_toEndOf="@id/value_guide_2"
-        app:layout_constraintStart_toStartOf="@id/value_guide_1"
-        app:layout_constraintTop_toBottomOf="@id/value_guide_3"
-        app:layout_constraintVertical_bias="0.425">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintVertical_bias="0.4">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
-
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
             <Button
                 android:id="@+id/activity_level"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="7dp"
                 android:layout_marginBottom="7dp"
-                android:layout_gravity="center"
-                android:background="@drawable/custom_button"
+                android:background="@drawable/button_back"
                 android:dropDownHeight="wrap_content"
                 android:text="🔥 Mức độ hoạt động"
                 android:textColor="#515151"
                 android:textSize="18sp"
                 app:backgroundTint="@null" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/spilt_val"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
             <Button
                 android:id="@+id/activities_of_level"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="7dp"
                 android:layout_marginBottom="7dp"
-                android:layout_gravity="center"
-                android:background="@drawable/custom_button"
+                android:background="@drawable/button_back"
                 android:dropDownHeight="wrap_content"
                 android:text="🏋🏻‍ Hoạt động"
                 android:textColor="#515151"
                 android:textSize="18sp"
                 app:backgroundTint="@null" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/spilt_val"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
             <Button
                 android:id="@+id/pick_time_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
                 android:layout_gravity="center"
-                android:background="@drawable/custom_button"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/button_back"
                 android:onClick="openTimePicker"
                 android:text="🕖 Thời gian luyện tập"
                 android:textColor="#515151"
                 android:textSize="18sp"
                 app:backgroundTint="@null" />
 
+        </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/add_activity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/cus_val_dis"
-                android:text="Lưu"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                app:backgroundTint="@null" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/value_guide_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.92"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/value_guide_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.58"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/view_guide_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.13"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/view_guide_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.58"/>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@id/view_guide_4"
-        app:layout_constraintEnd_toEndOf="@id/view_guide_2"
-        app:layout_constraintStart_toStartOf="@id/view_guide_1"
-        app:layout_constraintTop_toTopOf="@id/view_guide_3"
-        app:layout_constraintVertical_bias="0.689">
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="🎯 Tổng năng lượng đã tiêu hao"
-            android:textColor="#02AC8F"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.667" />
-
-        <TextView
-            android:id="@+id/total_used_energy"
+        <Button
+            android:id="@+id/add_activity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text=""
-            android:textColor="#02AC8F"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.667" />
+            android:layout_marginTop="45dp"
+            android:background="@drawable/cus_val_dis"
+            android:text="Lưu"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:backgroundTint="@null" />
 
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/view_guide_2"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_val"
+        app:layout_constraintVertical_bias="0.938">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/view_guide_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/kcal_ic"
+                android:layout_marginStart="5dp"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Năng lượng đã tiêu hao"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.496"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.667" />
+
+                <TextView
+                    android:id="@+id/total_used_energy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.496"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.667" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="218dp"
         android:src="@drawable/ride_bike"
-        app:layout_constraintBottom_toBottomOf="@id/img_guide_4"
-        app:layout_constraintEnd_toEndOf="@id/img_guide_2"
-        app:layout_constraintStart_toStartOf="@id/img_guide_1"
-        app:layout_constraintTop_toTopOf="@id/img_guide_3"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.98"/>
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/back_guide_1"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintGuide_percent="0.05"/>-->
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/back_guide_3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintGuide_percent="0.03"/>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/back_button"-->
-<!--        android:layout_width="35dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        android:background="@drawable/back_to_home_button"-->
-<!--        android:textSize="20dp"-->
-<!--        app:backgroundTint="@null"-->
-<!--        app:layout_constraintBottom_toBottomOf="@id/back_guide_4"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/back_guide_2"-->
-<!--        app:layout_constraintStart_toStartOf="@id/back_guide_1"-->
-<!--        app:layout_constraintTop_toTopOf="@id/back_guide_3" />-->
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/back_guide_2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintGuide_percent="0.1"/>-->
-
-<!--    <androidx.constraintlayout.widget.Guideline-->
-<!--        android:id="@+id/back_guide_4"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintGuide_percent="0.06"/>-->
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

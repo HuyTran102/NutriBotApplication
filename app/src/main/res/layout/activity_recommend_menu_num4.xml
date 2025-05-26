@@ -5,10 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".pages.recommend_menu.RecommendMenuNum4Activity"
-    android:background="#F7FFFFFF"
+    android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
     android:layout_gravity="center"
     android:keepScreenOn="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="#FFFFFF"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_to_home_button"
+            android:background="#FFFFFF"
+            android:padding="8dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#BBBBBB"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <ImageView
         android:id="@+id/item_image"
@@ -810,46 +846,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/back_guide_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/back_guide_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.03"/>
-
-    <Button
-        android:id="@+id/back_button"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@drawable/back_to_home_button"
-        android:textSize="20dp"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="@id/back_guide_4"
-        app:layout_constraintEnd_toEndOf="@id/back_guide_2"
-        app:layout_constraintStart_toStartOf="@id/back_guide_1"
-        app:layout_constraintTop_toTopOf="@id/back_guide_3" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/back_guide_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/back_guide_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.06"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

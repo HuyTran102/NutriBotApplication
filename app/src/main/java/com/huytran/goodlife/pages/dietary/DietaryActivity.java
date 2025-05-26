@@ -13,13 +13,12 @@ import android.widget.ImageButton;
 
 import com.google.android.material.tabs.TabLayout;
 import com.huytran.goodlife.pages.home.HomeActivity;
-import com.huytran.goodlife.loading_dialog.LoadingDialog;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.adapter.VPAdapter;
-import com.huytran.goodlife.fragment.FragmentDiary;
-import com.huytran.goodlife.fragment.FragmentDrinks;
-import com.huytran.goodlife.fragment.FragmentFood;
-import com.huytran.goodlife.fragment.FragmentGroceries;
+import com.huytran.goodlife.fragment.DiaryFragment;
+import com.huytran.goodlife.fragment.DrinksFragment;
+import com.huytran.goodlife.fragment.FoodFragment;
+import com.huytran.goodlife.fragment.GroceriesFragment;
 import com.uits.baseproject.widget.PFDialog;
 import com.uits.baseproject.widget.PFLoadingDialog;
 
@@ -56,10 +55,10 @@ public class DietaryActivity extends AppCompatActivity {
 
         VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
 
-        vpAdapter.addFragment(new FragmentFood(), "Món ăn");
-        vpAdapter.addFragment(new FragmentGroceries(), "Thực phẩm");
-        vpAdapter.addFragment(new FragmentDrinks(), "Sữa / Đồ  uống");
-        vpAdapter.addFragment(new FragmentDiary(), "Nhật ký");
+        vpAdapter.addFragment(new FoodFragment(), "Món ăn");
+        vpAdapter.addFragment(new GroceriesFragment(), "Thực phẩm");
+        vpAdapter.addFragment(new DrinksFragment(), "Sữa / Đồ  uống");
+        vpAdapter.addFragment(new DiaryFragment(), "Nhật ký");
 
         viewPager.setAdapter(vpAdapter);
         tabLayout.setupWithViewPager(viewPager);
@@ -75,14 +74,14 @@ public class DietaryActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 // Lấy Fragment hiện tại
                 if (position == 0) { // Tab "Món ăn"
-                    FragmentFood fragmentFood = (FragmentFood) vpAdapter.getItem(position);
-                    fragmentFood.loadData();
+                    FoodFragment foodFragment = (FoodFragment) vpAdapter.getItem(position);
+                    foodFragment.loadData();
                 } else if (position == 1) { // Tab "Thực phẩm"
-                    FragmentGroceries fragmentGroceries = (FragmentGroceries) vpAdapter.getItem(position);
-                    fragmentGroceries.loadData();
+                    GroceriesFragment groceriesFragment = (GroceriesFragment) vpAdapter.getItem(position);
+                    groceriesFragment.loadData();
                 } else if (position == 2) { // Tab "Sữa / Đồ uống"
-                    FragmentDrinks fragmentDrinks = (FragmentDrinks) vpAdapter.getItem(position);
-                    fragmentDrinks.loadData();
+                    DrinksFragment drinksFragment = (DrinksFragment) vpAdapter.getItem(position);
+                    drinksFragment.loadData();
                 }
             }
 

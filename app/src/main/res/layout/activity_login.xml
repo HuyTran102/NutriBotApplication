@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".pages.login.LoginScreenActivity"
     android:layout_gravity="center"
-    android:background="@color/login_bk_color"
+    android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
     android:gravity="center"
     android:keepScreenOn="true"
@@ -60,9 +60,9 @@
                     android:id="@+id/editEditTextMail"
                     style="@style/modifiedEditText"
                     android:hint="Tên"
+                    android:background="@drawable/input_card"
                     android:textStyle="bold"
                     android:textSize="16dp"
-                    android:textColor="#9E9D9D"
                     android:inputType="textPersonName"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -81,7 +81,7 @@
                     android:hint="Mật khẩu"
                     android:textStyle="bold"
                     android:textSize="16dp"
-                    android:textColor="#9E9D9D"
+                    android:background="@drawable/input_card"
                     android:inputType="textPassword"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -105,8 +105,6 @@
                 app:spinning_bar_color="#FFF"
                 app:spinning_bar_padding="6dp"
                 app:spinning_bar_width="4dp" />
-
-
 
             <TextView
                 style="@style/parent"

@@ -29,10 +29,10 @@
 -keep class com.huytran.goodlife.adapter.VPAdapter { *; }
 
 # Giữ lại các Fragment được sử dụng trong Dietary
--keep class com.huytran.goodlife.fragment.FragmentFood { *; }
--keep class com.huytran.goodlife.fragment.FragmentGroceries { *; }
--keep class com.huytran.goodlife.fragment.FragmentDrinks { *; }
--keep class com.huytran.goodlife.fragment.FragmentDiary { *; }
+-keep class com.huytran.goodlife.fragment.FoodFragment { *; }
+-keep class com.huytran.goodlife.fragment.GroceriesFragment { *; }
+-keep class com.huytran.goodlife.fragment.DrinksFragment { *; }
+-keep class com.huytran.goodlife.fragment.DiaryFragment { *; }
 
 # Nếu bạn dùng ViewBinding hoặc DataBinding
 -keep class **.databinding.* { *; }

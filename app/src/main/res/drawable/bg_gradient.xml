@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Màu nền trắng nhạt -->
+    <item android:drawable="@android:color/white" />
+
+    <!-- Gradient từ xanh ngọc nhạt lên trên -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient xmlns:android="http://schemas.android.com/apk/res/android"
+                android:angle="45"
+                android:startColor="#E0F7FA"
+                android:endColor="#FFFFFF"
+                android:type="linear" />
+
+        </shape>
+    </item>
+</layer-list>
