@@ -22,7 +22,6 @@
             android:background="@drawable/bubble_bot"
             android:padding="12dp"
             android:textSize="16sp"
-            android:textColor="#212121"
             android:text="Bot message" />
 
         <LinearLayout
@@ -41,7 +40,7 @@
                 android:src="@drawable/ic_menu_copy"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Sao chép"
-                app:tint="#888888" />
+                app:tint="#2E2E2E" />
 
         </LinearLayout>
     </LinearLayout>
@@ -63,7 +62,6 @@
             android:background="@drawable/bubble_user"
             android:padding="12dp"
             android:textSize="16sp"
-            android:textColor="#212121"
             android:text="User message" />
 
         <LinearLayout
@@ -82,7 +80,7 @@
                 android:src="@drawable/ic_edit"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Chỉnh sửa"
-                app:tint="#888888" />
+                app:tint="#2E2E2E" />
 
             <ImageButton
                 android:id="@+id/btnCopyUser"
@@ -91,7 +89,7 @@
                 android:src="@drawable/ic_menu_copy"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Sao chép"
-                app:tint="#888888" />
+                app:tint="#2E2E2E" />
 
         </LinearLayout>
     </LinearLayout>
