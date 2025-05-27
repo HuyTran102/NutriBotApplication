@@ -184,7 +184,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/kcal_ic"
+                android:src="@drawable/ic_kcal"
                 android:layout_marginStart="5dp"/>
 
             <LinearLayout

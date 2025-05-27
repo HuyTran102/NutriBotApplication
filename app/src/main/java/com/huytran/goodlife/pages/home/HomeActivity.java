@@ -77,7 +77,6 @@ public class HomeActivity extends AppCompatActivity {
     private Button drawerMenuButton;
     private FloatingActionButton chatBotButton;
     private LinearLayout nutritionalStatusButton, physicalButton, dietaryButton, tempMenuButton, recommendMenuButton, waterDemandButton;
-    private ProgressBar weightProgressBar, heightProgressBar, kcaloProgressBar;
     private TextView weightProgressText, heightProgressText, kcaloProgressText, weightView, heightView, kcaloView;
     private double actualWeight, actualHeight, usedEnergy, addEnergy, actualEnergy, recommendWeight, recommendHeight, recommendEnergy, statusWeight, statusHeight, statusEnergy;
     private int weight, height, kcalo;
@@ -116,11 +115,8 @@ public class HomeActivity extends AppCompatActivity {
         weightView = findViewById(R.id.weight_view);
         heightView = findViewById(R.id.height_view);
         kcaloView = findViewById(R.id.kcalo_view);
-        weightProgressBar = findViewById(R.id.weight_progres_bar);
         weightProgressText = findViewById(R.id.weight_progres_text);
-        heightProgressBar = findViewById(R.id.height_progres_bar);
         heightProgressText = findViewById(R.id.height_progres_text);
-        kcaloProgressBar = findViewById(R.id.kcalo_progres_bar);
         kcaloProgressText = findViewById(R.id.kcalo_progres_text);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -572,69 +568,19 @@ public class HomeActivity extends AppCompatActivity {
         }
         decimalFormat = new DecimalFormat("0");
 
-        final Handler weight_handler = new Handler();
-
-        weightProgressBar.setMax((int) recommendWeight);
-
-        DecimalFormat finalDecimalFormat = decimalFormat;
-        weight_handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (weight <= actualWeight) {
-                        weightProgressText.setText(String.valueOf(weight + "\n" + finalDecimalFormat.format(recommendWeight)));
-                    weightProgressBar.setProgress(weight);
-                    weight++;
-                    weight_handler.postDelayed(this, 35);
-                } else {
-                    weight_handler.removeCallbacks(this);
-                }
-            }
-        }, 35);
+        weightProgressText.setText(String.valueOf(decimalFormat.format(actualWeight) + " / " + decimalFormat.format(recommendWeight)));
 
         weightView.setText(weight_status);
 
-        final Handler height_handler = new Handler();
-
-        heightProgressBar.setMax((int) recommendHeight + 1);
-
-        DecimalFormat finalDecimalFormat1 = decimalFormat;
-        height_handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if(height <= actualHeight) {
-                    if(recommendHeight == 0) {
-                        heightProgressText.setText(String.valueOf(height + "\n" + finalDecimalFormat.format(actualHeight)));
-                    } else {
-                        heightProgressText.setText(String.valueOf(height + "\n" + finalDecimalFormat.format(recommendHeight)));
-                    }
-                    heightProgressBar.setProgress(height);
-                    height++;
-                    height_handler.postDelayed(this, 35);
-                } else {
-                    height_handler.removeCallbacks(this);
-                }
-            }
-        }, 35);
+        if(recommendHeight == 0) {
+            heightProgressText.setText(String.valueOf(decimalFormat.format(actualHeight) + " / " + decimalFormat.format(actualHeight)));
+        } else {
+            heightProgressText.setText(String.valueOf(decimalFormat.format(actualHeight) + " / " + decimalFormat.format(recommendHeight)));
+        }
 
         heightView.setText(height_status);
 
-        final Handler kcalo_handler = new Handler();
-
-        kcaloProgressBar.setMax((int) recommendEnergy + 1);
-
-        kcalo_handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (kcalo <= actualEnergy) {
-                        kcaloProgressText.setText(String.valueOf(kcalo + "\n" + finalDecimalFormat.format(recommendEnergy)));
-                    kcaloProgressBar.setProgress(kcalo);
-                    kcalo++;
-                    kcalo_handler.postDelayed(this, 0);
-                } else {
-                    kcalo_handler.removeCallbacks(this);
-                }
-            }
-        }, 0);
+        kcaloProgressText.setText(String.valueOf(decimalFormat.format(actualEnergy) + " / " + decimalFormat.format(recommendEnergy)));
 
         kcaloView.setText(energy_status);
 
@@ -642,70 +588,30 @@ public class HomeActivity extends AppCompatActivity {
 
     public void setNullValue() {
 
-        final Handler weight_handler = new Handler();
+        if (recommendWeight == 0) {
+            weightProgressText.setText(String.valueOf(weight + " / " + 0));
+        } else {
+            weightProgressText.setText(String.valueOf(weight + " / " + 0));
+        }
 
-        weight_handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (weight <= actualWeight) {
-                    if (recommendWeight == 0) {
-                        weightProgressText.setText(String.valueOf(weight + "\n" + 0));
-                    } else {
-                        weightProgressText.setText(String.valueOf(weight + "\n" + 0));
-                    }
-                    weightProgressBar.setProgress(weight);
-                    weight++;
-                    weight_handler.postDelayed(this, 35);
-                } else {
-                    weight_handler.removeCallbacks(this);
-                }
-            }
-        }, 35);
+        weightView.setText("Chưa Nhập");
 
-        weightView.setText(weight_status);
+        if (recommendHeight == 0) {
+            heightProgressText.setText(String.valueOf(height + " / " + 0));
+        } else {
+            heightProgressText.setText(String.valueOf(height + " / " + 0));
+        }
 
-        final Handler height_handler = new Handler();
-        height_handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (height <= 0) {
-                    if (recommendHeight == 0) {
-                        heightProgressText.setText(String.valueOf(height + "\n" + 0));
-                    } else {
-                        heightProgressText.setText(String.valueOf(height + "\n" + 0));
-                    }
-                    heightProgressBar.setProgress(height);
-                    height++;
-                    height_handler.postDelayed(this, 35);
-                } else {
-                    height_handler.removeCallbacks(this);
-                }
-            }
-        }, 35);
+        heightView.setText("Chưa nhập");
 
-        final Handler kcalo_handler = new Handler();
+        if (recommendEnergy == 0) {
+            kcaloProgressText.setText(String.valueOf(kcalo + " / " + 0));
+        } else {
+            kcaloProgressText.setText(String.valueOf(kcalo + " / " + 0));
+        }
 
-        kcaloProgressBar.setMax(0);
-
-        kcalo_handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (kcalo <= 0) {
-                    if (recommendEnergy == 0) {
-                        kcaloProgressText.setText(String.valueOf(kcalo + "\n" + 0));
-                    } else {
-                        kcaloProgressText.setText(String.valueOf(kcalo + "\n" + 0));
-                    }
-                    kcaloProgressBar.setProgress(kcalo);
-                    kcalo++;
-                    kcalo_handler.postDelayed(this, 0);
-                } else {
-                    kcalo_handler.removeCallbacks(this);
-                }
-            }
-        }, 0);
+        kcaloView.setText("Chưa nhập");
     }
-
 
     // Create notification
 
