@@ -51,6 +51,7 @@ import com.huytran.goodlife.pages.contact.ContactSupportTeamActivity;
 import com.huytran.goodlife.pages.contact.ContactWithNutritionistActivity;
 import com.huytran.goodlife.pages.physical.PhysicalActivity;
 import com.huytran.goodlife.R;
+import com.huytran.goodlife.pages.scanner.ScannerActivity;
 import com.huytran.goodlife.pages.template_menu.TemplateMenuActivity;
 import com.huytran.goodlife.pages.user_info.UserInformationActivity;
 import com.huytran.goodlife.pages.water_demand.WaterDemandActivity;
@@ -223,6 +224,10 @@ public class HomeActivity extends AppCompatActivity {
                     finish();
                 } else if (id == R.id.contact_support_team) {
                     Intent intent = new Intent(HomeActivity.this, ContactSupportTeamActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else if (id == R.id.scanner) {
+                    Intent intent = new Intent(HomeActivity.this, ScannerActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.logout) {

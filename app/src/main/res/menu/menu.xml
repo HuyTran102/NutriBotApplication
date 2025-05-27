@@ -45,6 +45,12 @@
             android:title="Liên hệ"/>
 
         <item
+            android:id="@+id/scanner"
+            android:icon="@drawable/contact_support_team"
+            android:title="Scanner"/>
+
+
+        <item
             android:id="@+id/logout"
             android:icon="@drawable/logout"
             android:title="Đăng xuất"/>
