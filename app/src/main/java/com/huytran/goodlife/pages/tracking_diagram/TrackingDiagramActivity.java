@@ -46,6 +46,7 @@ import com.huytran.goodlife.R;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.time.temporal.WeekFields;
 import java.util.ArrayList;
@@ -98,14 +99,13 @@ public class TrackingDiagramActivity extends AppCompatActivity {
         weekFields = WeekFields.of(Locale.getDefault());
 
         startOfWeek = currentDate.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
-
         endOfWeek = currentDate.with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY));
 
 //        Toast.makeText(this, "" + startOfWeek + " " + endOfWeek, Toast.LENGTH_SHORT).show();
 
         LoadLineChartData();
-
-        LoadLineChartRecommendData();
+//
+//        LoadLineChartRecommendData();
 
         setupInnerChart();
 
@@ -252,6 +252,9 @@ public class TrackingDiagramActivity extends AppCompatActivity {
     }
 
     public void LoadLineChartData() {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
         firebaseFirestore.collection("GoodLife")
                 .document(name)
                 .collection("Nhật kí")
@@ -262,16 +265,36 @@ public class TrackingDiagramActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Loop through all documents
                             if (!task.getResult().isEmpty()) {
-                                for (int i = startOfWeek.getDayOfMonth(); i <= endOfWeek.getDayOfMonth(); i++) {
+
+                                int dateIndex = 0;
+
+                                for (LocalDate date = startOfWeek; !date.isAfter(endOfWeek); date = date.plusDays(1)) {
+
                                     int sumKcal = 0;
+
+                                    dateIndex++;
+
                                     for (QueryDocumentSnapshot document : task.getResult()) {
-                                        int day = Integer.parseInt(document.getString("day")), month = Integer.parseInt(document.getString("month")), year = Integer.parseInt(document.getString("year"));
-                                        if (i == day && (startOfWeek.getYear() == year || endOfWeek.getYear() == year)
-                                                && (month == startOfWeek.getMonthValue() || endOfWeek.getMonthValue() == month)) {
+                                        String day = document.getString("day"), month = document.getString("month"), year = document.getString("year");
+
+                                        if(Integer.parseInt(day) < 10) {
+                                            day = "0" + day;
+                                        }
+
+                                        if(Integer.parseInt(month) < 10) {
+                                            month = "0" + month;
+                                        }
+
+                                        String docDateStr = year + "-" + month + "-" + day;
+
+                                        LocalDate docDate = LocalDate.parse(docDateStr, formatter);
+
+                                        if (docDate.equals(date)) {
                                             sumKcal += Integer.parseInt(document.getString("kcal"));
                                         }
                                     }
-                                    entries.add(new Entry(i, sumKcal));
+
+                                    entries.add(new Entry(dateIndex, sumKcal));
 
                                     dataSet1 = new LineDataSet(entries, "Năng lượng (Kcal)");
                                     dataSet1.setColor(getResources().getColor(R.color.purple_color));

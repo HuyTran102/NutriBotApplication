@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".pages.scanner.ScannerActivity">
 
-    <com.otaliastudios.cameraview.CameraView
-        android:id="@+id/cameraView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cameraFacing="back"
-        app:cameraGestureTap="autoFocus"
-        app:cameraPictureSizeMinWidth="1000"
-        app:cameraMode="picture" />
+<!--    <com.otaliastudios.cameraview.CameraView-->
+<!--        android:id="@+id/cameraView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:cameraFacing="back"-->
+<!--        app:cameraGestureTap="autoFocus"-->
+<!--        app:cameraPictureSizeMinWidth="1000"-->
+<!--        app:cameraMode="picture" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

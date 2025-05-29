@@ -22,9 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_marginTop="5dp"
             app:layout_constraintBottom_toTopOf="@id/button_view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.529"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/my_toolbar"
             app:layout_constraintVertical_bias="0.002">
@@ -62,8 +62,8 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="95dp"
+                            android:layout_height="95dp"
                             android:layout_gravity="center"
                             android:src="@drawable/weight_ic" />
 
@@ -111,8 +111,8 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 app:cardCornerRadius="20dp"
@@ -141,8 +141,8 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="95dp"
+                            android:layout_height="95dp"
                             android:layout_gravity="center"
                             android:src="@drawable/height_ic" />
 
@@ -189,8 +189,8 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="10dp"
@@ -219,8 +219,8 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
+                            android:layout_width="95dp"
+                            android:layout_height="95dp"
                             android:layout_gravity="center"
                             android:src="@drawable/ic_kcal" />
 
@@ -341,8 +341,8 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="18dp"
                     app:cardElevation="4dp"
@@ -357,9 +357,9 @@
                         android:id="@+id/nutritional_status_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="45dp"
+                        android:layout_marginStart="35dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="45dp"
+                        android:layout_marginEnd="35dp"
                         android:layout_marginBottom="10dp"
                         android:orientation="vertical"
                         app:backgroundTint="@null">
@@ -390,9 +390,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="18dp"
                     app:cardElevation="4dp"
@@ -407,9 +407,9 @@
                         android:id="@+id/dietary_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="50dp"
+                        android:layout_marginStart="40dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="50dp"
+                        android:layout_marginEnd="40dp"
                         android:layout_marginBottom="10dp"
                         android:orientation="vertical"
                         app:backgroundTint="@null">
@@ -440,9 +440,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="18dp"
                     app:cardElevation="4dp"
@@ -457,9 +457,9 @@
                         android:id="@+id/recommend_menu_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="55dp"
+                        android:layout_marginStart="45dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="55dp"
+                        android:layout_marginEnd="45dp"
                         android:layout_marginBottom="10dp"
                         android:orientation="vertical"
                         app:backgroundTint="@null">
@@ -494,6 +494,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -505,8 +506,8 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="18dp"
                     app:cardElevation="4dp"
@@ -521,9 +522,9 @@
                         android:id="@+id/physical_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="52dp"
+                        android:layout_marginStart="42dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="52dp"
+                        android:layout_marginEnd="42dp"
                         android:layout_marginBottom="10dp"
                         android:orientation="vertical"
                         app:backgroundTint="@null">
@@ -554,9 +555,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="18dp"
                     app:cardElevation="4dp"
@@ -571,9 +572,9 @@
                         android:id="@+id/temp_menu_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="35dp"
+                        android:layout_marginStart="25dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="35dp"
+                        android:layout_marginEnd="25dp"
                         android:layout_marginBottom="10dp"
                         android:orientation="vertical"
                         app:backgroundTint="@null">
@@ -604,9 +605,9 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="18dp"
                     app:cardElevation="4dp"
@@ -621,9 +622,9 @@
                         android:id="@+id/water_demand_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="35dp"
+                        android:layout_marginStart="25dp"
                         android:layout_marginTop="10dp"
-                        android:layout_marginEnd="35dp"
+                        android:layout_marginEnd="25dp"
                         android:layout_marginBottom="10dp"
                         android:orientation="vertical"
                         app:backgroundTint="@null">

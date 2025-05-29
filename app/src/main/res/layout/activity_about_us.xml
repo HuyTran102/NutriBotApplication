@@ -57,17 +57,16 @@
 
     <ImageView
         android:id="@+id/about_us_img"
-        android:layout_width="330dp"
-        android:layout_height="330dp"
+        android:layout_width="315dp"
+        android:layout_height="315dp"
         android:layout_marginTop="36dp"
         android:src="@drawable/about_us_img"
         app:layout_constraintBottom_toTopOf="@+id/value"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -88,11 +87,12 @@
             android:layout_height="wrap_content"
             android:lineSpacingExtra="6dp"
             android:padding="16dp"
+            android:justificationMode="inter_word"
             android:text="Phần mềm Quản lý dinh dưỡng cá nhân được thiết kế dành riêng cho học sinh trung học, giúp các em xây dựng thói quen ăn uống lành mạnh và khoa học. Và sứ mệnh của chúng tôi là đồng hành cùng học sinh trên hành trình nâng cao sức khỏe thể chất và tinh thần, hỗ trợ các em phát triển toàn diện để có thành tích học tập tốt nhất."
             android:textAlignment="center"
             android:textColor="#333333"
             android:textSize="19sp" />
 
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
