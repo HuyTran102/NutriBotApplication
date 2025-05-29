@@ -58,10 +58,6 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("androidx.core:core-splashscreen:1.0.0")
     implementation("com.github.phuquy2114:Libraries_android:1.0.9")
-//// Firebase ML Kit (Deprecated)
-//    implementation("com.google.firebase:firebase-ml-vision:24.1.0")
-//    implementation("com.google.firebase:firebase-ml-vision-image-label-model:20.0.2")
-//
-//// CameraView for quick camera usage (optional library by Google)
-//    implementation("com.otaliastudios:cameraview:2.7.2")
+// CameraView for quick camera usage (optional library by Google)
+    implementation("com.otaliastudios:cameraview:2.7.2")
 }
