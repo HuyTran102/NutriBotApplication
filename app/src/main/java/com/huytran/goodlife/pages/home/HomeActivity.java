@@ -2,6 +2,7 @@ package com.huytran.goodlife.pages.home;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -77,7 +78,7 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private Button drawerMenuButton;
     private FloatingActionButton chatBotButton;
-    private LinearLayout nutritionalStatusButton, physicalButton, dietaryButton, tempMenuButton, recommendMenuButton, waterDemandButton;
+    private CardView nutritionalStatusButton, physicalButton, dietaryButton, tempMenuButton, recommendMenuButton, waterDemandButton;
     private TextView weightProgressText, heightProgressText, kcaloProgressText, weightView, heightView, kcaloView;
     private double actualWeight, actualHeight, usedEnergy, addEnergy, actualEnergy, recommendWeight, recommendHeight, recommendEnergy, statusWeight, statusHeight, statusEnergy;
     private int weight, height, kcalo;
@@ -232,7 +233,7 @@ public class HomeActivity extends AppCompatActivity {
                     finish();
                 } else if (id == R.id.logout) {
                     try {
-                        String data = null + "\n" + "null" + "\n" +"false";
+                        String data = null + "\n" + "null" + "\n" + "false";
                         FileOutputStream fos = new FileOutputStream(myInternalFile);
                         fos.write(data.getBytes());
                         fos.close();
@@ -253,7 +254,7 @@ public class HomeActivity extends AppCompatActivity {
 
         int value = waterVal.getInt("Val", 0);
 
-        if(value != 0) {
+        if (value != 0) {
             scheduleNotification(6, 0, 1, value);
             scheduleNotification(9, 0, 2, value);
             scheduleNotification(11, 0, 3, value);
@@ -521,11 +522,11 @@ public class HomeActivity extends AppCompatActivity {
             weight_status = "Bình thường";
         } else if (actualWeight > recommendWeight) {
             statusWeight = (actualWeight - recommendWeight);
-            weight_status = "Thừa " + decimalFormat.format(statusWeight) + " (kg)";
+            weight_status = "Thừa " + decimalFormat.format(statusWeight);
 
         } else if (actualWeight < recommendWeight) {
             statusWeight = (recommendWeight - actualWeight);
-            weight_status = "Thiếu " + decimalFormat.format(statusWeight) + " (kg)";
+            weight_status = "Thiếu " + decimalFormat.format(statusWeight);
         } else {
             recommendWeight = 0;
             actualWeight = 0;
@@ -533,15 +534,15 @@ public class HomeActivity extends AppCompatActivity {
             weight_status = "";
         }
 
-        if (recommendHeight == actualHeight){
+        if (recommendHeight == actualHeight) {
             statusHeight = 0;
             height_status = "Bình thường";
-        } else if(actualHeight > recommendHeight) {
+        } else if (actualHeight > recommendHeight) {
             statusHeight = (actualHeight - recommendHeight);
-            height_status = "Thừa " + decimalFormat.format(statusHeight) + " (cm)";
-        } else if(actualHeight < recommendHeight){
+            height_status = "Thừa " + decimalFormat.format(statusHeight);
+        } else if (actualHeight < recommendHeight) {
             statusHeight = (recommendHeight - actualHeight);
-            height_status = "Thiếu " + decimalFormat.format(statusHeight) + " (cm)";
+            height_status = "Thiếu " + decimalFormat.format(statusHeight);
         } else {
             recommendHeight = -1;
             actualHeight = 0;
@@ -556,11 +557,11 @@ public class HomeActivity extends AppCompatActivity {
             energy_status = "Bình thường";
         } else if (actualEnergy > recommendEnergy) {
             statusEnergy = (actualEnergy - recommendEnergy);
-            energy_status = "Thừa " + decimalFormat.format(statusEnergy) + " (kcal)";
+            energy_status = "Thừa " + decimalFormat.format(statusEnergy);
         } else if (actualEnergy < recommendEnergy) {
             statusEnergy = (recommendEnergy - actualEnergy);
-            energy_status = "Thiếu " + decimalFormat.format(statusEnergy) + " (kcal)";
-        } else{
+            energy_status = "Thiếu " + decimalFormat.format(statusEnergy);
+        } else {
             recommendEnergy = 0;
             actualEnergy = 0;
             statusEnergy = 0;
@@ -577,7 +578,7 @@ public class HomeActivity extends AppCompatActivity {
 
         weightView.setText(weight_status);
 
-        if(recommendHeight == 0) {
+        if (recommendHeight == 0) {
             heightProgressText.setText(String.valueOf(decimalFormat.format(actualHeight) + " / " + decimalFormat.format(actualHeight)));
         } else {
             heightProgressText.setText(String.valueOf(decimalFormat.format(actualHeight) + " / " + decimalFormat.format(recommendHeight)));

@@ -73,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="20dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="4dp">
@@ -148,7 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/cus_val_dis"
             android:text="Lưu"
             android:textColor="#FFFFFF"
@@ -161,8 +162,8 @@
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="24dp"
         app:cardCornerRadius="12dp"
@@ -177,16 +178,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/ic_kcal"
+                android:layout_gravity="center"
                 android:layout_marginStart="5dp"
-                android:layout_gravity="center"/>
+                android:src="@drawable/ic_kcal" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -210,9 +211,9 @@
                     android:id="@+id/total_used_energy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:text=""
                     android:textSize="20sp"
-                    android:layout_marginTop="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.496"

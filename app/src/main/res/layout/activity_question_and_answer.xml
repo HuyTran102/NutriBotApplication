@@ -70,206 +70,288 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/basic_nutrition"
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/basic" />
+                <LinearLayout
+                    android:id="@+id/basic_nutrition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="96dp"
-                    android:layout_marginStart="15dp"
-                    android:gravity="center_vertical"
-                    android:text="Dinh dưỡng cơ bản"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/basic"
+                        android:layout_gravity="center"/>
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="96dp"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Dinh dưỡng cơ bản"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
 
-            <LinearLayout
-                android:id="@+id/nutrition_school_health"
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/school_health" />
+                <LinearLayout
+                    android:id="@+id/nutrition_school_health"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF">
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="96dp"
-                    android:layout_marginStart="15dp"
-                    android:gravity="center_vertical"
-                    android:text="Dinh dưỡng và sức khoẻ học đường"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/school_health" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="96dp"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Dinh dưỡng và sức khoẻ học đường"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
 
-            <LinearLayout
-                android:id="@+id/exam_season_nutrition"
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/exam_season" />
+                <LinearLayout
+                    android:id="@+id/exam_season_nutrition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF">
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="96dp"
-                    android:layout_marginStart="15dp"
-                    android:gravity="center_vertical"
-                    android:text="Dinh dưỡng mùa thi"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/exam_season" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="96dp"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Dinh dưỡng mùa thi"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
 
-            <LinearLayout
-                android:id="@+id/nutrition_physical_activity"
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/physical" />
+                <LinearLayout
+                    android:id="@+id/nutrition_physical_activity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF">
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="96dp"
-                    android:layout_marginStart="15dp"
-                    android:gravity="center_vertical"
-                    android:text="Dinh dưỡng và hoạt động thể chất"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/physical" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="96dp"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Dinh dưỡng và hoạt động thể chất"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
 
-            <LinearLayout
-                android:id="@+id/nutrition_mental_health"
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/mental_health" />
+                <LinearLayout
+                    android:id="@+id/nutrition_mental_health"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF">
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="96dp"
-                    android:layout_marginStart="15dp"
-                    android:gravity="center_vertical"
-                    android:text="Dinh dưỡng và sức khoẻ tâm lý"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/mental_health" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="96dp"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Dinh dưỡng và sức khoẻ tâm lý"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
 
-            <LinearLayout
-                android:id="@+id/nutrition_puberty_period"
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/puberty" />
+                <LinearLayout
+                    android:id="@+id/nutrition_puberty_period"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#FFFFFF">
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="96dp"
-                    android:layout_marginStart="15dp"
-                    android:gravity="center_vertical"
-                    android:text="Dinh dưỡng và giai đoạn dạy thì"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/puberty" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="96dp"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Dinh dưỡng và giai đoạn dạy thì"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
 
-            <LinearLayout
-                android:id="@+id/malnutrition"
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="10dp"
-                android:background="#FFFFFF">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/malnutrition" />
+                <LinearLayout
+                    android:id="@+id/malnutrition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF">
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="96dp"
-                    android:layout_marginStart="15dp"
-                    android:gravity="center_vertical"
-                    android:text="Suy dinh dưỡng"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/malnutrition" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="96dp"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Suy dinh dưỡng"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
 
-            <LinearLayout
-                android:id="@+id/over_weigth"
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="80dp"
-                android:background="#FFFFFF">
+                android:layout_marginBottom="80dp">
 
-                <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/over_weight" />
+                <LinearLayout
+                    android:id="@+id/over_weigth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:background="#FFFFFF">
 
-                <TextView
-                    android:layout_width="300dp"
-                    android:layout_height="96dp"
-                    android:layout_marginStart="15dp"
-                    android:gravity="center_vertical"
-                    android:text="Thừa cân béo phì"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/over_weight" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="96dp"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center_vertical"
+                        android:text="Thừa cân béo phì"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 

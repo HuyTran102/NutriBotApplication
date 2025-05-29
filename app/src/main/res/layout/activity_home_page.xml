@@ -112,7 +112,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 app:cardCornerRadius="20dp"
@@ -190,7 +190,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="10dp"
@@ -339,6 +339,7 @@
                 app:layout_constraintVertical_bias="1.356">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/nutritional_status_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -354,7 +355,6 @@
                     app:layout_constraintVertical_bias="0.565">
 
                     <LinearLayout
-                        android:id="@+id/nutritional_status_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="35dp"
@@ -388,6 +388,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/dietary_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -404,7 +405,6 @@
                     app:layout_constraintVertical_bias="0.748">
 
                     <LinearLayout
-                        android:id="@+id/dietary_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="40dp"
@@ -438,6 +438,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/recommend_menu_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -454,7 +455,6 @@
                     app:layout_constraintVertical_bias="0.931">
 
                     <LinearLayout
-                        android:id="@+id/recommend_menu_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="45dp"
@@ -504,6 +504,7 @@
                 app:layout_constraintVertical_bias="0.947">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/physical_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -519,7 +520,6 @@
                     app:layout_constraintVertical_bias="0.565">
 
                     <LinearLayout
-                        android:id="@+id/physical_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="42dp"
@@ -553,6 +553,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/temp_menu_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -569,7 +570,6 @@
                     app:layout_constraintVertical_bias="0.748">
 
                     <LinearLayout
-                        android:id="@+id/temp_menu_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="25dp"
@@ -603,6 +603,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/water_demand_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -619,7 +620,6 @@
                     app:layout_constraintVertical_bias="0.932">
 
                     <LinearLayout
-                        android:id="@+id/water_demand_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="25dp"

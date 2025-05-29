@@ -180,10 +180,10 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="12dp"
+        android:layout_width="344dp"
+        android:layout_height="311dp"
         android:layout_marginTop="10dp"
+        app:cardCornerRadius="12dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -195,22 +195,18 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.511"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/weight_height"
-            app:layout_constraintVertical_bias="0.3">
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="350dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:text="@string/k_t_qu_t_nh_tr_ng_dinh_d_ng"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -223,10 +219,8 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:orientation="horizontal"
@@ -238,15 +232,16 @@
                 app:layout_constraintVertical_bias="0.765">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
+                        android:orientation="horizontal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.496"
@@ -266,10 +261,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:text="BMI/tuổi"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
                             android:layout_weight="1"
+                            android:text="BMI/tuổi"
                             android:textColor="#036D5A"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -279,10 +274,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text=""
                             android:layout_weight="1"
-                            android:textColor="#FFFFFF"
                             android:gravity="end"
+                            android:text=""
+                            android:textColor="#FFFFFF"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -292,11 +287,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:background="#72BCB5" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
                         android:orientation="horizontal"
@@ -320,8 +318,8 @@
                             android:layout_gravity="center"
                             android:layout_marginStart="5dp"
                             android:layout_marginEnd="5dp"
-                            android:text="Chiều cao/tuổi"
                             android:layout_weight="1"
+                            android:text="Chiều cao/tuổi"
                             android:textColor="#036D5A"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -331,10 +329,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text=""
                             android:layout_weight="1"
-                            android:textColor="#FFFFFF"
                             android:gravity="end"
+                            android:text=""
+                            android:textColor="#FFFFFF"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -344,13 +342,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:background="#72BCB5" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
+                        android:orientation="horizontal"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -369,8 +370,8 @@
                             android:layout_gravity="center"
                             android:layout_marginStart="5dp"
                             android:layout_marginEnd="5dp"
-                            android:text="Cân nặng"
                             android:layout_weight="1"
+                            android:text="Cân nặng"
                             android:textColor="#036D5A"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -380,11 +381,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text=""
                             android:layout_weight="1"
+                            android:gravity="end"
+                            android:text=""
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
-                            android:gravity="end"
                             android:textStyle="bold" />
 
 
@@ -394,11 +395,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginTop="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:background="#72BCB5" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
                         android:orientation="horizontal"
@@ -420,9 +424,9 @@
                             android:layout_gravity="center"
                             android:layout_marginStart="5dp"
                             android:layout_marginEnd="5dp"
+                            android:layout_weight="1"
                             android:text="Chiều cao"
                             android:textColor="#036D5A"
-                            android:layout_weight="1"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -431,11 +435,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:text=""
                             android:layout_weight="1"
+                            android:gravity="end"
+                            android:text=""
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
-                            android:gravity="end"
                             android:textStyle="bold" />
 
 

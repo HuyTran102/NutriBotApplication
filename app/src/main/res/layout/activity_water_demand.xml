@@ -10,102 +10,17 @@
     android:layout_gravity="center"
     android:keepScreenOn="true">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.51"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sum_guide_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.51"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sum_guide_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sum_guide_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/sum_guide_6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.63"/>
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/arrow_guide_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.47"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/arrow_guide_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.53"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.39"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.49"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07"/>
-
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/img_guide_3"
-        app:layout_constraintEnd_toStartOf="@+id/val_guide_1"
+        app:layout_constraintBottom_toTopOf="@+id/drink_img"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
         app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.564">
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:layout_constraintVertical_bias="0.588">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -120,13 +35,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/water_view_bg"
                 android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@id/val_guide_8"
-                app:layout_constraintEnd_toEndOf="@id/val_guide_16"
-                app:layout_constraintHorizontal_bias="0.512"
-                app:layout_constraintStart_toStartOf="@id/val_guide_17"
-                app:layout_constraintTop_toTopOf="@id/val_guide_7"
-                app:layout_constraintVertical_bias="0.366">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -183,8 +92,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="5dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
@@ -194,13 +103,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/water_view_bg"
                 android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@id/val_guide_10"
-                app:layout_constraintEnd_toEndOf="@id/val_guide_16"
-                app:layout_constraintHorizontal_bias="0.486"
-                app:layout_constraintStart_toStartOf="@id/val_guide_17"
-                app:layout_constraintTop_toTopOf="@id/val_guide_9"
-                app:layout_constraintVertical_bias="0.571">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -259,8 +162,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="5dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
@@ -270,13 +173,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/water_view_bg"
                 android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@id/val_guide_14"
-                app:layout_constraintEnd_toEndOf="@id/val_guide_16"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@id/val_guide_17"
-                app:layout_constraintTop_toTopOf="@id/val_guide_13"
-                app:layout_constraintVertical_bias="0.782">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -341,10 +238,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Tổng lượng nước: "
-                android:textAlignment="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
+                android:text=" Tổng lượng nước: "
+                android:textAlignment="center"
                 android:textColor="#00FFFFFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -352,15 +249,16 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/img_guide_3"
+        app:layout_constraintBottom_toTopOf="@+id/drink_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.564">
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:layout_constraintVertical_bias="0.588">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -375,12 +273,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/water_view_bg"
                 android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@id/val_guide_8"
-                app:layout_constraintEnd_toEndOf="@id/val_guide_2"
-                app:layout_constraintStart_toStartOf="@id/val_guide_1"
-                app:layout_constraintTop_toTopOf="@id/val_guide_7"
-                app:layout_constraintVertical_bias="0.467">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -438,8 +331,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="5dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
@@ -449,13 +342,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/water_view_bg"
                 android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@id/val_guide_10"
-                app:layout_constraintEnd_toEndOf="@id/val_guide_2"
-                app:layout_constraintHorizontal_bias="0.486"
-                app:layout_constraintStart_toStartOf="@id/val_guide_1"
-                app:layout_constraintTop_toTopOf="@id/val_guide_9"
-                app:layout_constraintVertical_bias="0.682">
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -513,8 +400,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="25dp"
             android:layout_marginEnd="5dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
@@ -575,69 +462,6 @@
 
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33"/>
-
-
-
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.48"/>
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.69"/>
-
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/val_guide_14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.63"/>
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
@@ -684,20 +508,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7"/>
-
     <ImageView
         android:id="@+id/drink_img"
         android:layout_width="329dp"
@@ -708,19 +518,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.991" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.98"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

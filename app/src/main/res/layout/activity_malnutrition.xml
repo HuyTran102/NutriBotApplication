@@ -71,154 +71,218 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_button"
             android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                app:cardCornerRadius="12dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:cardElevation="4dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 1: Suy dinh dưỡng là gì?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Suy dinh dưỡng là tình trạng cơ thể không nhận đủ các chất dinh dưỡng cần thiết, dẫn đến thiếu cân, chậm phát triển hoặc các vấn đề sức khỏe khác."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 1: Suy dinh dưỡng là gì?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Suy dinh dưỡng là tình trạng cơ thể không nhận đủ các chất dinh dưỡng cần thiết, dẫn đến thiếu cân, chậm phát triển hoặc các vấn đề sức khỏe khác."
+                        android:textSize="17sp" />
 
-            <LinearLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 2: Nguyên nhân chính gây suy dinh dưỡng ở học sinh là gì?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Nguyên nhân bao gồm chế độ ăn không đầy đủ, kém hấp thu dinh dưỡng, hoặc mắc các bệnh lý kéo dài."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 2: Nguyên nhân chính gây suy dinh dưỡng ở học sinh là gì?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Nguyên nhân bao gồm chế độ ăn không đầy đủ, kém hấp thu dinh dưỡng, hoặc mắc các bệnh lý kéo dài."
+                        android:textSize="17sp" />
 
-            <LinearLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 3: Dấu hiệu nhận biết suy dinh dưỡng là gì?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Các dấu hiệu bao gồm sụt cân, chậm tăng trưởng, mệt mỏi, da xanh xao, tóc khô gãy và hệ miễn dịch suy yếu."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 3: Dấu hiệu nhận biết suy dinh dưỡng là gì?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Các dấu hiệu bao gồm sụt cân, chậm tăng trưởng, mệt mỏi, da xanh xao, tóc khô gãy và hệ miễn dịch suy yếu."
+                        android:textSize="17sp" />
 
-            <LinearLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 4: Suy dinh dưỡng ảnh hưởng như thế nào đến việc học tập?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Suy dinh dưỡng làm giảm khả năng tập trung, dễ mệt mỏi, suy giảm trí nhớ và ảnh hưởng đến kết quả học tập."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 4: Suy dinh dưỡng ảnh hưởng như thế nào đến việc học tập?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Suy dinh dưỡng làm giảm khả năng tập trung, dễ mệt mỏi, suy giảm trí nhớ và ảnh hưởng đến kết quả học tập."
+                        android:textSize="17sp" />
 
-            <LinearLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 5: Làm thế nào để phòng tránh suy dinh dưỡng?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Ăn đủ các nhóm thực phẩm, đặc biệt là protein, vitamin và khoáng chất. Duy trì bữa ăn đầy đủ, không bỏ bữa sáng."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 5: Làm thế nào để phòng tránh suy dinh dưỡng?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Ăn đủ các nhóm thực phẩm, đặc biệt là protein, vitamin và khoáng chất. Duy trì bữa ăn đầy đủ, không bỏ bữa sáng."
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 

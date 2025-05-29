@@ -71,210 +71,302 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/custom_button"
             android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 1: Bữa sáng có quan trọng không?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Rất quan trọng. Bữa sáng cung cấp năng lượng cho cả ngày học tập, giúp tăng cường khả năng tập trung và cải thiện hiệu suất học tập."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 1: Bữa sáng có quan trọng không?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Rất quan trọng. Bữa sáng cung cấp năng lượng cho cả ngày học tập, giúp tăng cường khả năng tập trung và cải thiện hiệu suất học tập."
+                        android:textSize="17sp" />
 
-            <LinearLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 2: Uống nước ngọt thường xuyên có ảnh hưởng gì?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Uống nhiều nước ngọt có thể gây béo phì, tăng nguy cơ mắc tiểu đường loại 2 và sâu răng."
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 3: Nên ăn vặt như thế nào cho lành mạnh?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Chọn các món ăn như trái cây tươi, các loại hạt, sữa chua không đường thay vì đồ chiên hoặc bánh kẹo ngọt."
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 4: Học sinh nên ăn mấy bữa mỗi ngày?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Nên ăn 3 bữa chính (sáng, trưa, tối) và có thể bổ sung 1-2 bữa phụ với các món ăn nhẹ lành mạnh như trái cây, sữa chua."
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 5: Làm thế nào để kiểm soát cân nặng hiệu quả?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Cần có chế độ ăn uống cân đối, hạn chế đồ ăn nhanh, nước ngọt và tăng cường vận động. Không nên áp dụng các chế độ giảm cân khắc nghiệt."
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 6: Học sinh nên uống bao nhiêu nước mỗi ngày?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Nên uống khoảng 1.5 - 2 lít nước mỗi ngày, tùy thuộc vào mức độ hoạt động thể chất và thời tiết."
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                android:layout_marginBottom="80dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 2: Uống nước ngọt thường xuyên có ảnh hưởng gì?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Uống nhiều nước ngọt có thể gây béo phì, tăng nguy cơ mắc tiểu đường loại 2 và sâu răng."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 7: Giấc ngủ ảnh hưởng thế nào đến dinh dưỡng?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Thiếu ngủ làm rối loạn hormone, tăng cảm giác đói và thèm ăn, dẫn đến tăng cân và giảm khả năng tập trung."
+                        android:textSize="17sp" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 3: Nên ăn vặt như thế nào cho lành mạnh?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Chọn các món ăn như trái cây tươi, các loại hạt, sữa chua không đường thay vì đồ chiên hoặc bánh kẹo ngọt."
-                    android:textSize="17sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 4: Học sinh nên ăn mấy bữa mỗi ngày?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Nên ăn 3 bữa chính (sáng, trưa, tối) và có thể bổ sung 1-2 bữa phụ với các món ăn nhẹ lành mạnh như trái cây, sữa chua."
-                    android:textSize="17sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 5: Làm thế nào để kiểm soát cân nặng hiệu quả?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Cần có chế độ ăn uống cân đối, hạn chế đồ ăn nhanh, nước ngọt và tăng cường vận động. Không nên áp dụng các chế độ giảm cân khắc nghiệt."
-                    android:textSize="17sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 6: Học sinh nên uống bao nhiêu nước mỗi ngày?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Nên uống khoảng 1.5 - 2 lít nước mỗi ngày, tùy thuộc vào mức độ hoạt động thể chất và thời tiết."
-                    android:textSize="17sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 7: Giấc ngủ ảnh hưởng thế nào đến dinh dưỡng?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Thiếu ngủ làm rối loạn hormone, tăng cảm giác đói và thèm ăn, dẫn đến tăng cân và giảm khả năng tập trung."
-                    android:textSize="17sp" />
-
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 

@@ -73,151 +73,215 @@
             android:layout_marginTop="10dp"
             android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:text="Câu hỏi 1: Thừa cân và béo phì khác nhau như thế nào?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:text="Đáp án: Thừa cân là tình trạng trọng lượng cơ thể cao hơn mức bình thường so với chiều cao, còn béo phì là tình trạng tích lũy mỡ quá mức, ảnh hưởng đến sức khỏe."
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:text="Câu hỏi 1: Thừa cân và béo phì khác nhau như thế nào?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:text="Đáp án: Thừa cân là tình trạng trọng lượng cơ thể cao hơn mức bình thường so với chiều cao, còn béo phì là tình trạng tích lũy mỡ quá mức, ảnh hưởng đến sức khỏe."
 
-            </LinearLayout>
+                        android:textSize="17sp" />
 
-            <LinearLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 2: Nguyên nhân nào dẫn đến béo phì ở học sinh?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Nguyên nhân bao gồm ăn quá nhiều thực phẩm giàu calo, ít vận động, uống nước ngọt thường xuyên, và thói quen sinh hoạt không lành mạnh."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 2: Nguyên nhân nào dẫn đến béo phì ở học sinh?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Nguyên nhân bao gồm ăn quá nhiều thực phẩm giàu calo, ít vận động, uống nước ngọt thường xuyên, và thói quen sinh hoạt không lành mạnh."
+                        android:textSize="17sp" />
 
-            <LinearLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 3: Béo phì có thể gây ra những bệnh gì?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Béo phì làm tăng nguy cơ mắc các bệnh như đái tháo đường loại 2, tăng huyết áp, bệnh tim mạch, gan nhiễm mỡ và rối loạn chuyển hóa."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 3: Béo phì có thể gây ra những bệnh gì?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Béo phì làm tăng nguy cơ mắc các bệnh như đái tháo đường loại 2, tăng huyết áp, bệnh tim mạch, gan nhiễm mỡ và rối loạn chuyển hóa."
+                        android:textSize="17sp" />
 
-            <LinearLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 4: Tại sao học sinh thừa cân thường thiếu tự tin?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Thừa cân có thể làm ảnh hưởng đến ngoại hình, dẫn đến tự ti, bị trêu chọc, hoặc cảm thấy không thoải mái trong các hoạt động thể chất."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 4: Tại sao học sinh thừa cân thường thiếu tự tin?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Thừa cân có thể làm ảnh hưởng đến ngoại hình, dẫn đến tự ti, bị trêu chọc, hoặc cảm thấy không thoải mái trong các hoạt động thể chất."
+                        android:textSize="17sp" />
 
-            <LinearLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 5: Làm thế nào để giảm cân an toàn cho học sinh?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Cần áp dụng chế độ ăn uống cân bằng, hạn chế đồ ăn nhanh và nước ngọt, tăng cường tập thể dục, ngủ đủ giấc và tránh nhịn ăn quá mức."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 5: Làm thế nào để giảm cân an toàn cho học sinh?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Cần áp dụng chế độ ăn uống cân bằng, hạn chế đồ ăn nhanh và nước ngọt, tăng cường tập thể dục, ngủ đủ giấc và tránh nhịn ăn quá mức."
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 

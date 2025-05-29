@@ -11,7 +11,7 @@
         android:type="linear"
         android:angle="45"
         android:startColor="#01977A"
-        android:endColor="#25D3A3"
+        android:endColor="#0E9D55"
         android:useLevel="false" />
     <corners android:radius="20dp"/>
 

@@ -56,71 +56,56 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="478dp"
-        android:background="@drawable/bg_gradient"
-        app:layout_constraintBottom_toTopOf="@id/water_img"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/my_toolbar"
-        app:layout_constraintVertical_bias="0.023">
+        app:layout_constraintVertical_bias="0.0">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycleView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:clipToPadding="false"
-            android:padding="12dp"
-            android:scrollbarStyle="outsideOverlay"
-            android:scrollbars="vertical"
+        <RelativeLayout
+            android:id="@+id/notification_message"
+            android:layout_width="match_parent"
+            android:layout_height="478dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.451" />
+            app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+            app:layout_constraintVertical_bias="0.0">
 
-    </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:padding="12dp"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.451" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25"/>
+        </RelativeLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8"/>
+    </ScrollView>
 
     <ImageView
         android:id="@+id/water_img"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/notification_water"
-        app:layout_constraintBottom_toBottomOf="@id/img_guide_4"
-        app:layout_constraintEnd_toEndOf="@id/img_guide_2"
-        app:layout_constraintStart_toStartOf="@id/img_guide_1"
-        app:layout_constraintTop_toTopOf="@id/img_guide_3"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/img_guide_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.98"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.979" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

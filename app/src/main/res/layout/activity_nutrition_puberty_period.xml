@@ -71,94 +71,132 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/custom_button"
             android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 1: Tại sao tuổi dậy thì cần nhiều dinh dưỡng hơn?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Đây là giai đoạn cơ thể phát triển nhanh chóng về chiều cao, cân nặng và hormone. Vì vậy, cần nhiều năng lượng và dinh dưỡng để phát triển toàn diện."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 1: Tại sao tuổi dậy thì cần nhiều dinh dưỡng hơn?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Đây là giai đoạn cơ thể phát triển nhanh chóng về chiều cao, cân nặng và hormone. Vì vậy, cần nhiều năng lượng và dinh dưỡng để phát triển toàn diện."
+                        android:textSize="17sp" />
 
-            <LinearLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 2: Làm thế nào để cải thiện làn da thông qua dinh dưỡng?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Ăn nhiều rau củ, trái cây giàu vitamin C và E, uống đủ nước, tránh đồ chiên rán và thực phẩm nhiều đường để giữ da khỏe mạnh."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 2: Làm thế nào để cải thiện làn da thông qua dinh dưỡng?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Ăn nhiều rau củ, trái cây giàu vitamin C và E, uống đủ nước, tránh đồ chiên rán và thực phẩm nhiều đường để giữ da khỏe mạnh."
+                        android:textSize="17sp" />
 
-            <LinearLayout
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/custom_button"
-                android:orientation="vertical">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="20dp">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Câu hỏi 3: Thiếu kẽm có thể gây ra vấn đề gì?"
-                    android:textColor="#02AC8F"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:gravity="center_vertical"
-                    android:justificationMode="inter_word"
-                    android:text="Đáp án: Thiếu kẽm có thể làm chậm phát triển, giảm khả năng miễn dịch, gây rụng tóc và nổi mụn."
-                    android:textSize="17sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Câu hỏi 3: Thiếu kẽm có thể gây ra vấn đề gì?"
+                        android:textColor="#02AC8F"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:justificationMode="inter_word"
+                        android:text="Đáp án: Thiếu kẽm có thể làm chậm phát triển, giảm khả năng miễn dịch, gây rụng tóc và nổi mụn."
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 
