@@ -10,11 +10,14 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.huytran.goodlife.R;
 
 public class TempMenuDataActivity extends AppCompatActivity {
     private ImageButton backButton;
+    private String text;
+    private TextView textView;
     private ImageView menuImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class TempMenuDataActivity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         backButton = findViewById(R.id.back_button);
+        textView = findViewById(R.id.text_view);
         menuImage = findViewById(R.id.item_image);
 
         Intent intent = getIntent();
@@ -42,7 +46,10 @@ public class TempMenuDataActivity extends AppCompatActivity {
 
         if(bundle != null) {
             imageId = intent.getIntExtra("Image", 0);
+            text = intent.getStringExtra("Text");
         }
+
+        textView.setText(text);
 
         menuImage.setImageResource(imageId);
 

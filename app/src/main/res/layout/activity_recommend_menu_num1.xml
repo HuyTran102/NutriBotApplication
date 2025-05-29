@@ -36,6 +36,15 @@
             android:background="#FFFFFF"
             android:padding="8dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu 1"
+            android:textColor="#02947B"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
     </androidx.appcompat.widget.Toolbar>
 
     <View

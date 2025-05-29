@@ -45,6 +45,7 @@ public class TempMenuViewAdapter extends RecyclerView.Adapter<TempMenuViewAdapte
             public void onClick(View view) {
                 Intent intent = new Intent(context, TempMenuDataActivity.class);
                 intent.putExtra("Image", itemAtPosition.getData_image());
+                intent.putExtra("Text", itemAtPosition.getName());
                 context.startActivity(intent);
             }
         });

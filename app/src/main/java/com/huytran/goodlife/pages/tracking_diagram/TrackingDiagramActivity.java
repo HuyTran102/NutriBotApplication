@@ -471,9 +471,10 @@ public class TrackingDiagramActivity extends AppCompatActivity {
                             addEnergy = total_sum;
                         }
 
-                        for (int i = startOfWeek.getDayOfMonth(); i <= endOfWeek.getDayOfMonth(); i++) {
-
-                            entries.add(new Entry(i, (float) recommendEnergy));
+                        int dateIndex = 0;
+                        for (LocalDate date = startOfWeek; !date.isAfter(endOfWeek); date = date.plusDays(1)) {
+                            dateIndex++;
+                            entries.add(new Entry(dateIndex, (float) recommendEnergy));
 
                         }
 
