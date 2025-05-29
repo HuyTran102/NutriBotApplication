@@ -104,8 +104,8 @@ public class TrackingDiagramActivity extends AppCompatActivity {
 //        Toast.makeText(this, "" + startOfWeek + " " + endOfWeek, Toast.LENGTH_SHORT).show();
 
         LoadLineChartData();
-//
-//        LoadLineChartRecommendData();
+
+        LoadLineChartRecommendData();
 
         setupInnerChart();
 
@@ -296,20 +296,20 @@ public class TrackingDiagramActivity extends AppCompatActivity {
 
                                     entries.add(new Entry(dateIndex, sumKcal));
 
-                                    dataSet1 = new LineDataSet(entries, "Năng lượng (Kcal)");
-                                    dataSet1.setColor(getResources().getColor(R.color.purple_color));
-                                    dataSet1.setHighLightColor(getResources().getColor(R.color.highlight));
-                                    dataSet1.setCircleColor(getResources().getColor(R.color.dot));
-                                    dataSet1.setCircleHoleColor(getResources().getColor(R.color.purple_color));
-                                    dataSet1.setLineWidth(3f);
-                                    dataSet1.setValueTextColor(getResources().getColor(R.color.darkblue));
-                                    dataSet1.setValueTextSize(15f);
-
                                 }
                             }
                         } else {
                             Log.w("Firestore", "Error getting documents", task.getException());
                         }
+
+                        dataSet1 = new LineDataSet(entries, "Năng lượng (Kcal)");
+                        dataSet1.setColor(getResources().getColor(R.color.purple_color));
+                        dataSet1.setHighLightColor(getResources().getColor(R.color.highlight));
+                        dataSet1.setCircleColor(getResources().getColor(R.color.dot));
+                        dataSet1.setCircleHoleColor(getResources().getColor(R.color.purple_color));
+                        dataSet1.setLineWidth(3f);
+                        dataSet1.setValueTextColor(getResources().getColor(R.color.darkblue));
+                        dataSet1.setValueTextSize(15f);
                     }
                 });
     }
@@ -475,30 +475,32 @@ public class TrackingDiagramActivity extends AppCompatActivity {
 
                             entries.add(new Entry(i, (float) recommendEnergy));
 
-                            dataSet2 = new LineDataSet(entries, "Năng lượng khuyến nghị (Kcal)");
-                            dataSet2.setColor(getResources().getColor(R.color.red_color));
-                            dataSet2.setHighLightColor(getResources().getColor(R.color.highlight));
-                            dataSet2.setCircleColor(getResources().getColor(R.color.dot2));
-                            dataSet2.setCircleHoleColor(getResources().getColor(R.color.red_color));
-                            dataSet2.setLineWidth(3f);
-                            dataSet2.setValueTextColor(getResources().getColor(R.color.dot2));
-                            dataSet2.setValueTextSize(15f);
-                            dataSet2.setDrawValues(false);
-
-                            LineData lineData = new LineData(dataSet1, dataSet2);
-                            lineChart.setData(lineData);
-                            lineChart.getDescription().setEnabled(false);
-                            lineChart.getDescription().setTypeface(Typeface.DEFAULT_BOLD);
-                            lineChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
-                            lineChart.notifyDataSetChanged();
-                            lineChart.invalidate();
-
                         }
 
                         Log.d("Firestore", "All tasks completed successfully");
                     } else {
                         Log.w("Firestore", "Error completing tasks", task.getException());
                     }
+
+                    dataSet2 = new LineDataSet(entries, "Năng lượng khuyến nghị (Kcal)");
+                    dataSet2.setColor(getResources().getColor(R.color.red_color));
+                    dataSet2.setHighLightColor(getResources().getColor(R.color.highlight));
+                    dataSet2.setCircleColor(getResources().getColor(R.color.dot2));
+                    dataSet2.setCircleHoleColor(getResources().getColor(R.color.red_color));
+                    dataSet2.setLineWidth(3f);
+                    dataSet2.setValueTextColor(getResources().getColor(R.color.dot2));
+                    dataSet2.setValueTextSize(15f);
+                    dataSet2.setDrawValues(false);
+
+                    LineData lineData = new LineData(dataSet1, dataSet2);
+                    lineChart.setData(lineData);
+                    lineChart.getDescription().setEnabled(false);
+                    lineChart.getDescription().setTypeface(Typeface.DEFAULT_BOLD);
+                    lineChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+                    lineChart.notifyDataSetChanged();
+                    lineChart.invalidate();
+
                 });
     }
+
 }
