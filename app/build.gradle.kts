@@ -60,4 +60,5 @@ dependencies {
     implementation("com.github.phuquy2114:Libraries_android:1.0.9")
 // CameraView for quick camera usage (optional library by Google)
     implementation("com.otaliastudios:cameraview:2.7.2")
+    implementation("com.google.mlkit:image-labeling:17.0.9")
 }
