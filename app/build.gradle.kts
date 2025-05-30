@@ -11,8 +11,8 @@ android {
         applicationId = "com.huytran.goodlifes"
         minSdk = 26
         targetSdk = 34
-        versionCode = 36
-        versionName = "1.35"
+        versionCode = 2
+        versionName = "1.1"
 
         resConfigs("en", "vi")
 
