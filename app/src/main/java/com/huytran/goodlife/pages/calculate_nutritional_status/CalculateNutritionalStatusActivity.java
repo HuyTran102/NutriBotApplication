@@ -5,11 +5,14 @@ import static java.lang.Math.abs;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -44,6 +47,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -131,25 +135,42 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                                 userRecommendWeight[0] = bmiStatusWarning(gender, BMI, monthAge);
 
                                 userRecommendHeight[0] = heightForAgeStatusWarning(gender, Double.parseDouble(height), monthAge);
-
-                                Toast.makeText(CalculateNutritionalStatusActivity.this, BMI + " " + monthAge, Toast.LENGTH_SHORT).show();
-
-//                                WriteDataFireBase(String.valueOf(userActualHeight[0]), String.valueOf(userActualWeight[0])
-//                                        , String.valueOf(userRecommendHeight[0]), String.valueOf(userRecommendWeight[0]));
                             } else {
-                                Toast.makeText(CalculateNutritionalStatusActivity.this, "Ngày tháng năm sinh không hợp lệ!", Toast.LENGTH_SHORT).show();
 
-                                bmiStatusView.setText("null");
-                                hfaStatusView.setText("null");
-                                heightView.setText("null");
-                                weightView.setText("null");
+                                Toast toast = Toast.makeText(CalculateNutritionalStatusActivity.this, "Ngày tháng năm sinh không hợp lệ! Vui lòng nhập lại!", Toast.LENGTH_SHORT);
+                                toast.show();
 
-                                WriteDataFireBase(String.valueOf(1), String.valueOf(1), String.valueOf(1), String.valueOf(1));
+                                new Handler().postDelayed(() -> toast.cancel(), 5000);
+
+                                // Get the current date
+                                Calendar cal = Calendar.getInstance();
+
+                                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                                        CalculateNutritionalStatusActivity.this,
+                                        AlertDialog.THEME_HOLO_LIGHT,
+                                        (view1, year, month, dayOfMonth) -> {
+                                            String selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
+
+                                            reference.child(name).child("date_of_birth").setValue(selectedDate)
+                                                    .addOnCompleteListener(task -> {
+                                                        if (task.isSuccessful()) {
+                                                            Toast.makeText(CalculateNutritionalStatusActivity.this, "Đã cập nhật ngày sinh!", Toast.LENGTH_SHORT).show();
+
+                                                            resultButton.performClick();
+                                                        } else {
+                                                            Toast.makeText(CalculateNutritionalStatusActivity.this, "Lỗi khi cập nhật ngày sinh!", Toast.LENGTH_SHORT).show();
+                                                            pfDialog.dismiss();
+                                                        }
+                                                    });
+                                        },
+                                        cal.get(Calendar.YEAR),
+                                        cal.get(Calendar.MONTH),
+                                        cal.get(Calendar.DAY_OF_MONTH)
+                                );
+                                datePickerDialog.getDatePicker().setCalendarViewShown(false);
+                                datePickerDialog.getDatePicker().setSpinnersShown(true);
+                                datePickerDialog.show();
                             }
-
-                            WriteDataFireBase(String.valueOf(userActualHeight[0]), String.valueOf(userActualWeight[0])
-                                    , String.valueOf(userRecommendHeight[0]), String.valueOf(userRecommendWeight[0]));
-
                             pfDialog.dismiss();
                         }
 
@@ -170,6 +191,28 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private String makeDateString(int day, int month, int year) {
+        date = getMonthFormat(month) + "/" + day + "/" + year;
+        return "Ngày sinh: " + getMonthFormat(month) + " " + day + " " + year;
+    }
+
+    private String getMonthFormat(int month) {
+        if (month == 1) return "JAN";
+        if (month == 2) return "FEB";
+        if (month == 3) return "MAR";
+        if (month == 4) return "APR";
+        if (month == 5) return "MAY";
+        if (month == 6) return "JUN";
+        if (month == 7) return "JUL";
+        if (month == 8) return "AUG";
+        if (month == 9) return "SEP";
+        if (month == 10) return "OCT";
+        if (month == 11) return "NOV";
+        if (month == 12) return "DEC";
+
+        return "JAN";
     }
 
     // Write Data to Cloud Firestone
