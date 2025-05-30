@@ -7,14 +7,66 @@
     android:layout_height="match_parent"
     tools:context=".pages.scanner.ScannerActivity">
 
-    <com.otaliastudios.cameraview.CameraView
-        android:id="@+id/cameraView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:cameraFacing="back"
-        app:cameraGestureTap="autoFocus"
-        app:cameraPictureSizeMinWidth="1000"
-        app:cameraMode="picture" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="#FFFFFF"
+            android:contentInsetLeft="0dp"
+            android:contentInsetStart="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            android:contentInsetRight="0dp"
+            android:contentInsetEnd="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/back_to_home_button"
+                android:background="#FFFFFF"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scanner"
+                android:textColor="#02947B"
+                android:textSize="27sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.otaliastudios.cameraview.CameraView
+            android:id="@+id/cameraView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cameraFacing="back"
+            app:cameraGestureTap="autoFocus"
+            app:cameraMode="picture"
+            app:cameraPictureSizeMinWidth="1000"
+            app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/txtLabel"

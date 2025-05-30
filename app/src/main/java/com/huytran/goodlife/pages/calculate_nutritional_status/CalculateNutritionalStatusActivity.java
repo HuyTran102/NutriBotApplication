@@ -1,5 +1,7 @@
 package com.huytran.goodlife.pages.calculate_nutritional_status;
 
+import static java.lang.Math.abs;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -128,6 +130,8 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                                 userRecommendWeight[0] = bmiStatusWarning(gender, BMI, monthAge);
 
                                 userRecommendHeight[0] = heightForAgeStatusWarning(gender, Double.parseDouble(height), monthAge);
+
+                                Toast.makeText(CalculateNutritionalStatusActivity.this, BMI + " " + monthAge, Toast.LENGTH_SHORT).show();
 
 //                                WriteDataFireBase(String.valueOf(userActualHeight[0]), String.valueOf(userActualWeight[0])
 //                                        , String.valueOf(userRecommendHeight[0]), String.valueOf(userRecommendWeight[0]));
@@ -388,12 +392,19 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
 
                         userRecommendWeight = recommendWeight;
 
-                        double add = Math.abs(Double.parseDouble(weight) - recommendWeight);
+                        double add = Double.parseDouble(weight) - recommendWeight;
 
-                        imgWeightAge.setImageResource(R.drawable.ic_close);
-                        result += decimalFormat.format(add) + " (kg)";
-                        weightView.setBackground(getResources().getDrawable(R.drawable.back_yellow));
-                        weightView.setText(result);
+                        if(add < 0) {
+                            imgWeightAge.setImageResource(R.drawable.ic_close);
+                            result += decimalFormat.format(abs(add)) + " (kg)";
+                            weightView.setBackground(getResources().getDrawable(R.drawable.back_yellow));
+                            weightView.setText(result);
+                        } else {
+                            imgWeightAge.setImageResource(R.drawable.ic_close);
+                            result = "Thừa " + decimalFormat.format(abs(add)) + " (kg)";
+                            weightView.setBackground(getResources().getDrawable(R.drawable.back_red));
+                            weightView.setText(result);
+                        }
                     }
                 }
             }
@@ -499,7 +510,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                     } else {
                         result += "Thiếu ";
 
-                        double add = Math.abs(height - negativeSD1);
+                        double add = abs(height - negativeSD1);
 
                         userRecommendHeight = negativeSD1;
 
