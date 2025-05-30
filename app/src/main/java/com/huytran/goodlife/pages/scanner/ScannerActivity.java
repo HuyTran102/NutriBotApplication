@@ -79,6 +79,7 @@ public class ScannerActivity extends AppCompatActivity {
         cameraView.addFrameProcessor(this::processFrame);
 
     }
+
     @SuppressLint("DefaultLocale")
     private void processFrame(Frame frame) {
         if (isProcessing) return;

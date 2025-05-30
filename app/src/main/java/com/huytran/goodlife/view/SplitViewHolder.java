@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.huytran.goodlife.R;
 
-public class SplitViewHolder extends RecyclerView.ViewHolder{
-    public TextView date;
+public class SplitViewHolder extends RecyclerView.ViewHolder {
     private final int viewType;
+    public TextView date;
 
     public SplitViewHolder(@NonNull View itemView, int viewType) {
         super(itemView);

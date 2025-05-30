@@ -32,8 +32,7 @@ public class BottomNavigationBehavior extends CoordinatorLayout.Behavior<BottomN
 
     @SuppressLint("RestrictedApi")
     private void updateSnackbar(View child, Snackbar.SnackbarLayout snackbarLayout) {
-        if(snackbarLayout.getLayoutParams() instanceof CoordinatorLayout.LayoutParams) {
-            CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams)snackbarLayout.getLayoutParams();
+        if (snackbarLayout.getLayoutParams() instanceof CoordinatorLayout.LayoutParams params) {
 
             params.setAnchorId(child.getId());
             params.anchorGravity = Gravity.TOP;

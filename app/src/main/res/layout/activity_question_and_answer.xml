@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.question_and_answer.QuestionAndAnswerActivity"
+    android:layout_gravity="center"
     android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
-    android:layout_gravity="center"
-    android:keepScreenOn="true">
+    android:keepScreenOn="true"
+    tools:context=".pages.question_and_answer.QuestionAndAnswerActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="#FFFFFF"
-        android:contentInsetLeft="0dp"
         android:contentInsetStart="0dp"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
-        android:contentInsetRight="0dp"
+        android:contentInsetLeft="0dp"
         android:contentInsetEnd="0dp"
-        app:contentInsetRight="0dp"
-        app:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -32,18 +32,18 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back_to_home_button"
             android:background="#FFFFFF"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:src="@drawable/back_to_home_button" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Q&amp;A"
             android:textColor="#02947B"
             android:textSize="27sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -52,9 +52,10 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#BBBBBB"
-        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
+
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,11 +74,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginTop="10dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:id="@+id/basic_nutrition"
@@ -87,9 +88,9 @@
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
+                        android:layout_gravity="center"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/basic"
-                        android:layout_gravity="center"/>
+                        android:src="@drawable/basic" />
 
                     <TextView
                         android:layout_width="300dp"
@@ -107,11 +108,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginTop="10dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:id="@+id/nutrition_school_health"
@@ -142,11 +143,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginTop="10dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:id="@+id/exam_season_nutrition"
@@ -177,11 +178,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginTop="10dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:id="@+id/nutrition_physical_activity"
@@ -212,11 +213,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginTop="10dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:id="@+id/nutrition_mental_health"
@@ -247,11 +248,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginTop="10dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:id="@+id/nutrition_puberty_period"
@@ -284,11 +285,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginTop="10dp">
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:id="@+id/malnutrition"
@@ -319,12 +320,12 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="80dp">
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="80dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:id="@+id/over_weigth"

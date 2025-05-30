@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.huytran.goodlife.pages.dietary.ItemDataActivity;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.model.Item;
+import com.huytran.goodlife.pages.dietary.ItemDataActivity;
 
 import java.util.List;
 
@@ -59,10 +59,10 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ViewHolder> {
     public int getItemCount() {
         return items.size();
     }
-    
+
     public void updateList(List<Item> newList) {
         items = newList;
-        notifyDataSetChanged();;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

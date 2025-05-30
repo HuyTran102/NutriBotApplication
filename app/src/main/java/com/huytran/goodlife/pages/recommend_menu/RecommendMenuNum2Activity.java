@@ -1,7 +1,5 @@
 package com.huytran.goodlife.pages.recommend_menu;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,9 +8,10 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
@@ -24,10 +23,8 @@ import com.huytran.goodlife.R;
 import java.util.Calendar;
 
 public class RecommendMenuNum2Activity extends AppCompatActivity {
-    private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
-    private TextView bun, thitBo1, chanGio, rauSong, suaChua, dauTay, gaoTe1, thitGa
-            , muc, khoaiTim, suon, dauAn1, duaHau, gaoTe2, caHoi, thitBo2, rauMongToi, dauAn2, mitThai
-            , tongSang, tongTrua, tongToi;
+    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    private TextView bun, thitBo1, chanGio, rauSong, suaChua, dauTay, gaoTe1, thitGa, muc, khoaiTim, suon, dauAn1, duaHau, gaoTe2, caHoi, thitBo2, rauMongToi, dauAn2, mitThai, tongSang, tongTrua, tongToi;
     private String name;
     private double recommendWeight, recommendEnergy;
     private ImageButton backButton;
@@ -44,8 +41,7 @@ public class RecommendMenuNum2Activity extends AppCompatActivity {
         window.setStatusBarColor(getResources().getColor(android.R.color.transparent));
 
         // Set the layout to extend into the status bar
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
@@ -96,90 +92,79 @@ public class RecommendMenuNum2Activity extends AppCompatActivity {
         int month = cal.get(Calendar.MONTH) + 1; // tháng 1 bắt đầu từ 0 trong Calendar
         int day = cal.get(Calendar.DAY_OF_MONTH);
 
-        Task<QuerySnapshot> nutritionTask = firebaseFirestore.collection("GoodLife")
-                .document(name).collection("Dinh dưỡng")
-                .get();
+        Task<QuerySnapshot> nutritionTask = firebaseFirestore.collection("GoodLife").document(name).collection("Dinh dưỡng").get();
 
-        Task<QuerySnapshot> activityTask = firebaseFirestore.collection("GoodLife")
-                .document(name).collection("Hoạt động thể lực")
-                .whereEqualTo("year", String.valueOf(year))
-                .whereEqualTo("month", String.valueOf(month))
-                .whereEqualTo("day", String.valueOf(day))
-                .get();
+        Task<QuerySnapshot> activityTask = firebaseFirestore.collection("GoodLife").document(name).collection("Hoạt động thể lực").whereEqualTo("year", String.valueOf(year)).whereEqualTo("month", String.valueOf(month)).whereEqualTo("day", String.valueOf(day)).get();
 
-        Tasks.whenAll(nutritionTask, activityTask)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        QuerySnapshot nutritionResult = nutritionTask.getResult();
-                        if (nutritionResult != null) {
-                            for (QueryDocumentSnapshot document : nutritionResult) {
-                                if (document.getString("userHeight") != null
-                                        && document.getString("userWeight") != null
-                                        && document.getString("userRecommendHeight") != null
-                                        && document.getString("userRecommendWeight") != null) {
-                                    try {
-                                        recommendWeight = Double.parseDouble(document.getString("userRecommendWeight"));
-                                    } catch (Exception e) {
-                                        recommendWeight = 0.0;
-                                    }
-                                }
+        Tasks.whenAll(nutritionTask, activityTask).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                QuerySnapshot nutritionResult = nutritionTask.getResult();
+                if (nutritionResult != null) {
+                    for (QueryDocumentSnapshot document : nutritionResult) {
+                        if (document.getString("userHeight") != null && document.getString("userWeight") != null && document.getString("userRecommendHeight") != null && document.getString("userRecommendWeight") != null) {
+                            try {
+                                recommendWeight = Double.parseDouble(document.getString("userRecommendWeight"));
+                            } catch (Exception e) {
+                                recommendWeight = 0.0;
                             }
                         }
-
-                        recommendEnergy = recommendWeight * 24 * 1.5;
-
-                        QuerySnapshot activityResult = activityTask.getResult();
-                        if (activityResult != null) {
-                            double total_sum = 0;
-                            for (QueryDocumentSnapshot document : activityResult) {
-                                String amount = document.getString("userUsedEnergy");
-                                if (amount != null && !amount.isEmpty()) {
-                                    try {
-                                        total_sum += Double.parseDouble(amount);
-                                    } catch (NumberFormatException e) {
-                                        Log.w("Firestore", "Error parsing used energy", e);
-                                    }
-                                }
-                            }
-
-                            recommendEnergy = recommendWeight * 24 * 1.5 + total_sum;
-
-                            double sang = recommendEnergy * 30 / 100, trua = recommendEnergy * 40 /100, toi = recommendEnergy * 30 / 100;
-
-                            bun.setText(String.format("%.0f", (sang * 30 / 100) * 100 / 110));
-                            thitBo1.setText(String.format("%.0f", (sang * 16 / 100) * 100 / 118));
-                            chanGio.setText(String.format("%.0f", (sang * 27 / 100) * 100 / 230));
-                            rauSong.setText(String.format("%.0f", (sang * 2 / 100) * 100 / 18));
-                            suaChua.setText(String.format("%.0f", (sang * 15 / 100) * 100 / 61));
-                            dauTay.setText(String.format("%.0f", (sang * 10 / 100) * 100 / 43));
-
-                            gaoTe1.setText(String.format("%.0f", (trua * 48 / 100) * 100 / 347));
-                            thitGa.setText(String.format("%.0f", (trua * 18 / 100) * 100 / 199));
-                            muc.setText(String.format("%.0f", (trua * 12 / 100) * 100 / 73));
-                            khoaiTim.setText(String.format("%.0f", (trua * 6 / 100) * 100 / 109));
-                            suon.setText(String.format("%.0f", (trua * 8 / 100) * 100 / 187));
-                            dauAn1.setText(String.format("%.0f", (trua * 3 / 100) * 100 / 900));
-                            duaHau.setText(String.format("%.0f", (trua * 5 / 100) * 100 / 16));
-
-                            gaoTe2.setText(String.format("%.0f", (toi * 48 / 100) * 100 / 347));
-                            caHoi.setText(String.format("%.0f", (toi * 20 / 100) * 100 / 136));
-                            thitBo2.setText(String.format("%.0f", (toi * 17 / 100) * 100 / 118));
-                            rauMongToi.setText(String.format("%.0f", (toi * 3 / 100) * 100 / 14));
-                            dauAn2.setText(String.format("%.0f", (toi * 2 / 100) * 100 / 756));
-                            mitThai.setText(String.format("%.0f", (toi * 10 / 100) * 100 / 50));
-
-                            tongSang.setText(String.format("%.0f", sang));
-
-                            tongTrua.setText(String.format("%.0f", trua));
-
-                            tongToi.setText(String.format("%.0f", toi));
-
-                        }
-
-                        Log.d("Firestore", "All tasks completed successfully");
-                    } else {
-                        Log.w("Firestore", "Error completing tasks", task.getException());
                     }
-                });
+                }
+
+                recommendEnergy = recommendWeight * 24 * 1.5;
+
+                QuerySnapshot activityResult = activityTask.getResult();
+                if (activityResult != null) {
+                    double total_sum = 0;
+                    for (QueryDocumentSnapshot document : activityResult) {
+                        String amount = document.getString("userUsedEnergy");
+                        if (amount != null && !amount.isEmpty()) {
+                            try {
+                                total_sum += Double.parseDouble(amount);
+                            } catch (NumberFormatException e) {
+                                Log.w("Firestore", "Error parsing used energy", e);
+                            }
+                        }
+                    }
+
+                    recommendEnergy = recommendWeight * 24 * 1.5 + total_sum;
+
+                    double sang = recommendEnergy * 30 / 100, trua = recommendEnergy * 40 / 100, toi = recommendEnergy * 30 / 100;
+
+                    bun.setText(String.format("%.0f", (sang * 30 / 100) * 100 / 110));
+                    thitBo1.setText(String.format("%.0f", (sang * 16 / 100) * 100 / 118));
+                    chanGio.setText(String.format("%.0f", (sang * 27 / 100) * 100 / 230));
+                    rauSong.setText(String.format("%.0f", (sang * 2 / 100) * 100 / 18));
+                    suaChua.setText(String.format("%.0f", (sang * 15 / 100) * 100 / 61));
+                    dauTay.setText(String.format("%.0f", (sang * 10 / 100) * 100 / 43));
+
+                    gaoTe1.setText(String.format("%.0f", (trua * 48 / 100) * 100 / 347));
+                    thitGa.setText(String.format("%.0f", (trua * 18 / 100) * 100 / 199));
+                    muc.setText(String.format("%.0f", (trua * 12 / 100) * 100 / 73));
+                    khoaiTim.setText(String.format("%.0f", (trua * 6 / 100) * 100 / 109));
+                    suon.setText(String.format("%.0f", (trua * 8 / 100) * 100 / 187));
+                    dauAn1.setText(String.format("%.0f", (trua * 3 / 100) * 100 / 900));
+                    duaHau.setText(String.format("%.0f", (trua * 5 / 100) * 100 / 16));
+
+                    gaoTe2.setText(String.format("%.0f", (toi * 48 / 100) * 100 / 347));
+                    caHoi.setText(String.format("%.0f", (toi * 20 / 100) * 100 / 136));
+                    thitBo2.setText(String.format("%.0f", (toi * 17 / 100) * 100 / 118));
+                    rauMongToi.setText(String.format("%.0f", (toi * 3 / 100) * 100 / 14));
+                    dauAn2.setText(String.format("%.0f", (toi * 2 / 100) * 100 / 756));
+                    mitThai.setText(String.format("%.0f", (toi * 10 / 100) * 100 / 50));
+
+                    tongSang.setText(String.format("%.0f", sang));
+
+                    tongTrua.setText(String.format("%.0f", trua));
+
+                    tongToi.setText(String.format("%.0f", toi));
+
+                }
+
+                Log.d("Firestore", "All tasks completed successfully");
+            } else {
+                Log.w("Firestore", "Error completing tasks", task.getException());
+            }
+        });
     }
 }

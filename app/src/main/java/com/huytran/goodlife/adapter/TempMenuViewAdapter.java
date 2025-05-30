@@ -12,12 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.pages.template_menu.TempMenuDataActivity;
 import com.huytran.goodlife.model.TempMenuItem;
+import com.huytran.goodlife.pages.template_menu.TempMenuDataActivity;
 
 import java.util.List;
 
-public class TempMenuViewAdapter extends RecyclerView.Adapter<TempMenuViewAdapter.ViewHolder>{
+public class TempMenuViewAdapter extends RecyclerView.Adapter<TempMenuViewAdapter.ViewHolder> {
     Context context;
 
     List<TempMenuItem> items;
@@ -58,7 +58,7 @@ public class TempMenuViewAdapter extends RecyclerView.Adapter<TempMenuViewAdapte
 
     public void updateList(List<TempMenuItem> newList) {
         items = newList;
-        notifyDataSetChanged();;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

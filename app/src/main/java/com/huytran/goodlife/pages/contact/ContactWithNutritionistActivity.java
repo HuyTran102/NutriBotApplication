@@ -1,11 +1,7 @@
 package com.huytran.goodlife.pages.contact;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
-import android.content.Intent;
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,9 +9,12 @@ import android.os.Handler;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.home.HomeActivity;
@@ -38,8 +37,7 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
         window.setStatusBarColor(getResources().getColor(android.R.color.transparent));
 
         // Set the layout to extend into the status bar
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
@@ -50,7 +48,7 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
         backButton = findViewById(R.id.back_button);
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
         }
 
         phoneButton.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +59,7 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
+
         textButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,7 +106,7 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
 
             }
         });
-        
+
         emailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.question_and_answer.NutritionPhysicalActivityActivity"
+    android:layout_gravity="center"
     android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
-    android:layout_gravity="center"
-    android:keepScreenOn="true">
+    android:keepScreenOn="true"
+    tools:context=".pages.question_and_answer.NutritionPhysicalActivityActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="#FFFFFF"
-        android:contentInsetLeft="0dp"
         android:contentInsetStart="0dp"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
-        android:contentInsetRight="0dp"
+        android:contentInsetLeft="0dp"
         android:contentInsetEnd="0dp"
-        app:contentInsetRight="0dp"
-        app:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -32,18 +32,18 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back_to_home_button"
             android:background="#FFFFFF"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:src="@drawable/back_to_home_button" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Dinh dưỡng &amp; thể dục"
             android:textColor="#02947B"
             android:textSize="27sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -52,9 +52,9 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#BBBBBB"
-        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -76,18 +76,18 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -117,19 +117,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -159,19 +159,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -201,19 +201,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -243,19 +243,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView

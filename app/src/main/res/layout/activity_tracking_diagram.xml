@@ -15,15 +15,15 @@
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="#FFFFFF"
-        android:contentInsetLeft="0dp"
         android:contentInsetStart="0dp"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
-        android:contentInsetRight="0dp"
+        android:contentInsetLeft="0dp"
         android:contentInsetEnd="0dp"
-        app:contentInsetRight="0dp"
-        app:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -32,18 +32,18 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back_to_home_button"
             android:background="#FFFFFF"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:src="@drawable/back_to_home_button" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Biểu đồ thống kê"
             android:textColor="#02947B"
             android:textSize="27sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -51,37 +51,37 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#BBBBBB"
-        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line_chart_guide_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05"/>
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line_chart_guide_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95"/>
+        app:layout_constraintGuide_percent="0.95" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line_chart_guide_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2"/>
+        app:layout_constraintGuide_percent="0.2" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/line_chart_guide_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55"/>
+        app:layout_constraintGuide_percent="0.55" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/lineChart"
@@ -99,28 +99,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05"/>
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/pie_chart_guide_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95"/>
+        app:layout_constraintGuide_percent="0.95" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/pie_chart_guide_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.60"/>
+        app:layout_constraintGuide_percent="0.60" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/pie_chart_guide_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.95"/>
+        app:layout_constraintGuide_percent="0.95" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -134,13 +134,13 @@
             android:id="@+id/pieChart"
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true" />
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/innerChart"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true" />
 
     </RelativeLayout>
 

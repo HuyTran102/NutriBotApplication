@@ -4,11 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -22,19 +20,19 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.huytran.goodlife.pages.dietary.DiaryItemDataActivity;
-import com.huytran.goodlife.pages.dietary.DietaryActivity;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.model.DiaryItem;
+import com.huytran.goodlife.pages.dietary.DiaryItemDataActivity;
+import com.huytran.goodlife.pages.dietary.DietaryActivity;
 
 import java.text.DecimalFormat;
 import java.util.List;
 
 public class DiaryViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    Context context;
-    List<DiaryItem> items;
     private static final int LAYOUT_ONE = 0;
     private static final int LAYOUT_TWO = 1;
+    Context context;
+    List<DiaryItem> items;
 
     public DiaryViewAdapter(Context context, List<DiaryItem> items) {
         this.context = context;
@@ -43,7 +41,7 @@ public class DiaryViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
     @Override
     public int getItemViewType(int position) {
-        if(position == 0) {
+        if (position == 0) {
             return LAYOUT_ONE;
         } else {
             return LAYOUT_TWO;
@@ -56,7 +54,7 @@ public class DiaryViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         View view = null;
         RecyclerView.ViewHolder viewHolder = null;
 
-        if(viewType == LAYOUT_ONE) {
+        if (viewType == LAYOUT_ONE) {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_split_bar, parent, false);
             viewHolder = new SplitViewHolder(view, viewType);
         } else {
@@ -76,16 +74,16 @@ public class DiaryViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         DiaryItem itemAtPosition = items.get(position);
 
-        if(holder.getItemViewType() == LAYOUT_ONE) {
+        if (holder.getItemViewType() == LAYOUT_ONE) {
             SplitViewHolder splitHolder = (SplitViewHolder) holder;
 
             splitHolder.date.setText(makeDateString(itemAtPosition.getAdding_day(), itemAtPosition.getAdding_month(), itemAtPosition.getAdding_year()));
         } else {
             DiaryViewHolder itemHolder = (DiaryViewHolder) holder;
-            
+
             SharedPreferences sp = context.getSharedPreferences("Data", Context.MODE_PRIVATE);
 
-            String user_name = sp.getString("Name",null);
+            String user_name = sp.getString("Name", null);
 
             DecimalFormat decimalFormat = new DecimalFormat("0.0");
 
@@ -108,44 +106,34 @@ public class DiaryViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                     DocumentReference documentReference = firebaseFirestore.collection("GoodLife").document(user_name).collection("Nhật kí").document(itemAtPosition.getName());
 
                     // delete document from database
-                    firebaseFirestore.collection("GoodLife")
-                            .document(user_name)
-                            .collection("Nhật kí")
-                            .get()
-                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                    if(task.isSuccessful()) {
-                                        // Loop through all documents
-                                        for (QueryDocumentSnapshot document : task.getResult()) {
-                                            String docId = null;
-                                            if(document.getString("name").equals(itemAtPosition.getName())) {
-                                                docId = document.getId();
+                    firebaseFirestore.collection("GoodLife").document(user_name).collection("Nhật kí").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                // Loop through all documents
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    String docId = null;
+                                    if (document.getString("name").equals(itemAtPosition.getName())) {
+                                        docId = document.getId();
 
-                                                firebaseFirestore.collection("GoodLife")
-                                                        .document(user_name)
-                                                        .collection("Nhật kí")
-                                                        .document(docId)
-                                                        .delete()
-                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                            @Override
-                                                            public void onComplete(@NonNull Task<Void> task) {
-                                                                Log.w("Firestore", "Getting documents successfuly");
-                                                            }
-                                                        })
-                                                        .addOnFailureListener(new OnFailureListener() {
-                                                            @Override
-                                                            public void onFailure(@NonNull Exception e) {
-                                                                Log.w("Firestore", "Error getting documents", task.getException());
-                                                            }
-                                                        });
+                                        firebaseFirestore.collection("GoodLife").document(user_name).collection("Nhật kí").document(docId).delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                Log.w("Firestore", "Getting documents successfuly");
                                             }
-                                        }
-                                    } else {
-                                        Log.w("Firestore", "Error getting documents", task.getException());
+                                        }).addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.w("Firestore", "Error getting documents", task.getException());
+                                            }
+                                        });
                                     }
                                 }
-                            });
+                            } else {
+                                Log.w("Firestore", "Error getting documents", task.getException());
+                            }
+                        }
+                    });
 
                     Intent intent = new Intent(context, DietaryActivity.class);
                     context.startActivity(intent);
@@ -175,9 +163,10 @@ public class DiaryViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public int getItemCount() {
         return items.size();
     }
-    public class SplitViewHolder extends RecyclerView.ViewHolder{
-        public TextView date;
+
+    public class SplitViewHolder extends RecyclerView.ViewHolder {
         private final int viewType;
+        public TextView date;
 
         public SplitViewHolder(@NonNull View itemView, int viewType) {
             super(itemView);
@@ -192,10 +181,9 @@ public class DiaryViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public class DiaryViewHolder extends RecyclerView.ViewHolder {
+        private final int viewType;
         TextView name, unit_type, unit_name, kcal, amount, protein, lipid, glucid;
         ImageButton delete, infomation;
-
-        private final int viewType;
 
         public DiaryViewHolder(@NonNull View itemView, int viewType) {
             super(itemView);
@@ -213,7 +201,6 @@ public class DiaryViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
             delete = itemView.findViewById(R.id.delete_item_button);
             infomation = itemView.findViewById(R.id.item_info_button);
-
 
 
         }

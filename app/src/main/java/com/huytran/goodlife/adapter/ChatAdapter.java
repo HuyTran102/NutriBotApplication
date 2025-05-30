@@ -7,47 +7,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.List;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.huytran.goodlife.model.ChatMessage;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.huytran.goodlife.R;
+import com.huytran.goodlife.model.ChatMessage;
+
+import java.util.List;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     private final List<ChatMessage> messages;
-    private Context context;
+    private final Context context;
+    private OnMessageEditListener editListener;
 
     public ChatAdapter(List<ChatMessage> messages, Context context) {
         this.messages = messages;
         this.context = context;
     }
-
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView userText, botText;
-        LinearLayout userLayout, botLayout;
-        ImageButton btnEditUser, btnCopyUser, btnCopyBot;
-        LinearLayout userActions, botActions;
-
-
-        public ViewHolder(View view) {
-            super(view);
-            userText = view.findViewById(R.id.userText);
-            botText = view.findViewById(R.id.botText);
-            userLayout = view.findViewById(R.id.userLayout);
-            botLayout = view.findViewById(R.id.botLayout);
-            btnEditUser = view.findViewById(R.id.btnEditUser);
-            btnCopyUser = view.findViewById(R.id.btnCopyUser);
-            btnCopyBot = view.findViewById(R.id.btnCopyBot);
-            userActions = view.findViewById(R.id.userActions);
-            botActions = view.findViewById(R.id.botActions);
-
-        }
-    }
-
 
     @Override
     public int getItemViewType(int position) {
@@ -61,12 +41,6 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
                 .inflate(R.layout.item_message, parent, false);
         return new ViewHolder(view);
     }
-
-    public interface OnMessageEditListener {
-        void onMessageEdit(int position, ChatMessage message);
-    }
-
-    private OnMessageEditListener editListener;
 
     public void setOnMessageEditListener(OnMessageEditListener listener) {
         this.editListener = listener;
@@ -140,5 +114,31 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return messages.size();
+    }
+
+    public interface OnMessageEditListener {
+        void onMessageEdit(int position, ChatMessage message);
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView userText, botText;
+        LinearLayout userLayout, botLayout;
+        ImageButton btnEditUser, btnCopyUser, btnCopyBot;
+        LinearLayout userActions, botActions;
+
+
+        public ViewHolder(View view) {
+            super(view);
+            userText = view.findViewById(R.id.userText);
+            botText = view.findViewById(R.id.botText);
+            userLayout = view.findViewById(R.id.userLayout);
+            botLayout = view.findViewById(R.id.botLayout);
+            btnEditUser = view.findViewById(R.id.btnEditUser);
+            btnCopyUser = view.findViewById(R.id.btnCopyUser);
+            btnCopyBot = view.findViewById(R.id.btnCopyBot);
+            userActions = view.findViewById(R.id.userActions);
+            botActions = view.findViewById(R.id.botActions);
+
+        }
     }
 }

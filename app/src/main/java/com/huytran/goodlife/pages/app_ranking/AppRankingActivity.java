@@ -1,7 +1,5 @@
 package com.huytran.goodlife.pages.app_ranking;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,8 +11,10 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.huytran.goodlife.pages.home.HomeActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.huytran.goodlife.R;
+import com.huytran.goodlife.pages.home.HomeActivity;
 
 public class AppRankingActivity extends AppCompatActivity {
     private RatingBar ratingBar;
@@ -35,8 +35,7 @@ public class AppRankingActivity extends AppCompatActivity {
         window.setStatusBarColor(getResources().getColor(android.R.color.transparent));
 
         // Set the layout to extend into the status bar
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
@@ -49,15 +48,15 @@ public class AppRankingActivity extends AppCompatActivity {
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean b) {
-                if(rating == 1) {
+                if (rating == 1) {
                     ratingIcon.setImageResource(R.drawable.star_1);
-                } else if(rating == 2) {
+                } else if (rating == 2) {
                     ratingIcon.setImageResource(R.drawable.star_2);
-                } else if(rating == 3) {
+                } else if (rating == 3) {
                     ratingIcon.setImageResource(R.drawable.star_3);
-                } else if(rating == 4) {
+                } else if (rating == 4) {
                     ratingIcon.setImageResource(R.drawable.star_4);
-                } else if(rating == 5){
+                } else if (rating == 5) {
                     ratingIcon.setImageResource(R.drawable.star_5);
                 } else {
                     ratingIcon.setImageResource(0);

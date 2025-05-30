@@ -1,10 +1,8 @@
 package com.huytran.goodlife.pages.physical;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,12 +19,14 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.app.TimePickerDialog;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -49,11 +49,13 @@ public class PhysicalActivity extends AppCompatActivity {
     private Button pickTimeButton, activityLevel, activitiesOfLevel, addActivity;
     private ImageButton backButton;
     private Dialog dialog;
-    private ArrayList<String> items = new ArrayList<>(), activities = new ArrayList<>();
-    private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    private final ArrayList<String> items = new ArrayList<>();
+    private final ArrayList<String> activities = new ArrayList<>();
+    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private String name;
     private double userWeight, sumUsedEnergy;
     private TextView totalUsedEnergy;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,8 +68,7 @@ public class PhysicalActivity extends AppCompatActivity {
         window.setStatusBarColor(getResources().getColor(android.R.color.transparent));
 
         // Set the layout to extend into the status bar
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
@@ -140,10 +141,7 @@ public class PhysicalActivity extends AppCompatActivity {
 
                 double itemUsedEnergy = (Double.parseDouble(itemActivityMET) * userWeight * 3.5 * prac_minute) / 200;
 
-                WriteDataFireBase(itemActivityName, itemActivityLevel, itemActivityMET
-                        , itemPracticeTime, String.valueOf(itemUsedEnergy), String.valueOf(year)
-                        , String.valueOf(month), String.valueOf(day)
-                        , String.valueOf(hour), String.valueOf(minute), String.valueOf(second));
+                WriteDataFireBase(itemActivityName, itemActivityLevel, itemActivityMET, itemPracticeTime, String.valueOf(itemUsedEnergy), String.valueOf(year), String.valueOf(month), String.valueOf(day), String.valueOf(hour), String.valueOf(minute), String.valueOf(second));
 
                 CalculateSumUsedEnergy();
             }
@@ -199,7 +197,8 @@ public class PhysicalActivity extends AppCompatActivity {
         // Set up search functionality
         editTextSearch.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -220,20 +219,20 @@ public class PhysicalActivity extends AppCompatActivity {
             int start = fullText.indexOf(adapter.getItem(i));
             int end = start + adapter.getItem(i).length();
 
-            if(adapter.getItem(i).equals("Nhẹ")) {
+            if (adapter.getItem(i).equals("Nhẹ")) {
                 spannable.setSpan(new ForegroundColorSpan(Color.parseColor("#D0D0D0")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } else if(adapter.getItem(i).equals("Vừa")) {
+            } else if (adapter.getItem(i).equals("Vừa")) {
                 spannable.setSpan(new ForegroundColorSpan(Color.parseColor("#7B7B7B")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } else if(adapter.getItem(i).equals("Nặng")) {
+            } else if (adapter.getItem(i).equals("Nặng")) {
                 spannable.setSpan(new ForegroundColorSpan(Color.parseColor("#454545")), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
 
             activityLevel.setText(spannable);
             dialog.dismiss();
 
-            if(adapter.getItem(i) == "") {
+            if (adapter.getItem(i) == "") {
                 activities.add(" - MET 0.0");
-            }else if(adapter.getItem(i).contains("Nhẹ")) {
+            } else if (adapter.getItem(i).contains("Nhẹ")) {
                 activities.clear();
 
                 activities.add("Câu cá đứng - MET 2.5");
@@ -245,7 +244,7 @@ public class PhysicalActivity extends AppCompatActivity {
                 activities.add("Bơi biến nhẹ - MET 2.0");
                 activities.add("Đi bộ vận tốc 3 km/giờ - MET 2.5");
 
-            } else if(adapter.getItem(i).contains("Vừa")) {
+            } else if (adapter.getItem(i).contains("Vừa")) {
                 activities.clear();
                 activities.add("Bơi biến vừa - MET 3.0");
                 activities.add("Bơi ở bể 2 km/h - MET 4.3");
@@ -272,7 +271,7 @@ public class PhysicalActivity extends AppCompatActivity {
                 activities.add("Bóng chuyền - MET 3.0");
                 activities.add("Đi bộ 6km/giờ - MET 5.0");
                 activities.add("Trượt nước - MET 6.0");
-            } else if(adapter.getItem(i).contains("Nặng")) {
+            } else if (adapter.getItem(i).contains("Nặng")) {
                 activities.clear();
 
                 activities.add("Aerobic tốc độ vừa - MET 6.5");
@@ -331,7 +330,8 @@ public class PhysicalActivity extends AppCompatActivity {
         // Set up search functionality
         editTextSearch.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -354,10 +354,7 @@ public class PhysicalActivity extends AppCompatActivity {
     }
 
     // Write Data to Cloud Firestone
-    public void WriteDataFireBase(String userActivityName, String userActivityLevel
-            , String userActivityMet, String userActivityTime, String userUsedEnergy
-            , String itemAddingYear, String itemAddingMonth, String itemAddingDay
-            , String itemAddingHour, String itemAddingMinute, String itemAddingSecond) {
+    public void WriteDataFireBase(String userActivityName, String userActivityLevel, String userActivityMet, String userActivityTime, String userUsedEnergy, String itemAddingYear, String itemAddingMonth, String itemAddingDay, String itemAddingHour, String itemAddingMinute, String itemAddingSecond) {
         // Create a new item with all of the value
         Map<String, Object> item = new HashMap<>();
         item.put("userActivityName", userActivityName);
@@ -372,79 +369,63 @@ public class PhysicalActivity extends AppCompatActivity {
         item.put("minute", itemAddingMinute);
         item.put("second", itemAddingSecond);
 
-        firebaseFirestore.collection("GoodLife")
-                .document(name).collection("Hoạt động thể lực")
-                .add(item)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d("Firestore", "Adding value to database successfully");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("Firestore", "Error adding value to database: ", e);
-                    }
-                });
+        firebaseFirestore.collection("GoodLife").document(name).collection("Hoạt động thể lực").add(item).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Log.d("Firestore", "Adding value to database successfully");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w("Firestore", "Error adding value to database: ", e);
+            }
+        });
     }
 
     // Load Data from database
-    public void LoadDataFireBase(){
-        firebaseFirestore.collection("GoodLife")
-                .document(name).collection("Dinh dưỡng")
-                .get()
-                .addOnCompleteListener((OnCompleteListener<QuerySnapshot>) task -> {
-                    if(task.isSuccessful()) {
-                        // Loop through all documents
-                        for(QueryDocumentSnapshot document : task.getResult()) {
-                            if(document.getString("useHeight") != ""
-                                    && document.getString("userWeight") != ""
-                                    && document.getString("userRecommendHeight") != ""
-                                    && document.getString("userRecommendWeight") != "") {
-                                try {
-                                    userWeight = Double.parseDouble(document.getString("userWeight"));
-                                }catch (Exception e){
-                                    userWeight = 0.0;
-                                }
-                            }
-
+    public void LoadDataFireBase() {
+        firebaseFirestore.collection("GoodLife").document(name).collection("Dinh dưỡng").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                // Loop through all documents
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    if (document.getString("useHeight") != "" && document.getString("userWeight") != "" && document.getString("userRecommendHeight") != "" && document.getString("userRecommendWeight") != "") {
+                        try {
+                            userWeight = Double.parseDouble(document.getString("userWeight"));
+                        } catch (Exception e) {
+                            userWeight = 0.0;
                         }
-                    } else {
-                        Log.w("Firestore", "Error getting documents", task.getException());
                     }
-                });
+
+                }
+            } else {
+                Log.w("Firestore", "Error getting documents", task.getException());
+            }
+        });
     }
 
     // Load Data from database
-    public void CalculateSumUsedEnergy(){
-        firebaseFirestore.collection("GoodLife")
-                .document(name).collection("Hoạt động thể lực")
-                .get()
-                .addOnCompleteListener((OnCompleteListener<QuerySnapshot>) task -> {
-                    if(task.isSuccessful()) {
-                        double total_sum = 0;
-                        // Get the current date
-                        Calendar cal = Calendar.getInstance();
-                        int year = cal.get(Calendar.YEAR);
-                        int month = cal.get(Calendar.MONTH);
-                        int day = cal.get(Calendar.DAY_OF_MONTH);
-                        month += 1;
-                        // Loop through all documents
-                        for(QueryDocumentSnapshot document : task.getResult()) {
-                            if(document.getString("userUsedEnergy") != ""
-                                    && Integer.parseInt(document.getString("day")) == day
-                                    && Integer.parseInt(document.getString("month")) == month
-                                    && Integer.parseInt(document.getString("year")) == year) {
-                                    total_sum += Double.parseDouble(document.getString("userUsedEnergy"));
-                            }
-                        }
-
-                        DecimalFormat df = new DecimalFormat("###.#");
-                        totalUsedEnergy.setText(df.format(total_sum) + " Kcal");
-                    } else {
-                        Log.w("Firestore", "Error getting documents", task.getException());
+    public void CalculateSumUsedEnergy() {
+        firebaseFirestore.collection("GoodLife").document(name).collection("Hoạt động thể lực").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                double total_sum = 0;
+                // Get the current date
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
+                month += 1;
+                // Loop through all documents
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    if (document.getString("userUsedEnergy") != "" && Integer.parseInt(document.getString("day")) == day && Integer.parseInt(document.getString("month")) == month && Integer.parseInt(document.getString("year")) == year) {
+                        total_sum += Double.parseDouble(document.getString("userUsedEnergy"));
                     }
-                });
+                }
+
+                DecimalFormat df = new DecimalFormat("###.#");
+                totalUsedEnergy.setText(df.format(total_sum) + " Kcal");
+            } else {
+                Log.w("Firestore", "Error getting documents", task.getException());
+            }
+        });
     }
 }

@@ -5,13 +5,6 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +12,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -38,7 +37,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class DiaryFragment extends Fragment {
-    private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private DatePickerDialog datePickerDialog;
     private Button dateButton;
     private TextView viewItemName, itemKcalo, itemProtein, itemLipid, itemGlucid, itemUnitType, itemUnitName, itemAmount;
@@ -74,7 +73,7 @@ public class DiaryFragment extends Fragment {
 
         SharedPreferences sp = getContext().getSharedPreferences("Data", Context.MODE_PRIVATE);
 
-        name = sp.getString("Name",null);
+        name = sp.getString("Name", null);
 
         // Get the current date
         Calendar cal = Calendar.getInstance();
@@ -122,7 +121,7 @@ public class DiaryFragment extends Fragment {
     }
 
     // Date Picker for user to select their date of birth
-    public void setDataUI(List<DiaryItem> items){
+    public void setDataUI(List<DiaryItem> items) {
 
         calories_val = 0;
         amount_val = 0;
@@ -131,7 +130,7 @@ public class DiaryFragment extends Fragment {
         glucid_val = 0;
 
         // set total value
-        for(DiaryItem diaryItem : items) {
+        for (DiaryItem diaryItem : items) {
             calories_val += diaryItem.getKcal();
             amount_val += diaryItem.getAmount();
             protein_val += diaryItem.getProtein();
@@ -153,7 +152,7 @@ public class DiaryFragment extends Fragment {
     }
 
     // Load Data to Recycle Item
-    public void LoadDataFireBase () {
+    public void LoadDataFireBase() {
         // Create a DatePickerDialog with Holo theme
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -162,7 +161,7 @@ public class DiaryFragment extends Fragment {
                 // Handle the selected date (e.g., update the TextView)
                 String selectedDate = makeDateString(day, month, year);
                 //selectedDateTextView.setText(selectedDate);
-                Log.d("DATE",selectedDate);
+                Log.d("DATE", selectedDate);
                 showListData(selectedDate);
 
             }
@@ -188,51 +187,41 @@ public class DiaryFragment extends Fragment {
         });
     }
 
-    public void showListData(String selectedDate){
+    public void showListData(String selectedDate) {
         List<DiaryItem> list_items = new ArrayList<>();
-        firebaseFirestore.collection("GoodLife")
-                .document(name)
-                .collection("Nhật kí")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful()) {
-                            // Loop through all documents
-                            for(QueryDocumentSnapshot document : task.getResult()) {
-                                DiaryItem diaryItem = new DiaryItem(document.getString("name"), Double.parseDouble(document.getString("amount"))
-                                        , Integer.parseInt(document.getString("kcal")), Double.parseDouble(document.getString("protein"))
-                                        , Double.parseDouble(document.getString("lipid")), Double.parseDouble(document.getString("glucid"))
-                                        , document.getString("unit_type"), document.getString("unit_name"), Integer.parseInt(document.getString("image_id"))
-                                        , Integer.parseInt(document.getString("year")), Integer.parseInt(document.getString("month")), Integer.parseInt(document.getString("day"))
-                                        , Integer.parseInt(document.getString("hour")), Integer.parseInt(document.getString("minute")), Integer.parseInt(document.getString("second")));
-                                String date = makeDateString(Integer.parseInt(document.getString("day")), Integer.parseInt(document.getString("month")), Integer.parseInt(document.getString("year")));
-                                if (date.equals(selectedDate)) {
-                                    list_items.add(diaryItem);
-                                }
-                            }
-
-                            String[] date = selectedDate.split("/");
-
-                            DiaryItem startItem = new DiaryItem("", 0, 0, 0, 0, 0
-                                    , "", "", 0, Integer.parseInt(date[2]), Integer.parseInt(date[0]), Integer.parseInt(date[1]), 0, 0, 0);
-
-                            list_items.add(0, startItem);
-                            
-                            Collections.sort(list_items, new Comparator<DiaryItem>() {
-                                @Override
-                                public int compare(DiaryItem item1, DiaryItem item2) {
-                                    LocalTime item1_time = LocalTime.of(item1.getAdding_hour(), item1.getAdding_minute(), item1.getAdding_second());
-                                    LocalTime item2_time = LocalTime.of(item2.getAdding_hour(), item2.getAdding_minute(), item2.getAdding_second());
-                                    return item1_time.compareTo(item2_time);
-                                }
-                            });
-
-                            setDataUI(list_items);
-                        } else {
-                            Log.w("Firestore", "Error getting documents", task.getException());
+        firebaseFirestore.collection("GoodLife").document(name).collection("Nhật kí").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    // Loop through all documents
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        DiaryItem diaryItem = new DiaryItem(document.getString("name"), Double.parseDouble(document.getString("amount")), Integer.parseInt(document.getString("kcal")), Double.parseDouble(document.getString("protein")), Double.parseDouble(document.getString("lipid")), Double.parseDouble(document.getString("glucid")), document.getString("unit_type"), document.getString("unit_name"), Integer.parseInt(document.getString("image_id")), Integer.parseInt(document.getString("year")), Integer.parseInt(document.getString("month")), Integer.parseInt(document.getString("day")), Integer.parseInt(document.getString("hour")), Integer.parseInt(document.getString("minute")), Integer.parseInt(document.getString("second")));
+                        String date = makeDateString(Integer.parseInt(document.getString("day")), Integer.parseInt(document.getString("month")), Integer.parseInt(document.getString("year")));
+                        if (date.equals(selectedDate)) {
+                            list_items.add(diaryItem);
                         }
                     }
-                });
+
+                    String[] date = selectedDate.split("/");
+
+                    DiaryItem startItem = new DiaryItem("", 0, 0, 0, 0, 0, "", "", 0, Integer.parseInt(date[2]), Integer.parseInt(date[0]), Integer.parseInt(date[1]), 0, 0, 0);
+
+                    list_items.add(0, startItem);
+
+                    Collections.sort(list_items, new Comparator<DiaryItem>() {
+                        @Override
+                        public int compare(DiaryItem item1, DiaryItem item2) {
+                            LocalTime item1_time = LocalTime.of(item1.getAdding_hour(), item1.getAdding_minute(), item1.getAdding_second());
+                            LocalTime item2_time = LocalTime.of(item2.getAdding_hour(), item2.getAdding_minute(), item2.getAdding_second());
+                            return item1_time.compareTo(item2_time);
+                        }
+                    });
+
+                    setDataUI(list_items);
+                } else {
+                    Log.w("Firestore", "Error getting documents", task.getException());
+                }
+            }
+        });
     }
 }

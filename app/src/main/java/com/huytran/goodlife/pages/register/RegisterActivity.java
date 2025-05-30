@@ -1,7 +1,5 @@
 package com.huytran.goodlife.pages.register;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -15,11 +13,13 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.huytran.goodlife.model.HelperClass;
 import com.huytran.goodlife.R;
+import com.huytran.goodlife.model.HelperClass;
 import com.huytran.goodlife.pages.login.LoginScreenActivity;
 
 import java.util.Calendar;
@@ -47,8 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
         window.setStatusBarColor(getResources().getColor(android.R.color.transparent));
 
         // Set the layout to extend into the status bar
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
@@ -74,7 +73,8 @@ public class RegisterActivity extends AppCompatActivity {
                 name = String.valueOf(editTextName.getText());
                 password = String.valueOf(editTextPassword.getText());
                 email = String.valueOf(editTextMail.getText());
-                if(chose_boy.isChecked()) gender = "Nam"; else gender = "Nu";
+                if (chose_boy.isChecked()) gender = "Nam";
+                else gender = "Nu";
                 HelperClass helperClass = new HelperClass(name, password, email, date, gender, signUpDate);
                 reference.child(name).setValue(helperClass);
 
@@ -129,30 +129,18 @@ public class RegisterActivity extends AppCompatActivity {
 
     // Get Month Format from number to String
     private String getMonthFormat(int month) {
-        if(month == 1)
-            return "JAN";
-        if(month == 2)
-            return "FEB";
-        if(month == 3)
-            return "MAR";
-        if(month == 4)
-            return "APR";
-        if(month == 5)
-            return "MAY";
-        if(month == 6)
-            return "JUN";
-        if(month == 7)
-            return "JUL";
-        if(month == 8)
-            return "AUG";
-        if(month == 9)
-            return "SEP";
-        if(month == 10)
-            return "OCT";
-        if(month == 11)
-            return "NOV";
-        if(month == 12)
-            return "DEC";
+        if (month == 1) return "JAN";
+        if (month == 2) return "FEB";
+        if (month == 3) return "MAR";
+        if (month == 4) return "APR";
+        if (month == 5) return "MAY";
+        if (month == 6) return "JUN";
+        if (month == 7) return "JUL";
+        if (month == 8) return "AUG";
+        if (month == 9) return "SEP";
+        if (month == 10) return "OCT";
+        if (month == 11) return "NOV";
+        if (month == 12) return "DEC";
 
         return "JAN";
     }
@@ -163,8 +151,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     // when user click on login button
-    public void onLoginClick(View view){
+    public void onLoginClick(View view) {
         startActivity(new Intent(this, LoginScreenActivity.class));
-        overridePendingTransition(R.anim.slide_in_left,android.R.anim.slide_out_right);
+        overridePendingTransition(R.anim.slide_in_left, android.R.anim.slide_out_right);
     }
 }

@@ -1,4 +1,5 @@
 package com.huytran.goodlife.pages.notification;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
@@ -23,7 +24,7 @@ import java.util.Map;
 
 public class NotificationReceiverActivity extends BroadcastReceiver {
     private static final String CHANNEL_ID = "scheduled_channel";
-    private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private String name;
 
     @Override
@@ -39,31 +40,22 @@ public class NotificationReceiverActivity extends BroadcastReceiver {
 
         SharedPreferences sp = context.getSharedPreferences("Data", Context.MODE_PRIVATE);
 
-        name = sp.getString("Name",null);
+        name = sp.getString("Name", null);
 
         createNotificationChannel(context);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.mipmap.iconh)
-                .setContentTitle("Bổ sung nước !")
-                .setContentText("Bạn cần bổ xung thêm " + value + " ml nước")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID).setSmallIcon(R.mipmap.iconh).setContentTitle("Bổ sung nước !").setContentText("Bạn cần bổ xung thêm " + value + " ml nước").setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
-        if(id == 1) {
-            WriteDataFireBase("Bổ sung nước !", "Bạn cần bổ xung thêm " + value + " ml nước"
-                    , "6:00", makeDateString(day, month, year));
-        } else if(id == 2) {
-            WriteDataFireBase("Bổ sung nước !", "Bạn cần bổ xung thêm " + value + " ml nước"
-                    , "9:00", makeDateString(day, month, year));
-        } else if(id == 3) {
-            WriteDataFireBase("Bổ sung nước !", "Bạn cần bổ xung thêm " + value + " ml nước"
-                    , "11:00", makeDateString(day, month, year));
-        } else if(id == 4) {
-            WriteDataFireBase("Bổ sung nước !", "Bạn cần bổ xung thêm " + value + " ml nước"
-                    , "14:00", makeDateString(day, month, year));
-        } else if(id == 5) {
-            WriteDataFireBase("Bổ sung nước !", "Bạn cần bổ xung thêm " + value + " ml nước"
-                    , "18:00", makeDateString(day, month, year));
+        if (id == 1) {
+            WriteDataFireBase("Bổ sung nước !", "Bạn cần bổ xung thêm " + value + " ml nước", "6:00", makeDateString(day, month, year));
+        } else if (id == 2) {
+            WriteDataFireBase("Bổ sung nước !", "Bạn cần bổ xung thêm " + value + " ml nước", "9:00", makeDateString(day, month, year));
+        } else if (id == 3) {
+            WriteDataFireBase("Bổ sung nước !", "Bạn cần bổ xung thêm " + value + " ml nước", "11:00", makeDateString(day, month, year));
+        } else if (id == 4) {
+            WriteDataFireBase("Bổ sung nước !", "Bạn cần bổ xung thêm " + value + " ml nước", "14:00", makeDateString(day, month, year));
+        } else if (id == 5) {
+            WriteDataFireBase("Bổ sung nước !", "Bạn cần bổ xung thêm " + value + " ml nước", "18:00", makeDateString(day, month, year));
         }
 
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -93,7 +85,7 @@ public class NotificationReceiverActivity extends BroadcastReceiver {
     }
 
     // Write Data to Cloud Firestone
-    public void WriteDataFireBase(String titleName, String information, String time, String date){
+    public void WriteDataFireBase(String titleName, String information, String time, String date) {
         // Create a new item with all of the data like name, amount, ...
         Map<String, Object> item = new HashMap<>();
         item.put("name", titleName);
@@ -101,19 +93,16 @@ public class NotificationReceiverActivity extends BroadcastReceiver {
         item.put("time", time);
         item.put("date", date);
 
-        firebaseFirestore.collection("GoodLife").document(name).collection("Thông Báo")
-                .add(item)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d("Firestore", "Adding item to database successfully");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("Firestore", "Error adding item to database: ", e);
-                    }
-                });
+        firebaseFirestore.collection("GoodLife").document(name).collection("Thông Báo").add(item).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Log.d("Firestore", "Adding item to database successfully");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w("Firestore", "Error adding item to database: ", e);
+            }
+        });
     }
 }

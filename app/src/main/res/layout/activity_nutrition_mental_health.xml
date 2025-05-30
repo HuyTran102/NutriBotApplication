@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.question_and_answer.NutritionMentalHealthActivity"
+    android:layout_gravity="center"
     android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
-    android:layout_gravity="center"
-    android:keepScreenOn="true">
+    android:keepScreenOn="true"
+    tools:context=".pages.question_and_answer.NutritionMentalHealthActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="#FFFFFF"
-        android:contentInsetLeft="0dp"
         android:contentInsetStart="0dp"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
-        android:contentInsetRight="0dp"
+        android:contentInsetLeft="0dp"
         android:contentInsetEnd="0dp"
-        app:contentInsetRight="0dp"
-        app:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -32,18 +32,18 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back_to_home_button"
             android:background="#FFFFFF"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:src="@drawable/back_to_home_button" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Tình trạng dinh dưỡng"
             android:textColor="#02947B"
             android:textSize="27sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -52,30 +52,30 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#BBBBBB"
-        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/search_guide_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.0"/>
+        app:layout_constraintGuide_percent="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/search_guide_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="1"/>
+        app:layout_constraintGuide_percent="1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/search_guide_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.98"/>
+        app:layout_constraintGuide_percent="0.98" />
 
 
     <ScrollView
@@ -97,18 +97,18 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -129,7 +129,7 @@
                         android:gravity="center_vertical"
                         android:justificationMode="inter_word"
                         android:text="Đáp án: Chế độ ăn cân bằng giúp cải thiện tâm trạng. Thiếu hụt các chất như omega-3, vitamin B và sắt có thể gây mệt mỏi, lo âu hoặc trầm cảm."
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -139,19 +139,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -172,7 +172,7 @@
                         android:gravity="center_vertical"
                         android:justificationMode="inter_word"
                         android:text="Đáp án: Các thực phẩm như chuối, hạnh nhân, sô-cô-la đen, cá hồi và sữa chua có thể giúp cơ thể giảm căng thẳng nhờ cung cấp các chất dinh dưỡng như vitamin B, magie và tryptophan."
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -181,19 +181,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -214,7 +214,7 @@
                         android:gravity="center_vertical"
                         android:justificationMode="inter_word"
                         android:text="Đáp án: Uống nhiều caffeine có thể gây mất ngủ, lo lắng, làm giảm khả năng tập trung. Học sinh nên hạn chế uống nhiều cà phê hoặc trà."
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 

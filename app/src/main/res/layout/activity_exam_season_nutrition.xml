@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.question_and_answer.ExamSeasonNutritionActivity"
+    android:layout_gravity="center"
     android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
-    android:layout_gravity="center"
-    android:keepScreenOn="true">
+    android:keepScreenOn="true"
+    tools:context=".pages.question_and_answer.ExamSeasonNutritionActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="#FFFFFF"
-        android:contentInsetLeft="0dp"
         android:contentInsetStart="0dp"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
-        android:contentInsetRight="0dp"
+        android:contentInsetLeft="0dp"
         android:contentInsetEnd="0dp"
-        app:contentInsetRight="0dp"
-        app:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -32,18 +32,18 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back_to_home_button"
             android:background="#FFFFFF"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:src="@drawable/back_to_home_button" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Dinh dưỡng mùa thi"
             android:textColor="#02947B"
             android:textSize="27sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -52,9 +52,9 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#BBBBBB"
-        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -75,19 +75,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp">
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -116,19 +116,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -158,19 +158,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -191,7 +191,7 @@
                         android:gravity="center_vertical"
                         android:justificationMode="inter_word"
                         android:text="Đáp án: Nên ăn các thực phẩm giàu protein và carbohydrate như trứng, bánh mì ngũ cốc nguyên hạt, sữa hoặc sữa chua để cung cấp năng lượng lâu dài cho não bộ."
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -200,19 +200,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -233,7 +233,7 @@
                         android:gravity="center_vertical"
                         android:justificationMode="inter_word"
                         android:text="Đáp án: Các thực phẩm như cá hồi, quả óc chó, trứng, bơ, việt quất và các loại rau lá xanh giúp tăng cường chức năng não bộ và trí nhớ."
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -243,19 +243,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -267,7 +267,7 @@
                         android:text="Câu hỏi 5: Có nên uống cà phê hoặc nước tăng lực không?"
                         android:textColor="#02AC8F"
                         android:textSize="17sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -285,19 +285,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -327,19 +327,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -360,7 +360,7 @@
                         android:gravity="center_vertical"
                         android:justificationMode="inter_word"
                         android:text="Đáp án: Đồ ngọt chỉ cung cấp năng lượng ngắn hạn, sau đó dễ gây mệt mỏi. Thay vào đó, nên ăn trái cây để cung cấp đường tự nhiên cùng với vitamin."
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -369,19 +369,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -402,7 +402,7 @@
                         android:gravity="center_vertical"
                         android:justificationMode="inter_word"
                         android:text="Đáp án: Không nên ăn đêm thường xuyên vì dễ gây tăng cân và ảnh hưởng đến giấc ngủ. Nếu đói, nên ăn nhẹ các món như sữa chua, chuối hoặc hạt."
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -411,19 +411,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -453,19 +453,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -486,7 +486,7 @@
                         android:gravity="center_vertical"
                         android:justificationMode="inter_word"
                         android:text="Đáp án: Nên chia thành 3 bữa chính và 2 bữa phụ để cung cấp năng lượng liên tục, tránh tình trạng đói hoặc no quá mức."
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -495,19 +495,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -528,7 +528,7 @@
                         android:gravity="center_vertical"
                         android:justificationMode="inter_word"
                         android:text="Đáp án: Các thực phẩm như chuối, sô-cô-la đen, hạnh nhân, và các loại hạt chứa magie giúp giảm căng thẳng. Trà xanh cũng giúp làm dịu tinh thần."
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -537,19 +537,19 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -570,7 +570,7 @@
                         android:gravity="center_vertical"
                         android:justificationMode="inter_word"
                         android:text="Đáp án: Nên ăn các bữa nhẹ chứa protein như sữa chua hoặc hạt. Tránh ăn quá no, uống đủ nước và có thể vận động nhẹ giữa giờ học."
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -579,20 +579,20 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginBottom="80dp">
+                android:layout_marginBottom="80dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -614,7 +614,7 @@
                         android:gravity="center_vertical"
                         android:justificationMode="inter_word"
                         android:text="Đáp án: Ăn bữa sáng đầy đủ với các thực phẩm dễ tiêu hóa như trứng, bánh mì ngũ cốc, chuối và uống nước hoặc sữa. Không nên uống quá nhiều caffeine."
-                        android:textSize="17sp"/>
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 

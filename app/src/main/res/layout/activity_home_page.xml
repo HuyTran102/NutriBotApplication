@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    android:id="@+id/drawer_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.home.HomeActivity"
+    android:layout_gravity="center"
     android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
-    android:layout_gravity="center"
     android:keepScreenOn="true"
+    tools:context=".pages.home.HomeActivity"
     tools:openDrawer="start">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,8 +20,8 @@
             android:id="@+id/diplay_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="5dp"
+            android:gravity="center"
             app:layout_constraintBottom_toTopOf="@id/button_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -272,15 +271,15 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:background="#FFFFFF"
-            android:contentInsetLeft="0dp"
             android:contentInsetStart="0dp"
-            app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp"
-            android:contentInsetRight="0dp"
+            android:contentInsetLeft="0dp"
             android:contentInsetEnd="0dp"
-            app:contentInsetRight="0dp"
-            app:contentInsetEnd="0dp"
+            android:contentInsetRight="0dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -289,21 +288,21 @@
                 android:id="@+id/drawer_menu_button"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
+                android:layout_marginStart="10dp"
                 android:background="@drawable/drawer_menu"
                 android:ems="10"
                 android:gravity="center_vertical"
-                app:backgroundTint="@null"
-                android:layout_marginStart="10dp"/>
+                app:backgroundTint="@null" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NutriBot"
+                android:layout_gravity="center"
                 android:fontFamily="@font/firasans_bolditalic"
+                android:text="NutriBot"
                 android:textColor="#02947B"
                 android:textSize="32sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"/>
+                android:textStyle="bold" />
 
         </androidx.appcompat.widget.Toolbar>
 
@@ -311,9 +310,9 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#BBBBBB"
-            app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
 
         <LinearLayout
             android:id="@+id/button_view"
@@ -374,9 +373,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
                             android:background="#F7FFFFFF"
                             android:text="Dinh dưỡng"
-                            android:layout_marginTop="10dp"
                             android:textAlignment="center"
                             android:textColor="#018B73"
                             android:textSize="16dp"
@@ -392,8 +391,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="18dp"
                     app:cardElevation="4dp"
@@ -424,9 +423,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
                             android:background="#F7FFFFFF"
                             android:text="Khẩu phần"
-                            android:layout_marginTop="10dp"
                             android:textAlignment="center"
                             android:textColor="#018B73"
                             android:textSize="16dp"
@@ -442,8 +441,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="18dp"
                     app:cardElevation="4dp"
@@ -474,9 +473,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
                             android:background="#F7FFFFFF"
                             android:text="Thực đơn"
-                            android:layout_marginTop="10dp"
                             android:textAlignment="center"
                             android:textColor="#018B73"
                             android:textSize="16dp"
@@ -492,9 +491,9 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginStart="10dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -539,9 +538,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
                             android:background="#F7FFFFFF"
                             android:text="Luyện tập"
-                            android:layout_marginTop="10dp"
                             android:textAlignment="center"
                             android:textColor="#018B73"
                             android:textSize="16dp"
@@ -557,8 +556,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="18dp"
                     app:cardElevation="4dp"
@@ -589,9 +588,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
                             android:background="#F7FFFFFF"
                             android:text="Thực đơn mẫu"
-                            android:layout_marginTop="10dp"
                             android:textAlignment="center"
                             android:textColor="#018B73"
                             android:textSize="16dp"
@@ -607,8 +606,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginBottom="10dp"
                     app:cardCornerRadius="18dp"
                     app:cardElevation="4dp"
@@ -639,11 +638,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
                             android:background="#F7FFFFFF"
                             android:text="Nhu cầu nước"
                             android:textAlignment="center"
                             android:textColor="#018B73"
-                            android:layout_marginTop="10dp"
                             android:textSize="16dp"
                             android:textStyle="bold"
                             app:backgroundTint="@null" />
@@ -661,29 +660,29 @@
             android:id="@+id/chat_bot_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:gravity="center_vertical"
             android:src="@drawable/chat_ic"
-            app:backgroundTint="#FFFFFF"
-            app:tint="@null"
-            android:layout_margin="8dp"
-            app:maxImageSize="40dp"
             android:translationZ="10dp"
+            app:backgroundTint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.989"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.998" />
+            app:layout_constraintVertical_bias="0.998"
+            app:maxImageSize="40dp"
+            app:tint="@null" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/nav_view"
+        android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/menu"
-        android:layout_gravity="start"/>
+        app:menu="@menu/menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

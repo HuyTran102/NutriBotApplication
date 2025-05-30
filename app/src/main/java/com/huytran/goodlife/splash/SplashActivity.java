@@ -5,17 +5,11 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +20,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.pages.login.LoginScreenActivity;
-import com.uits.baseproject.widget.PFDialog;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -38,10 +31,10 @@ import java.io.InputStreamReader;
 import java.util.Objects;
 
 public class SplashActivity extends AppCompatActivity {
-    private String filename = "Storage.txt";
     File myInternalFile;
-    private String filepath = "Super_mystery_folder";
     String username_tmp, password_tmp, islogin = "false";
+    private final String filename = "Storage.txt";
+    private final String filepath = "Super_mystery_folder";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +42,7 @@ public class SplashActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash);
 
-        ContextWrapper contextWrapper = new ContextWrapper(
-                getApplicationContext());
+        ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
@@ -111,8 +103,7 @@ public class SplashActivity extends AppCompatActivity {
         try {
             FileInputStream fis = new FileInputStream(myInternalFile);
             DataInputStream in = new DataInputStream(fis);
-            BufferedReader br = new BufferedReader(
-                    new InputStreamReader(in));
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String strLine;
             int i = 1;
             while ((strLine = br.readLine()) != null) {
@@ -122,9 +113,7 @@ public class SplashActivity extends AppCompatActivity {
                 i++;
             }
             in.close();
-            if (islogin.equals("true")) {
-                return true;
-            } else return false;
+            return islogin.equals("true");
         } catch (IOException e) {
             e.printStackTrace();
         }

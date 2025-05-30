@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="5dp"
     android:layout_marginStart="3dp"
-    android:layout_marginEnd="3dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="3dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,14 +15,14 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/spilt_val"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/spilt_val" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@drawable/custom_button"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,17 +32,17 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="5dp">
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp">
 
                 <TextView
                     android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="21:00"
                     android:layout_marginStart="5dp"
+                    android:text="21:00"
                     android:textSize="22sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/name"
@@ -52,7 +52,7 @@
                     android:text="Bổ sung nước !"
                     android:textColor="#099D83"
                     android:textSize="22sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -63,19 +63,19 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginBottom="3dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginBottom="3dp"
                     android:src="@drawable/ic_clock_black" />
 
                 <TextView
                     android:id="@+id/information"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginStart="15dp"
                     android:text="Bạn cần bổ xung thêm 400 ml nước"
-                    android:textSize="22sp"/>
+                    android:textSize="22sp" />
 
             </LinearLayout>
 

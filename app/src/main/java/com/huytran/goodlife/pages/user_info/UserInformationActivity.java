@@ -1,8 +1,5 @@
 package com.huytran.goodlife.pages.user_info;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,7 +28,7 @@ public class UserInformationActivity extends AppCompatActivity {
     private String name, date, gender, email;
     private ImageButton backButton;
     private TextView userName, userGender, userDateOfBirth, userEmail;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +41,7 @@ public class UserInformationActivity extends AppCompatActivity {
         window.setStatusBarColor(getResources().getColor(android.R.color.transparent));
 
         // Set the layout to extend into the status bar
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
@@ -69,11 +67,12 @@ public class UserInformationActivity extends AppCompatActivity {
                 date = snapshot.child(name).child("date_of_birth").getValue(String.class);
                 email = snapshot.child(name).child("email").getValue(String.class);
 
-                if(gender.equals("Nu")) gender = "Nữ";
+                if (gender.equals("Nu")) gender = "Nữ";
                 userGender.setText(gender);
                 userDateOfBirth.setText(makeDateString(date));
                 userEmail.setText(email);
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -91,30 +90,18 @@ public class UserInformationActivity extends AppCompatActivity {
     }
 
     String getNumberMonthFormat(String month) {
-        if (Objects.equals(month, "JAN"))
-            return "1";
-        if (Objects.equals(month, "FEB"))
-            return "2";
-        if (Objects.equals(month, "MAR"))
-            return "3";
-        if (Objects.equals(month, "APR"))
-            return "4";
-        if (Objects.equals(month, "MAY"))
-            return "5";
-        if (Objects.equals(month, "JUN"))
-            return "6";
-        if (Objects.equals(month, "JUL"))
-            return "7";
-        if (Objects.equals(month, "AUG"))
-            return "8";
-        if (Objects.equals(month, "SEP"))
-            return "9";
-        if (Objects.equals(month, "OCT"))
-            return "10";
-        if (Objects.equals(month, "NOV"))
-            return "11";
-        if (Objects.equals(month, "DEC"))
-            return "11";
+        if (Objects.equals(month, "JAN")) return "1";
+        if (Objects.equals(month, "FEB")) return "2";
+        if (Objects.equals(month, "MAR")) return "3";
+        if (Objects.equals(month, "APR")) return "4";
+        if (Objects.equals(month, "MAY")) return "5";
+        if (Objects.equals(month, "JUN")) return "6";
+        if (Objects.equals(month, "JUL")) return "7";
+        if (Objects.equals(month, "AUG")) return "8";
+        if (Objects.equals(month, "SEP")) return "9";
+        if (Objects.equals(month, "OCT")) return "10";
+        if (Objects.equals(month, "NOV")) return "11";
+        if (Objects.equals(month, "DEC")) return "11";
 
         return "1";
     }

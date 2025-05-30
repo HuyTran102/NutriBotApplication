@@ -58,6 +58,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private PFDialog pfDialog;
     private static final String TAG = "ExcelRead";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,7 +106,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 pfDialog.show();
-                if(validUserHeight() && validUserWeight()) {
+                if (validUserHeight() && validUserWeight()) {
                     height = String.valueOf(userHeight.getText());
                     weight = String.valueOf(userWeight.getText());
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user");
@@ -123,7 +124,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
 
                             int monthAge = calculateMonthAge();
 
-                            if(monthAge >= 120 && monthAge <= 228) {
+                            if (monthAge >= 120 && monthAge <= 228) {
 
                                 double BMI = calculateBMI();
 
@@ -137,7 +138,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
 //                                        , String.valueOf(userRecommendHeight[0]), String.valueOf(userRecommendWeight[0]));
                             } else {
                                 Toast.makeText(CalculateNutritionalStatusActivity.this, "Ngày tháng năm sinh không hợp lệ!", Toast.LENGTH_SHORT).show();
-                                
+
                                 bmiStatusView.setText("null");
                                 hfaStatusView.setText("null");
                                 heightView.setText("null");
@@ -172,7 +173,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
     }
 
     // Write Data to Cloud Firestone
-    public void WriteDataFireBase(String userHeight, String userWeight, String userRecommendHeight, String userRecommendWeight){
+    public void WriteDataFireBase(String userHeight, String userWeight, String userRecommendHeight, String userRecommendWeight) {
         // Create a new item with all of the value
         Map<String, Object> item = new HashMap<>();
         item.put("userHeight", userHeight);
@@ -201,7 +202,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
     public Boolean validUserHeight() {
         String height;
         height = String.valueOf(userHeight.getText());
-        if(height.isEmpty()) {
+        if (height.isEmpty()) {
             userHeight.setError("Vui lòng nhập vào chiều cao người dùng!");
             return false;
         } else {
@@ -213,7 +214,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
     public Boolean validUserWeight() {
         String weight;
         weight = String.valueOf(userWeight.getText());
-        if(weight.isEmpty()) {
+        if (weight.isEmpty()) {
             userWeight.setError("Vui lòng nhập vào cân nặng người dùng!");
             return false;
         } else {
@@ -271,7 +272,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
 
         int monthAge = yearDifferent * 12 + monthDifferent;
 
-        if(signInDay < birthDay) {
+        if (signInDay < birthDay) {
             monthAge -= 1;
         }
 
@@ -289,9 +290,9 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
 
     double bmiStatusWarning(String gender, double bmi, int monthAge) {
         String path;
-        if(gender.equals("Nam")) {
+        if (gender.equals("Nam")) {
             path = "bmiBoys.xlsx";
-        } else if(gender.equals("Nu")) {
+        } else if (gender.equals("Nu")) {
             path = "bmiGirls.xlsx";
         } else {
             Toast.makeText(CalculateNutritionalStatusActivity.this, "Không thể cảnh báo tình trạng BMI do giới tính không hợp lệ !", Toast.LENGTH_SHORT).show();
@@ -306,11 +307,11 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
             Sheet sheet = workbook.getSheetAt(0);
 
             double userRecommendWeight = 0;
-            for(int rowIndex = 1; rowIndex <= sheet.getLastRowNum(); rowIndex ++) {
+            for (int rowIndex = 1; rowIndex <= sheet.getLastRowNum(); rowIndex++) {
                 Row row = sheet.getRow(rowIndex);
                 Cell cell = row.getCell(0);
                 int value = (int) cell.getNumericCellValue();
-                if(value == monthAge) {
+                if (value == monthAge) {
                     cell = row.getCell(1);
                     double negativeSD3 = (double) cell.getNumericCellValue();
                     cell = row.getCell(2);
@@ -326,27 +327,27 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                     cell = row.getCell(7);
                     double positiveSD3 = (double) cell.getNumericCellValue();
 
-                    if(bmi > positiveSD3) {
+                    if (bmi > positiveSD3) {
                         bmiAge.setImageResource(R.drawable.ic_close);
                         bmiStatusView.setText("Béo phì");
                         bmiStatusView.setBackground(getResources().getDrawable(R.drawable.back_red));
-                    } else if(positiveSD2 <= bmi && bmi <= positiveSD3) {
+                    } else if (positiveSD2 <= bmi && bmi <= positiveSD3) {
                         bmiAge.setImageResource(R.drawable.ic_close);
                         bmiStatusView.setText("Béo phì");
                         bmiStatusView.setBackground(getResources().getDrawable(R.drawable.back_red));
-                    } else if(positiveSD1 <= bmi && bmi <= positiveSD2) {
+                    } else if (positiveSD1 <= bmi && bmi <= positiveSD2) {
                         bmiAge.setImageResource(R.drawable.ic_close);
                         bmiStatusView.setText("Thừa cân");
                         bmiStatusView.setBackground(getResources().getDrawable(R.drawable.back_red));
-                    } else if(negativeSD2 <= bmi && bmi <= positiveSD1) {
+                    } else if (negativeSD2 <= bmi && bmi <= positiveSD1) {
                         bmiAge.setImageResource(R.drawable.ic_check);
                         bmiStatusView.setText("Bình thường");
                         bmiStatusView.setBackground(getResources().getDrawable(R.drawable.back_green));
-                    } else if(negativeSD3 <= bmi && bmi <= negativeSD2) {
+                    } else if (negativeSD3 <= bmi && bmi <= negativeSD2) {
                         bmiAge.setImageResource(R.drawable.ic_close);
                         bmiStatusView.setText("Gầy còm vừa");
                         bmiStatusView.setBackground(getResources().getDrawable(R.drawable.back_yellow));
-                    } else if(bmi < negativeSD3){
+                    } else if (bmi < negativeSD3) {
                         bmiAge.setImageResource(R.drawable.ic_close);
                         bmiStatusView.setText("Gầy còm nặng");
                         bmiStatusView.setBackground(getResources().getDrawable(R.drawable.back_yellow));
@@ -356,7 +357,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
 
                     String result = "";
 
-                    if(bmi < positiveSD3 && bmi > positiveSD1) {
+                    if (bmi < positiveSD3 && bmi > positiveSD1) {
                         result += "Thừa ";
 
                         double recommendWeight = positiveSD1 * Double.parseDouble(height) * Double.parseDouble(height);
@@ -365,7 +366,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
 
                         double subtrac = Double.parseDouble(weight) - recommendWeight;
 
-                        if(subtrac == 0) {
+                        if (subtrac == 0) {
                             result += "Bình thường!";
 
                             userRecommendWeight = Double.parseDouble(this.weight);
@@ -378,7 +379,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                             weightView.setBackground(getResources().getDrawable(R.drawable.back_red));
                             weightView.setText(result);
                         }
-                    }  else if(negativeSD2 <= bmi && bmi <= positiveSD1) {
+                    } else if (negativeSD2 <= bmi && bmi <= positiveSD1) {
                         result += "Bình thường";
 
                         imgWeightAge.setImageResource(R.drawable.ic_check);
@@ -394,7 +395,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
 
                         double add = Double.parseDouble(weight) - recommendWeight;
 
-                        if(add < 0) {
+                        if (add < 0) {
                             imgWeightAge.setImageResource(R.drawable.ic_close);
                             result += decimalFormat.format(abs(add)) + " (kg)";
                             weightView.setBackground(getResources().getDrawable(R.drawable.back_yellow));
@@ -422,9 +423,9 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
     double heightForAgeStatusWarning(String gender, double height, int monthAge) {
         height *= 100;
         String path;
-        if(gender.equals("Nam")) {
+        if (gender.equals("Nam")) {
             path = "hfaBoys.xlsx";
-        } else if(gender.equals("Nu")) {
+        } else if (gender.equals("Nu")) {
             path = "hfaGirls.xlsx";
         } else {
             Toast.makeText(CalculateNutritionalStatusActivity.this, "Không thể cảnh báo tình trạng BMI do giới tính không hợp lệ !", Toast.LENGTH_SHORT).show();
@@ -439,11 +440,11 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
             Sheet sheet = workbook.getSheetAt(0);
 
             double userRecommendHeight = 0;
-            for(int rowIndex = 1; rowIndex <= sheet.getLastRowNum(); rowIndex ++) {
+            for (int rowIndex = 1; rowIndex <= sheet.getLastRowNum(); rowIndex++) {
                 Row row = sheet.getRow(rowIndex);
                 Cell cell = row.getCell(0);
                 int value = (int) cell.getNumericCellValue();
-                if(value == monthAge) {
+                if (value == monthAge) {
                     cell = row.getCell(1);
                     double negativeSD3 = (double) cell.getNumericCellValue();
                     cell = row.getCell(2);
@@ -459,27 +460,27 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                     cell = row.getCell(7);
                     double positiveSD3 = (double) cell.getNumericCellValue();
 
-                    if(height > positiveSD3) {
+                    if (height > positiveSD3) {
                         heightAge.setImageResource(R.drawable.ic_close);
                         hfaStatusView.setBackground(getResources().getDrawable(R.drawable.back_red));
                         hfaStatusView.setText("Béo phì");
-                    } else if(positiveSD2 <= height && height <= positiveSD3) {
+                    } else if (positiveSD2 <= height && height <= positiveSD3) {
                         heightAge.setImageResource(R.drawable.ic_check);
                         hfaStatusView.setBackground(getResources().getDrawable(R.drawable.back_green));
                         hfaStatusView.setText("Bình thường");
-                    } else if(positiveSD1 <= height && height <= positiveSD2) {
+                    } else if (positiveSD1 <= height && height <= positiveSD2) {
                         heightAge.setImageResource(R.drawable.ic_check);
                         hfaStatusView.setBackground(getResources().getDrawable(R.drawable.back_green));
                         hfaStatusView.setText("Bình thường");
-                    } else if(negativeSD2 <= height && height <= positiveSD1) {
+                    } else if (negativeSD2 <= height && height <= positiveSD1) {
                         heightAge.setImageResource(R.drawable.ic_check);
                         hfaStatusView.setBackground(getResources().getDrawable(R.drawable.back_green));
                         hfaStatusView.setText("Bình thường");
-                    } else if(negativeSD3 <= height && height <= negativeSD2) {
+                    } else if (negativeSD3 <= height && height <= negativeSD2) {
                         heightAge.setImageResource(R.drawable.ic_close);
                         hfaStatusView.setBackground(getResources().getDrawable(R.drawable.back_yellow));
                         hfaStatusView.setText("Thấp còi vừa");
-                    } else if(height < negativeSD3){
+                    } else if (height < negativeSD3) {
                         heightAge.setImageResource(R.drawable.ic_close);
                         hfaStatusView.setBackground(getResources().getDrawable(R.drawable.back_yellow));
                         hfaStatusView.setText("Thấp còi nặng");
@@ -489,7 +490,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
 
                     String result = "";
 
-                    if(height > positiveSD3 && height >= positiveSD1) {
+                    if (height > positiveSD3 && height >= positiveSD1) {
                         result += "Thừa ";
 
                         double subtrac = height - positiveSD1;
@@ -500,7 +501,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                         result += decimalFormat.format(subtrac) + " (cm)";
                         heightView.setBackground(getResources().getDrawable(R.drawable.back_red));
                         heightView.setText(result);
-                    }  else if(negativeSD2 <= height && height <= positiveSD3) {
+                    } else if (negativeSD2 <= height && height <= positiveSD3) {
                         result += "Bình thường";
 
                         imgHeightAge.setImageResource(R.drawable.ic_check);

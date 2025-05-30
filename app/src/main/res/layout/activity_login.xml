@@ -2,15 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.login.LoginScreenActivity"
     android:layout_gravity="center"
     android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
     android:gravity="center"
     android:keepScreenOn="true"
-    style="@style/AppTheme">
+    tools:context=".pages.login.LoginScreenActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,8 +37,8 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:text="Đăng nhập \n tài khoản"
-                    android:textStyle="bold"
-                    android:textColor="#02947B"/>
+                    android:textColor="#02947B"
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -51,28 +51,28 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputEmail"
+                style="@style/CustomTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/CustomTextInputLayout"
                 android:layout_marginTop="@dimen/loginViewsMargin">
 
                 <EditText
                     android:id="@+id/editEditTextMail"
                     style="@style/modifiedEditText"
                     android:hint="Tên"
-                    android:textStyle="bold"
-                    android:textSize="16dp"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
                     android:textColor="#9E9D9D"
                     android:textColorHint="#9E9D9D"
-                    android:inputType="textPersonName"
-                    android:maxLines="1" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputPassword"
+                style="@style/CustomTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/CustomTextInputLayout"
                 android:layout_marginTop="@dimen/loginViewsMargin"
                 app:passwordToggleEnabled="true">
 
@@ -80,12 +80,12 @@
                     android:id="@+id/editTextPassword"
                     style="@style/modifiedEditText"
                     android:hint="Mật khẩu"
-                    android:textStyle="bold"
-                    android:textSize="16dp"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
                     android:textColor="#9E9D9D"
                     android:textColorHint="#9E9D9D"
-                    android:inputType="textPassword"
-                    android:maxLines="1" />
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -123,8 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:gravity="center"
-                android:weightSum="12">
-            </LinearLayout>
+                android:weightSum="12"></LinearLayout>
         </LinearLayout>
     </ScrollView>
 

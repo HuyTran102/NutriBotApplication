@@ -2,6 +2,10 @@ package com.huytran.goodlife.fragment;
 
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,15 +14,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.huytran.goodlife.pages.dietary.DietaryActivity;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.adapter.ViewAdapter;
 import com.huytran.goodlife.model.Item;
+import com.huytran.goodlife.pages.dietary.DietaryActivity;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -33,11 +32,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class DrinksFragment extends Fragment {
+    private static final String TAG = "ExcelRead";
     private RecyclerView recyclerView;
-    private List<Item> items = new ArrayList<>();
+    private final List<Item> items = new ArrayList<>();
     private SearchView searchView;
     private ViewAdapter viewAdapter;
-    private static final String TAG = "ExcelRead";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -77,35 +76,35 @@ public class DrinksFragment extends Fragment {
 
             int imageNameIndex = 4000;
 
-            for(int rowIndex = 0; rowIndex < sheet.getPhysicalNumberOfRows() - 1; rowIndex ++) {
+            for (int rowIndex = 0; rowIndex < sheet.getPhysicalNumberOfRows() - 1; rowIndex++) {
                 Row row = sheet.getRow(rowIndex);
                 Cell cell = row.getCell(1);
                 String name = cell.getStringCellValue();
                 cell = row.getCell(2);
                 int kcal = (int) cell.getNumericCellValue();
                 cell = row.getCell(3);
-                double protein = (double) cell.getNumericCellValue();
+                double protein = cell.getNumericCellValue();
                 cell = row.getCell(4);
-                double lipid = (double) cell.getNumericCellValue();
+                double lipid = cell.getNumericCellValue();
                 cell = row.getCell(5);
-                double glucid = (double) cell.getNumericCellValue();
+                double glucid = cell.getNumericCellValue();
                 cell = row.getCell(6);
                 int unit = (int) cell.getNumericCellValue();
 
-                if(imageNameIndex <= 4125) {
-                    imageNameIndex ++;
+                if (imageNameIndex <= 4125) {
+                    imageNameIndex++;
                 }
 
                 String i_name = "n" + imageNameIndex;
 
                 String unit_type;
-                if(unit == 0) {
+                if (unit == 0) {
                     unit_type = "(g)";
                 } else {
                     unit_type = "(ml)";
                 }
 
-                if(this.getResources().getIdentifier(i_name, "drawable", getActivity().getPackageName()) == 0) {
+                if (this.getResources().getIdentifier(i_name, "drawable", getActivity().getPackageName()) == 0) {
                     items.add(new Item(String.valueOf(name), R.drawable.noimageavailable, kcal, protein, lipid, glucid, unit_type));
                 } else {
                     items.add(new Item(String.valueOf(name), this.getResources().getIdentifier(i_name, "drawable", getActivity().getPackageName()), kcal, protein, lipid, glucid, unit_type));
@@ -157,8 +156,8 @@ public class DrinksFragment extends Fragment {
 
     void findData(String name) {
         List<Item> list = new ArrayList<>();
-        for(Item data : items) {
-            if(data.getName().toLowerCase().contains(name.toLowerCase())) {
+        for (Item data : items) {
+            if (data.getName().toLowerCase().contains(name.toLowerCase())) {
                 list.add(data);
             }
         }

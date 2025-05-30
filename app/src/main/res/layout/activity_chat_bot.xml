@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.chat_bot.ChatBotActivity"
+    android:layout_gravity="center"
     android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
-    android:layout_gravity="center"
-    android:keepScreenOn="true">
+    android:keepScreenOn="true"
+    tools:context=".pages.chat_bot.ChatBotActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -87,13 +87,13 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="20dp"
-                android:layout_marginTop="30dp"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
-                android:padding="8dp">
+                android:padding="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="20dp">
 
                 <!-- Input area -->
                 <LinearLayout

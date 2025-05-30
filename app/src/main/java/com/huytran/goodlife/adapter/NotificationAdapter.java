@@ -9,8 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.huytran.goodlife.pages.notification.NotificationDataActivity;
 import com.huytran.goodlife.R;
+import com.huytran.goodlife.pages.notification.NotificationDataActivity;
 
 import java.util.List;
 

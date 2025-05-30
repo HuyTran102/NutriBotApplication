@@ -4,26 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pages.user_info.UserInformationActivity"
+    android:layout_gravity="center"
     android:background="@drawable/bg_gradient"
     android:focusableInTouchMode="true"
-    android:layout_gravity="center"
-    android:keepScreenOn="true">
+    android:keepScreenOn="true"
+    tools:context=".pages.user_info.UserInformationActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:background="#FFFFFF"
-        android:contentInsetLeft="0dp"
         android:contentInsetStart="0dp"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp"
-        android:contentInsetRight="0dp"
+        android:contentInsetLeft="0dp"
         android:contentInsetEnd="0dp"
-        app:contentInsetRight="0dp"
-        app:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -32,9 +32,9 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back_to_home_button"
             android:background="#FFFFFF"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:src="@drawable/back_to_home_button" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -42,17 +42,17 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#BBBBBB"
-        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_marginTop="65dp"
         android:gravity="center_horizontal"
-        android:padding="24dp"
-        android:layout_marginTop="65dp">
+        android:orientation="vertical"
+        android:padding="24dp">
 
         <!-- Avatar Icon -->
         <ImageView
@@ -60,27 +60,27 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="55dp"
-            android:src="@drawable/ic_user"
-            android:contentDescription="User Icon" />
+            android:contentDescription="User Icon"
+            android:src="@drawable/ic_user" />
 
         <!-- Username -->
         <TextView
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:text="Huy4"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp" />
+            android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="35dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginTop="35dp">
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
             <!-- Info Box 1: Giới tính -->
             <LinearLayout
@@ -92,21 +92,21 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="start"
                     android:paddingStart="4dp"
                     android:text="Giới tính"
-                    android:textSize="16sp"
                     android:textColor="#555555"
-                    android:gravity="start" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/user_gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="start"
                     android:paddingStart="4dp"
                     android:text="Nam"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:gravity="start" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -114,11 +114,11 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginTop="45dp">
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
             <!-- Info Box 2: Ngày sinh -->
             <LinearLayout
@@ -130,21 +130,21 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="start"
                     android:paddingStart="4dp"
                     android:text="Ngày tháng năm sinh"
-                    android:textSize="16sp"
                     android:textColor="#555555"
-                    android:gravity="start" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/user_date_of_birth"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="start"
                     android:paddingStart="4dp"
                     android:text="5/6/2011"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:gravity="start" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -152,11 +152,11 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="5dp"
-            android:layout_marginTop="45dp">
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
             <!-- Info Box 3: Email -->
             <LinearLayout
@@ -168,21 +168,21 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="start"
                     android:paddingStart="4dp"
                     android:text="Email"
-                    android:textSize="16sp"
                     android:textColor="#555555"
-                    android:gravity="start" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/user_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="start"
                     android:paddingStart="4dp"
                     android:text="giahuysaidepchieu@gmail.com"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:gravity="start" />
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

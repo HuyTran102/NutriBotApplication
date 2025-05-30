@@ -1,14 +1,5 @@
 package com.huytran.goodlife.pages.home;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -21,7 +12,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,10 +22,14 @@ import android.view.animation.Animation;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -51,25 +45,25 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.huytran.goodlife.pages.contact.ContactSupportTeamActivity;
-import com.huytran.goodlife.pages.contact.ContactWithNutritionistActivity;
-import com.huytran.goodlife.pages.physical.PhysicalActivity;
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.pages.scanner.ScannerActivity;
-import com.huytran.goodlife.pages.template_menu.TemplateMenuActivity;
-import com.huytran.goodlife.pages.user_info.UserInformationActivity;
-import com.huytran.goodlife.pages.water_demand.WaterDemandActivity;
 import com.huytran.goodlife.pages.about_us.AboutUsActivity;
 import com.huytran.goodlife.pages.app_ranking.AppRankingActivity;
 import com.huytran.goodlife.pages.calculate_nutritional_status.CalculateNutritionalStatusActivity;
 import com.huytran.goodlife.pages.chat_bot.ChatBotActivity;
+import com.huytran.goodlife.pages.contact.ContactSupportTeamActivity;
+import com.huytran.goodlife.pages.contact.ContactWithNutritionistActivity;
 import com.huytran.goodlife.pages.dietary.DietaryActivity;
 import com.huytran.goodlife.pages.login.LoginScreenActivity;
 import com.huytran.goodlife.pages.notification.NotificationActivity;
 import com.huytran.goodlife.pages.notification.NotificationReceiverActivity;
+import com.huytran.goodlife.pages.physical.PhysicalActivity;
 import com.huytran.goodlife.pages.question_and_answer.QuestionAndAnswerActivity;
 import com.huytran.goodlife.pages.recommend_menu.RecommendMenuActivity;
+import com.huytran.goodlife.pages.scanner.ScannerActivity;
+import com.huytran.goodlife.pages.template_menu.TemplateMenuActivity;
 import com.huytran.goodlife.pages.tracking_diagram.TrackingDiagramActivity;
+import com.huytran.goodlife.pages.user_info.UserInformationActivity;
+import com.huytran.goodlife.pages.water_demand.WaterDemandActivity;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -78,7 +72,9 @@ import java.text.DecimalFormat;
 import java.util.Calendar;
 
 public class HomeActivity extends AppCompatActivity {
-    private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    public Boolean ok1 = false, ok2 = false, ok3 = false;
+    File myInternalFile;
+    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private Button drawerMenuButton;
     private FloatingActionButton chatBotButton;
     private CardView nutritionalStatusButton, physicalButton, dietaryButton, tempMenuButton, recommendMenuButton, waterDemandButton;
@@ -87,14 +83,12 @@ public class HomeActivity extends AppCompatActivity {
     private int weight, height, kcalo;
     private String weight_status, height_status, energy_status;
     private String name;
-    public Boolean ok1 = false, ok2 = false, ok3 = false;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private View footerView;
-    private String filename = "Storage.txt";
-    File myInternalFile;
-    private String filepath = "Super_mystery_folder";
-    private String appLink = "https://play.google.com/store/apps/details?id=com.huytran.goodlifes";
+    private final String filename = "Storage.txt";
+    private final String filepath = "Super_mystery_folder";
+    private final String appLink = "https://play.google.com/store/apps/details?id=com.huytran.goodlifes";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,8 +102,7 @@ public class HomeActivity extends AppCompatActivity {
         window.setStatusBarColor(getResources().getColor(android.R.color.transparent));
 
         // Set the layout to extend into the status bar
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
@@ -136,8 +129,7 @@ public class HomeActivity extends AppCompatActivity {
         drawerMenuButton.bringToFront();
 
         drawerMenuButton.setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
-        ContextWrapper contextWrapper = new ContextWrapper(
-                getApplicationContext());
+        ContextWrapper contextWrapper = new ContextWrapper(getApplicationContext());
         File directory = contextWrapper.getDir(filepath, Context.MODE_PRIVATE);
         myInternalFile = new File(directory, filename);
         drawerLayout.addDrawerListener(new DrawerLayout.DrawerListener() {
@@ -165,12 +157,9 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        ScaleAnimation bounceAnim = new ScaleAnimation(
-                0.7f, 1.1f,  // X scale from 70% to 110%
+        ScaleAnimation bounceAnim = new ScaleAnimation(0.7f, 1.1f,  // X scale from 70% to 110%
                 0.7f, 1.1f,  // Y scale
-                Animation.RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF, 0.5f
-        );
+                Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 
         bounceAnim.setDuration(800); // slower for more visible bounce
         bounceAnim.setRepeatMode(Animation.REVERSE); // Reverse to shrink back
@@ -184,17 +173,15 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        chatBotButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        chatBotButton.startAnimation(bounceAnim);
-                        Intent intent = new Intent(HomeActivity.this, ChatBotActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                }
-        );
+        chatBotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chatBotButton.startAnimation(bounceAnim);
+                Intent intent = new Intent(HomeActivity.this, ChatBotActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         try {
             PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
@@ -363,22 +350,18 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, NotificationReceiverActivity.class);
         intent.putExtra("EXTRA_VALUE", value);
         intent.putExtra("EXTRA_ID", id);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                this, id, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, id, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         if (alarmManager != null) {
-            alarmManager.setExactAndAllowWhileIdle(
-                    AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
         }
     }
 
     // Load Data to Recycle Item
     public void LoadDataFireBase() {
         // Task 1: Lấy dữ liệu từ Firestore cho "Dinh dưỡng"
-        Task<QuerySnapshot> nutritionTask = firebaseFirestore.collection("GoodLife")
-                .document(name).collection("Dinh dưỡng")
-                .get();
+        Task<QuerySnapshot> nutritionTask = firebaseFirestore.collection("GoodLife").document(name).collection("Dinh dưỡng").get();
 
         // Task 2: Lấy dữ liệu từ Firebase Realtime Database
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user");
@@ -434,106 +417,91 @@ public class HomeActivity extends AppCompatActivity {
         int day = cal.get(Calendar.DAY_OF_MONTH);
 
         // Task 3: Lấy dữ liệu từ Firestore cho "Hoạt động thể lực"
-        Task<QuerySnapshot> activityTask = firebaseFirestore.collection("GoodLife")
-                .document(name).collection("Hoạt động thể lực")
-                .whereEqualTo("year", String.valueOf(year))
-                .whereEqualTo("month", String.valueOf(month))
-                .whereEqualTo("day", String.valueOf(day))
-                .get();
+        Task<QuerySnapshot> activityTask = firebaseFirestore.collection("GoodLife").document(name).collection("Hoạt động thể lực").whereEqualTo("year", String.valueOf(year)).whereEqualTo("month", String.valueOf(month)).whereEqualTo("day", String.valueOf(day)).get();
 
         // Task 4: Lấy dữ liệu từ Firestore cho "Nhật kí"
-        Task<QuerySnapshot> diaryTask = firebaseFirestore.collection("GoodLife")
-                .document(name)
-                .collection("Nhật kí")
-                .whereEqualTo("year", String.valueOf(year))
-                .whereEqualTo("month", String.valueOf(month))
-                .whereEqualTo("day", String.valueOf(day))
-                .get();
+        Task<QuerySnapshot> diaryTask = firebaseFirestore.collection("GoodLife").document(name).collection("Nhật kí").whereEqualTo("year", String.valueOf(year)).whereEqualTo("month", String.valueOf(month)).whereEqualTo("day", String.valueOf(day)).get();
 
         // Chờ cho tất cả các Task hoàn thành
-        Tasks.whenAll(nutritionTask, realtimeDatabaseTask.getTask(), activityTask, diaryTask)
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        // Task 1: Xử lý kết quả của Nutrition task
-                        QuerySnapshot nutritionResult = nutritionTask.getResult();
-                        if (nutritionResult != null) {
-                            for (QueryDocumentSnapshot document : nutritionResult) {
-                                if (document.getString("userHeight") != null
-                                        && document.getString("userWeight") != null
-                                        && document.getString("userRecommendHeight") != null
-                                        && document.getString("userRecommendWeight") != null) {
-                                    try {
-                                        actualHeight = Double.parseDouble(document.getString("userHeight"));
-                                    } catch (Exception e) {
-                                        actualHeight = 0.0;
-                                    }
+        Tasks.whenAll(nutritionTask, realtimeDatabaseTask.getTask(), activityTask, diaryTask).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                // Task 1: Xử lý kết quả của Nutrition task
+                QuerySnapshot nutritionResult = nutritionTask.getResult();
+                if (nutritionResult != null) {
+                    for (QueryDocumentSnapshot document : nutritionResult) {
+                        if (document.getString("userHeight") != null && document.getString("userWeight") != null && document.getString("userRecommendHeight") != null && document.getString("userRecommendWeight") != null) {
+                            try {
+                                actualHeight = Double.parseDouble(document.getString("userHeight"));
+                            } catch (Exception e) {
+                                actualHeight = 0.0;
+                            }
 
-                                    try {
-                                        actualWeight = Double.parseDouble(document.getString("userWeight"));
-                                    } catch (Exception e) {
-                                        actualWeight = 0.0;
-                                    }
+                            try {
+                                actualWeight = Double.parseDouble(document.getString("userWeight"));
+                            } catch (Exception e) {
+                                actualWeight = 0.0;
+                            }
 
-                                    try {
-                                        recommendHeight = Double.parseDouble(document.getString("userRecommendHeight"));
-                                    } catch (Exception e) {
-                                        recommendHeight = 0.0;
-                                    }
+                            try {
+                                recommendHeight = Double.parseDouble(document.getString("userRecommendHeight"));
+                            } catch (Exception e) {
+                                recommendHeight = 0.0;
+                            }
 
-                                    try {
-                                        recommendWeight = Double.parseDouble(document.getString("userRecommendWeight"));
-                                    } catch (Exception e) {
-                                        recommendWeight = 0.0;
-                                    }
-                                }
+                            try {
+                                recommendWeight = Double.parseDouble(document.getString("userRecommendWeight"));
+                            } catch (Exception e) {
+                                recommendWeight = 0.0;
                             }
                         }
-
-                        recommendEnergy = recommendWeight * 24 * 1.5;
-
-                        // Toast.makeText(this, " " + recommendWeight + " ", Toast.LENGTH_SHORT).show();
-
-                        // Task 3: Xử lý kết quả của Activity task
-                        QuerySnapshot activityResult = activityTask.getResult();
-                        if (activityResult != null) {
-                            double total_sum = 0;
-                            for (QueryDocumentSnapshot document : activityResult) {
-                                String amount = document.getString("userUsedEnergy");
-                                if (amount != null && !amount.isEmpty()) {
-                                    try {
-                                        total_sum += Double.parseDouble(amount);
-                                    } catch (NumberFormatException e) {
-                                        Log.w("Firestore", "Error parsing used energy", e);
-                                    }
-                                }
-                            }
-                            usedEnergy = total_sum;
-
-                            recommendEnergy = recommendWeight * 24 * 1.5 + usedEnergy;
-                        }
-
-                        // Task 4: Xử lý kết quả của Diary task
-                        QuerySnapshot diaryResult = diaryTask.getResult();
-                        if (diaryResult != null) {
-                            double total_sum = 0;
-                            for (QueryDocumentSnapshot document : diaryResult) {
-                                String amount = document.getString("kcal");
-                                if (amount != null && !amount.isEmpty()) {
-                                    try {
-                                        total_sum += Double.parseDouble(amount);
-                                    } catch (NumberFormatException e) {
-                                        Log.w("Firestore", "Error parsing diary energy", e);
-                                    }
-                                }
-                            }
-                            addEnergy = total_sum;
-                        }
-                        setWeightAndHeight();
-                        Log.d("Firestore", "All tasks completed successfully");
-                    } else {
-                        Log.w("Firestore", "Error completing tasks", task.getException());
                     }
-                });
+                }
+
+                recommendEnergy = recommendWeight * 24 * 1.5;
+
+                // Toast.makeText(this, " " + recommendWeight + " ", Toast.LENGTH_SHORT).show();
+
+                // Task 3: Xử lý kết quả của Activity task
+                QuerySnapshot activityResult = activityTask.getResult();
+                if (activityResult != null) {
+                    double total_sum = 0;
+                    for (QueryDocumentSnapshot document : activityResult) {
+                        String amount = document.getString("userUsedEnergy");
+                        if (amount != null && !amount.isEmpty()) {
+                            try {
+                                total_sum += Double.parseDouble(amount);
+                            } catch (NumberFormatException e) {
+                                Log.w("Firestore", "Error parsing used energy", e);
+                            }
+                        }
+                    }
+                    usedEnergy = total_sum;
+
+                    recommendEnergy = recommendWeight * 24 * 1.5 + usedEnergy;
+                }
+
+                // Task 4: Xử lý kết quả của Diary task
+                QuerySnapshot diaryResult = diaryTask.getResult();
+                if (diaryResult != null) {
+                    double total_sum = 0;
+                    for (QueryDocumentSnapshot document : diaryResult) {
+                        String amount = document.getString("kcal");
+                        if (amount != null && !amount.isEmpty()) {
+                            try {
+                                total_sum += Double.parseDouble(amount);
+                            } catch (NumberFormatException e) {
+                                Log.w("Firestore", "Error parsing diary energy", e);
+                            }
+                        }
+                    }
+                    addEnergy = total_sum;
+                }
+                setWeightAndHeight();
+                Log.d("Firestore", "All tasks completed successfully");
+            } else {
+                Log.w("Firestore", "Error completing tasks", task.getException());
+            }
+        });
     }
 
 
@@ -599,19 +567,19 @@ public class HomeActivity extends AppCompatActivity {
         }
         decimalFormat = new DecimalFormat("0");
 
-        weightProgressText.setText(String.valueOf(decimalFormat.format(actualWeight) + " / " + decimalFormat.format(recommendWeight)));
+        weightProgressText.setText(decimalFormat.format(actualWeight) + " / " + decimalFormat.format(recommendWeight));
 
         weightView.setText(weight_status);
 
         if (recommendHeight == 0) {
-            heightProgressText.setText(String.valueOf(decimalFormat.format(actualHeight) + " / " + decimalFormat.format(actualHeight)));
+            heightProgressText.setText(decimalFormat.format(actualHeight) + " / " + decimalFormat.format(actualHeight));
         } else {
-            heightProgressText.setText(String.valueOf(decimalFormat.format(actualHeight) + " / " + decimalFormat.format(recommendHeight)));
+            heightProgressText.setText(decimalFormat.format(actualHeight) + " / " + decimalFormat.format(recommendHeight));
         }
 
         heightView.setText(height_status);
 
-        kcaloProgressText.setText(String.valueOf(decimalFormat.format(actualEnergy) + " / " + decimalFormat.format(recommendEnergy)));
+        kcaloProgressText.setText(decimalFormat.format(actualEnergy) + " / " + decimalFormat.format(recommendEnergy));
 
         kcaloView.setText(energy_status);
 
@@ -620,25 +588,25 @@ public class HomeActivity extends AppCompatActivity {
     public void setNullValue() {
 
         if (recommendWeight == 0) {
-            weightProgressText.setText(String.valueOf(weight + " / " + 0));
+            weightProgressText.setText(weight + " / " + 0);
         } else {
-            weightProgressText.setText(String.valueOf(weight + " / " + 0));
+            weightProgressText.setText(weight + " / " + 0);
         }
 
         weightView.setText("Chưa Nhập");
 
         if (recommendHeight == 0) {
-            heightProgressText.setText(String.valueOf(height + " / " + 0));
+            heightProgressText.setText(height + " / " + 0);
         } else {
-            heightProgressText.setText(String.valueOf(height + " / " + 0));
+            heightProgressText.setText(height + " / " + 0);
         }
 
         heightView.setText("Chưa nhập");
 
         if (recommendEnergy == 0) {
-            kcaloProgressText.setText(String.valueOf(kcalo + " / " + 0));
+            kcaloProgressText.setText(kcalo + " / " + 0);
         } else {
-            kcaloProgressText.setText(String.valueOf(kcalo + " / " + 0));
+            kcaloProgressText.setText(kcalo + " / " + 0);
         }
 
         kcaloView.setText("Chưa nhập");

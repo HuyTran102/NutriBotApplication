@@ -14,31 +14,31 @@ public class VPAdapter extends FragmentPagerAdapter {
     private final ArrayList<String> fragmentTitle = new ArrayList<>();
 
     public VPAdapter(@NonNull FragmentManager fm, int behavior) {
-        
+
         super(fm, behavior);
-        
+
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        
+
         return fragmentArrayList.get(position);
-        
+
     }
 
     @Override
     public int getCount() {
-        
+
         return fragmentArrayList.size();
-        
+
     }
 
     public void addFragment(Fragment fragment, String title) {
-        
+
         fragmentArrayList.add(fragment);
         fragmentTitle.add(title);
-        
+
     }
 
     @Nullable

@@ -7,10 +7,7 @@ public class DiaryItem {
     public int adding_year, adding_month, adding_day, adding_hour, adding_minute, adding_second;
     public double amount, protein, lipid, glucid;
 
-    public DiaryItem(String name, double amount, int kcal,  double protein
-            , double lipid, double glucid, String unit_type, String unit_name
-            , int image, int adding_year, int adding_month, int adding_day
-            , int adding_hour, int adding_minute, int adding_second) {
+    public DiaryItem(String name, double amount, int kcal, double protein, double lipid, double glucid, String unit_type, String unit_name, int image, int adding_year, int adding_month, int adding_day, int adding_hour, int adding_minute, int adding_second) {
         this.name = name;
         this.amount = amount;
         this.kcal = kcal;
