@@ -102,8 +102,8 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
         resultButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pfDialog.show();
                 if(validUserHeight() && validUserWeight()) {
+                    pfDialog.show();
                     height = String.valueOf(userHeight.getText());
                     weight = String.valueOf(userWeight.getText());
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user");
