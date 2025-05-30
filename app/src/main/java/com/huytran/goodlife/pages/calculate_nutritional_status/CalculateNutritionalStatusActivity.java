@@ -2,9 +2,6 @@ package com.huytran.goodlife.pages.calculate_nutritional_status;
 
 import static java.lang.Math.abs;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -23,6 +20,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
@@ -33,8 +33,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.R;
+import com.huytran.goodlife.pages.home.HomeActivity;
 import com.uits.baseproject.widget.PFDialog;
 import com.uits.baseproject.widget.PFLoadingDialog;
 
@@ -53,15 +53,16 @@ import java.util.Map;
 import java.util.Objects;
 
 public class CalculateNutritionalStatusActivity extends AppCompatActivity {
+    private static final String TAG = "ExcelRead";
     private Button resultButton;
     private ImageButton backButton;
     private TextInputEditText userHeight, userWeight;
     private String name, signInDate, gender, password, date, height, weight;
     private TextView bmiStatusView, hfaStatusView, heightView, weightView;
     private ImageView bmiAge, heightAge, imgWeightAge, imgHeightAge;
-    private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private PFDialog pfDialog;
-    private static final String TAG = "ExcelRead";
+    private final boolean changeUnvalidDate = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +76,7 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
         window.setStatusBarColor(getResources().getColor(android.R.color.transparent));
 
         // Set the layout to extend into the status bar
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE |
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
@@ -135,8 +135,8 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                                 userRecommendWeight[0] = bmiStatusWarning(gender, BMI, monthAge);
 
                                 userRecommendHeight[0] = heightForAgeStatusWarning(gender, Double.parseDouble(height), monthAge);
-                            } else {
 
+                            } else {
                                 Toast toast = Toast.makeText(CalculateNutritionalStatusActivity.this, "Ngày tháng năm sinh không hợp lệ! Vui lòng nhập lại!", Toast.LENGTH_SHORT);
                                 toast.show();
 
@@ -145,32 +145,27 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                                 // Get the current date
                                 Calendar cal = Calendar.getInstance();
 
-                                DatePickerDialog datePickerDialog = new DatePickerDialog(
-                                        CalculateNutritionalStatusActivity.this,
-                                        AlertDialog.THEME_HOLO_LIGHT,
-                                        (view1, year, month, dayOfMonth) -> {
-                                            String selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
+                                DatePickerDialog datePickerDialog = new DatePickerDialog(CalculateNutritionalStatusActivity.this, AlertDialog.THEME_HOLO_LIGHT, (view1, year, month, dayOfMonth) -> {
+                                    String selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year;
 
-                                            reference.child(name).child("date_of_birth").setValue(selectedDate)
-                                                    .addOnCompleteListener(task -> {
-                                                        if (task.isSuccessful()) {
-                                                            Toast.makeText(CalculateNutritionalStatusActivity.this, "Đã cập nhật ngày sinh!", Toast.LENGTH_SHORT).show();
+                                    reference.child(name).child("date_of_birth").setValue(selectedDate).addOnCompleteListener(task -> {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(CalculateNutritionalStatusActivity.this, "Đã cập nhật ngày sinh!", Toast.LENGTH_SHORT).show();
 
-                                                            resultButton.performClick();
-                                                        } else {
-                                                            Toast.makeText(CalculateNutritionalStatusActivity.this, "Lỗi khi cập nhật ngày sinh!", Toast.LENGTH_SHORT).show();
-                                                            pfDialog.dismiss();
-                                                        }
-                                                    });
-                                        },
-                                        cal.get(Calendar.YEAR),
-                                        cal.get(Calendar.MONTH),
-                                        cal.get(Calendar.DAY_OF_MONTH)
-                                );
+                                            resultButton.performClick();
+                                        } else {
+                                            Toast.makeText(CalculateNutritionalStatusActivity.this, "Lỗi khi cập nhật ngày sinh!", Toast.LENGTH_SHORT).show();
+                                            pfDialog.dismiss();
+                                        }
+                                    });
+                                }, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
                                 datePickerDialog.getDatePicker().setCalendarViewShown(false);
                                 datePickerDialog.getDatePicker().setSpinnersShown(true);
                                 datePickerDialog.show();
                             }
+
+                            WriteDataFireBase(String.valueOf(userActualHeight[0]), String.valueOf(userActualWeight[0]), String.valueOf(userRecommendHeight[0]), String.valueOf(userRecommendWeight[0]));
+
                             pfDialog.dismiss();
                         }
 
@@ -193,28 +188,6 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
         });
     }
 
-    private String makeDateString(int day, int month, int year) {
-        date = getMonthFormat(month) + "/" + day + "/" + year;
-        return "Ngày sinh: " + getMonthFormat(month) + " " + day + " " + year;
-    }
-
-    private String getMonthFormat(int month) {
-        if (month == 1) return "JAN";
-        if (month == 2) return "FEB";
-        if (month == 3) return "MAR";
-        if (month == 4) return "APR";
-        if (month == 5) return "MAY";
-        if (month == 6) return "JUN";
-        if (month == 7) return "JUL";
-        if (month == 8) return "AUG";
-        if (month == 9) return "SEP";
-        if (month == 10) return "OCT";
-        if (month == 11) return "NOV";
-        if (month == 12) return "DEC";
-
-        return "JAN";
-    }
-
     // Write Data to Cloud Firestone
     public void WriteDataFireBase(String userHeight, String userWeight, String userRecommendHeight, String userRecommendWeight) {
         // Create a new item with all of the value
@@ -224,22 +197,17 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
         item.put("userRecommendHeight", userRecommendHeight);
         item.put("userRecommendWeight", userRecommendWeight);
 
-        firebaseFirestore.collection("GoodLife")
-                .document(name).collection("Dinh dưỡng")
-                .document("Value")
-                .set(item)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d("Firestore", "Adding value to database successfully");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("Firestore", "Error adding value to database: ", e);
-                    }
-                });
+        firebaseFirestore.collection("GoodLife").document(name).collection("Dinh dưỡng").document("Value").set(item).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("Firestore", "Adding value to database successfully");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w("Firestore", "Error adding value to database: ", e);
+            }
+        });
     }
 
     public Boolean validUserHeight() {
@@ -267,30 +235,18 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
     }
 
     String getNumberMonthFormat(String month) {
-        if (Objects.equals(month, "JAN"))
-            return "1";
-        if (Objects.equals(month, "FEB"))
-            return "2";
-        if (Objects.equals(month, "MAR"))
-            return "3";
-        if (Objects.equals(month, "APR"))
-            return "4";
-        if (Objects.equals(month, "MAY"))
-            return "5";
-        if (Objects.equals(month, "JUN"))
-            return "6";
-        if (Objects.equals(month, "JUL"))
-            return "7";
-        if (Objects.equals(month, "AUG"))
-            return "8";
-        if (Objects.equals(month, "SEP"))
-            return "9";
-        if (Objects.equals(month, "OCT"))
-            return "10";
-        if (Objects.equals(month, "NOV"))
-            return "11";
-        if (Objects.equals(month, "DEC"))
-            return "11";
+        if (Objects.equals(month, "JAN")) return "1";
+        if (Objects.equals(month, "FEB")) return "2";
+        if (Objects.equals(month, "MAR")) return "3";
+        if (Objects.equals(month, "APR")) return "4";
+        if (Objects.equals(month, "MAY")) return "5";
+        if (Objects.equals(month, "JUN")) return "6";
+        if (Objects.equals(month, "JUL")) return "7";
+        if (Objects.equals(month, "AUG")) return "8";
+        if (Objects.equals(month, "SEP")) return "9";
+        if (Objects.equals(month, "OCT")) return "10";
+        if (Objects.equals(month, "NOV")) return "11";
+        if (Objects.equals(month, "DEC")) return "11";
 
         return "1";
     }
@@ -356,19 +312,19 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                 int value = (int) cell.getNumericCellValue();
                 if (value == monthAge) {
                     cell = row.getCell(1);
-                    double negativeSD3 = (double) cell.getNumericCellValue();
+                    double negativeSD3 = cell.getNumericCellValue();
                     cell = row.getCell(2);
-                    double negativeSD2 = (double) cell.getNumericCellValue();
+                    double negativeSD2 = cell.getNumericCellValue();
                     cell = row.getCell(3);
-                    double negativeSD1 = (double) cell.getNumericCellValue();
+                    double negativeSD1 = cell.getNumericCellValue();
                     cell = row.getCell(4);
-                    double positiveSD0 = (double) cell.getNumericCellValue();
+                    double positiveSD0 = cell.getNumericCellValue();
                     cell = row.getCell(5);
-                    double positiveSD1 = (double) cell.getNumericCellValue();
+                    double positiveSD1 = cell.getNumericCellValue();
                     cell = row.getCell(6);
-                    double positiveSD2 = (double) cell.getNumericCellValue();
+                    double positiveSD2 = cell.getNumericCellValue();
                     cell = row.getCell(7);
-                    double positiveSD3 = (double) cell.getNumericCellValue();
+                    double positiveSD3 = cell.getNumericCellValue();
 
                     if (bmi > positiveSD3) {
                         bmiAge.setImageResource(R.drawable.ic_close);
@@ -489,19 +445,19 @@ public class CalculateNutritionalStatusActivity extends AppCompatActivity {
                 int value = (int) cell.getNumericCellValue();
                 if (value == monthAge) {
                     cell = row.getCell(1);
-                    double negativeSD3 = (double) cell.getNumericCellValue();
+                    double negativeSD3 = cell.getNumericCellValue();
                     cell = row.getCell(2);
-                    double negativeSD2 = (double) cell.getNumericCellValue();
+                    double negativeSD2 = cell.getNumericCellValue();
                     cell = row.getCell(3);
-                    double negativeSD1 = (double) cell.getNumericCellValue();
+                    double negativeSD1 = cell.getNumericCellValue();
                     cell = row.getCell(4);
-                    double positiveSD0 = (double) cell.getNumericCellValue();
+                    double positiveSD0 = cell.getNumericCellValue();
                     cell = row.getCell(5);
-                    double positiveSD1 = (double) cell.getNumericCellValue();
+                    double positiveSD1 = cell.getNumericCellValue();
                     cell = row.getCell(6);
-                    double positiveSD2 = (double) cell.getNumericCellValue();
+                    double positiveSD2 = cell.getNumericCellValue();
                     cell = row.getCell(7);
-                    double positiveSD3 = (double) cell.getNumericCellValue();
+                    double positiveSD3 = cell.getNumericCellValue();
 
                     if (height > positiveSD3) {
                         heightAge.setImageResource(R.drawable.ic_close);
