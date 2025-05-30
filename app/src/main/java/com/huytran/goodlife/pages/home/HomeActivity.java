@@ -17,10 +17,13 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -87,9 +90,11 @@ public class HomeActivity extends AppCompatActivity {
     public Boolean ok1 = false, ok2 = false, ok3 = false;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+    private View footerView;
     private String filename = "Storage.txt";
     File myInternalFile;
     private String filepath = "Super_mystery_folder";
+    private String appLink = "https://play.google.com/store/apps/details?id=com.huytran.goodlifes";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -191,6 +196,18 @@ public class HomeActivity extends AppCompatActivity {
                 }
         );
 
+        try {
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            String version = pInfo.versionName;
+
+            Menu menu = navigationView.getMenu();
+            MenuItem versionItem = menu.findItem(R.id.app_version);
+            versionItem.setTitle("Phiên bản " + version);
+
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -231,6 +248,14 @@ public class HomeActivity extends AppCompatActivity {
                     Intent intent = new Intent(HomeActivity.this, ScannerActivity.class);
                     startActivity(intent);
                     finish();
+                } else if (id == R.id.sharing) {
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("text/plain");
+                    String shareBody = "Hãy thử ứng dụng này: " + appLink;
+                    intent.putExtra(Intent.EXTRA_SUBJECT, "Ứng dụng hay cho bạn");
+                    intent.putExtra(Intent.EXTRA_TEXT, shareBody);
+                    startActivity(Intent.createChooser(intent, "Chia sẻ qua"));
+
                 } else if (id == R.id.logout) {
                     try {
                         String data = null + "\n" + "null" + "\n" + "false";

@@ -45,8 +45,13 @@
             android:title="Liên hệ"/>
 
         <item
+            android:id="@+id/sharing"
+            android:icon="@drawable/share_ic"
+            android:title="Chia sẻ"/>
+
+        <item
             android:id="@+id/scanner"
-            android:icon="@drawable/contact_support_team"
+            android:icon="@drawable/scanner_ic"
             android:title="Scanner"/>
 
 
@@ -54,5 +59,14 @@
             android:id="@+id/logout"
             android:icon="@drawable/logout"
             android:title="Đăng xuất"/>
+
+        <group android:id="@+id/group_bottom" android:checkableBehavior="none">
+                <item
+                    android:id="@+id/app_version"
+                    android:enabled="false"
+                    android:title="Phiên bản 1.0.0"
+                    android:orderInCategory="1000"/>
+        </group>
+
 
 </menu>
