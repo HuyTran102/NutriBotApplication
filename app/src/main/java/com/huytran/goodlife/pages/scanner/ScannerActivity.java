@@ -73,7 +73,7 @@ public class ScannerActivity extends AppCompatActivity {
 
         cameraView = findViewById(R.id.cameraView);
         backButton = findViewById(R.id.back_button);
-        txtLabel = findViewById(R.id.txtLabel);
+
 
         cameraView.setLifecycleOwner(this);
         cameraView.addFrameProcessor(this::processFrame);

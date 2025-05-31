@@ -7,6 +7,8 @@ import android.util.Pair;
 
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.Interpreter;
+import org.tensorflow.lite.support.common.ops.NormalizeOp;
+import org.tensorflow.lite.support.image.ImageProcessor;
 import org.tensorflow.lite.support.image.TensorImage;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
 
@@ -75,8 +77,14 @@ public class ImageClassifier {
         bitmap = Bitmap.createScaledBitmap(bitmap, 224, 224, true);
 
         // Tạo TensorImage để nạp ảnh
+
+        ImageProcessor imageProcessor = new ImageProcessor.Builder()
+                .add(new NormalizeOp(0.0f, 255.0f))
+                .build();
+
         TensorImage tensorImage = new TensorImage(DataType.FLOAT32);
         tensorImage.load(bitmap);
+        tensorImage = imageProcessor.process(tensorImage);
 
         // Tạo đầu ra TensorBuffer
         TensorBuffer output = TensorBuffer.createFixedSize(new int[]{1, labels.size()}, DataType.FLOAT32);
@@ -106,7 +114,7 @@ public class ImageClassifier {
             }
         }
 
-        return labels.get(maxIndex) + " (" + String.format("%.2f", maxConfidence * 100) + "%)";
+        return labels.get(maxIndex);
     }
 
     public List<Pair<String, Float>> classifyTopK(Bitmap bitmap, int topK) {
