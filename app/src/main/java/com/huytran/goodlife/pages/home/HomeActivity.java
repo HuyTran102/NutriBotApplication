@@ -502,10 +502,19 @@ public class HomeActivity extends AppCompatActivity {
                 Log.w("Firestore", "Error completing tasks", task.getException());
             }
         });
+
+        if (actualHeight == 0 && actualEnergy == 0 && usedEnergy == 0 && addEnergy == 0) {
+            setNullValue();
+        }
     }
 
 
     public void setWeightAndHeight() {
+
+        if (actualHeight == 0 && actualEnergy == 0 && usedEnergy == 0 && addEnergy == 0) {
+            setNullValue();
+        }
+
         actualHeight *= 100;
 
         DecimalFormat decimalFormat = new DecimalFormat("0.0");
