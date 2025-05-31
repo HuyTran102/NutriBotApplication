@@ -60,6 +60,7 @@ import com.huytran.goodlife.pages.physical.PhysicalActivity;
 import com.huytran.goodlife.pages.question_and_answer.QuestionAndAnswerActivity;
 import com.huytran.goodlife.pages.recommend_menu.RecommendMenuActivity;
 import com.huytran.goodlife.pages.scanner.ScannerActivity;
+import com.huytran.goodlife.pages.scanner.ScannerTensorFlowActivity;
 import com.huytran.goodlife.pages.template_menu.TemplateMenuActivity;
 import com.huytran.goodlife.pages.tracking_diagram.TrackingDiagramActivity;
 import com.huytran.goodlife.pages.user_info.UserInformationActivity;
@@ -232,7 +233,7 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.scanner) {
-                    Intent intent = new Intent(HomeActivity.this, ScannerActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, ScannerTensorFlowActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.sharing) {

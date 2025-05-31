@@ -58,7 +58,10 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("androidx.core:core-splashscreen:1.0.0")
     implementation("com.github.phuquy2114:Libraries_android:1.0.9")
-// CameraView for quick camera usage (optional library by Google)
+    // CameraView for quick camera usage (optional library by Google)
     implementation("com.otaliastudios:cameraview:2.7.2")
     implementation("com.google.mlkit:image-labeling:17.0.9")
+    implementation("org.tensorflow:tensorflow-lite:2.13.0")
+    implementation("org.tensorflow:tensorflow-lite-support:0.3.1")
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.13.0")
 }
