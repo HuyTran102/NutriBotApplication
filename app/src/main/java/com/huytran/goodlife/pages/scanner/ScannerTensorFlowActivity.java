@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.ImageFormat;
 import android.graphics.Matrix;
 import android.graphics.Rect;
+import android.graphics.YuvImage;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -16,8 +17,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,11 +28,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.pages.scanner.helper.ImageClassifier;
 import com.otaliastudios.cameraview.CameraView;
-import com.huytran.goodlife.R;
-import android.graphics.YuvImage;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -41,16 +41,18 @@ import java.util.List;
 
 public class ScannerTensorFlowActivity extends AppCompatActivity {
 
+    private final int REQUIRED_STABLE_COUNT = 2; // Giả sử 1 frame mỗi ~300ms => 5 lần là khoảng 1.5s
     private CameraView cameraView;
     private boolean isProcessing;
     private TextView objectName, objectKcalo, objectProtein, objectLipid, objectGlucid;
     private ImageClassifier classifier;
     private ImageButton backButton;
-    private List<Pair<String, Float>> tempResults = new ArrayList<>();
-    private Handler handler = new Handler(Looper.getMainLooper());
+    private final List<Pair<String, Float>> tempResults = new ArrayList<>();
+    private final Handler handler = new Handler(Looper.getMainLooper());
     private Bitmap tempBitmap = null;
-
-    private Runnable resultRunnable = () -> {
+    private String lastDetectedLabel = "";
+    private int detectionCount = 0;
+    private final Runnable resultRunnable = () -> {
         if (tempResults.isEmpty()) return;
 
         // Sắp xếp để lấy kết quả có confidence cao nhất
@@ -105,8 +107,7 @@ public class ScannerTensorFlowActivity extends AppCompatActivity {
         backButton = findViewById(R.id.back_button);
 
         cameraView.setLifecycleOwner(this);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, 1);
         } else {
             setupCamera();
@@ -122,6 +123,7 @@ public class ScannerTensorFlowActivity extends AppCompatActivity {
         });
 
     }
+
     private void setupCamera() {
         try {
             classifier = new ImageClassifier(this);
@@ -149,30 +151,45 @@ public class ScannerTensorFlowActivity extends AppCompatActivity {
             Matrix matrix = new Matrix();
             matrix.postRotate(rotation);
             Bitmap rotatedBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+            // Gọi classify trả về label chính xác
             String result = classifier.classifyFLOAT32(rotatedBitmap);
-
             String[] words = result.split(",");
 
+            if (words.length < 5) {
+                isProcessing = false;
+                return;
+            }
+
             String ob_name = words[0];
-
-            String name[] = ob_name.split(" ");
-
+            String[] name = ob_name.split(" ");
+            if (name.length < 2) {
+                isProcessing = false;
+                return;
+            }
             String label = name[1];
-
             String kcalo_val = words[1];
             String protein_val = words[2];
             String lipid_val = words[3];
             String glucid_val = words[4];
 
-            runOnUiThread(() -> {
+            // Nếu cùng label thì tăng đếm, nếu khác thì reset
+            if (label.equals(lastDetectedLabel)) {
+                detectionCount++;
+            } else {
+                lastDetectedLabel = label;
+                detectionCount = 1;
+            }
 
-                objectName.setText(label);
-                objectKcalo.setText(kcalo_val);
-                objectProtein.setText(protein_val);
-                objectLipid.setText(lipid_val);
-                objectGlucid.setText(glucid_val);
-
-            });
+            // Chỉ khi nhận diện liên tục trên N lần mới hiển thị
+            if (detectionCount >= REQUIRED_STABLE_COUNT) {
+                runOnUiThread(() -> {
+                    objectName.setText(label);
+                    objectKcalo.setText(kcalo_val);
+                    objectProtein.setText(protein_val);
+                    objectLipid.setText(lipid_val);
+                    objectGlucid.setText(glucid_val);
+                });
+            }
 
             // Gọi classify trả về List<Pair<String, Float>>
             List<Pair<String, Float>> results = classifier.classifyTopK(rotatedBitmap, 3);
