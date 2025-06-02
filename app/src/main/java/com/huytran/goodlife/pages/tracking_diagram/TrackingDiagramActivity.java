@@ -292,15 +292,10 @@ public class TrackingDiagramActivity extends AppCompatActivity {
                             }
                         }
 
-
-                        double protein_per = sum_protein / sumKcal * 100;
-                        double lipid_per = sum_lipid / sumKcal * 100;
-                        double glucid_per = sum_glucid / sumKcal * 100;
-
                         ArrayList<PieEntry> entries = new ArrayList<>();
-                        entries.add(new PieEntry((float) glucid_per, "Bột"));
-                        entries.add(new PieEntry((float) protein_per, "Đạm"));
-                        entries.add(new PieEntry((float) lipid_per, "Béo"));
+                        entries.add(new PieEntry((float) sum_glucid, "Bột"));
+                        entries.add(new PieEntry((float) sum_protein, "Đạm"));
+                        entries.add(new PieEntry((float) sum_lipid, "Béo"));
 
                         PieDataSet dataSet = new PieDataSet(entries, "");
                         dataSet.setColors(Color.parseColor("#2E7D32"),  // Leaf Green
@@ -316,15 +311,12 @@ public class TrackingDiagramActivity extends AppCompatActivity {
 
                         PieData pieData = new PieData(dataSet);
                         pieChart.setData(pieData);
-                        pieChart.setUsePercentValues(true);
+                        pieChart.getLegend().setEnabled(false);
+                        pieChart.setDrawEntryLabels(true);
                         pieChart.getDescription().setEnabled(false);
-                        Legend legend = pieChart.getLegend();
-                        legend.setEnabled(true);
-                        legend.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM); // căn dưới
-                        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER); // căn giữa
-                        legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
-                        legend.setDrawInside(false);
-                        pieChart.animateY(1000);
+                        pieChart.setBackgroundColor(Color.TRANSPARENT);
+                        pieChart.setExtraBottomOffset(18f);
+                        pieChart.setUsePercentValues(true);
                         pieChart.setHoleRadius(40f);
                         pieChart.setTransparentCircleRadius(53f);
                         pieChart.invalidate();
@@ -560,6 +552,7 @@ public class TrackingDiagramActivity extends AppCompatActivity {
             LineData lineData = new LineData(dataSet1, dataSet2);
             Legend legend = lineChart.getLegend();
             legend.setEnabled(true);
+            legend.setTextSize(12f);
             legend.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM); // căn dưới
             legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER); // căn giữa
             legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);

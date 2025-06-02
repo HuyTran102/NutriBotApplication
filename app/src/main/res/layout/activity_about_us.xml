@@ -88,7 +88,7 @@
             android:justificationMode="inter_word"
             android:lineSpacingExtra="6dp"
             android:padding="16dp"
-            android:text="Phần mềm Quản lý dinh dưỡng cá nhân được thiết kế dành riêng cho học sinh trung học, giúp các em xây dựng thói quen ăn uống lành mạnh và khoa học. Và sứ mệnh của chúng tôi là đồng hành cùng học sinh trên hành trình nâng cao sức khỏe thể chất và tinh thần, hỗ trợ các em phát triển toàn diện để có thành tích học tập tốt nhất."
+            android:text="Phần NutriBot được thiết kế dành riêng cho học sinh trung học, giúp các em xây dựng thói quen ăn uống lành mạnh và khoa học. Và sứ mệnh của chúng tôi là đồng hành cùng học sinh trên hành trình nâng cao sức khỏe thể chất và tinh thần, hỗ trợ các em phát triển toàn diện để có thành tích học tập tốt nhất."
             android:textAlignment="center"
             android:textColor="#333333"
             android:textSize="19sp" />
