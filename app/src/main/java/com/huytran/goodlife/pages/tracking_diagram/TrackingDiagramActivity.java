@@ -268,9 +268,13 @@ public class TrackingDiagramActivity extends AppCompatActivity {
                                 double lipid = (recommendEnergy * 0.2) / 9;
                                 double glucid = (recommendEnergy * 0.6) / 4;
 
-                                glucidValue += " / " + glucid + "g";
-                                proteinValue += " / " + protein + "g";
-                                lipidValue += " / " + lipid + "g";
+                                String form_glucid = String.format("%.1f", glucid);
+                                String form_protein = String.format("%.1f", protein);
+                                String form_lipid = String.format("%.1f", lipid);
+
+                                glucidValue += " / " + form_glucid + "g";
+                                proteinValue += " / " + form_protein + "g";
+                                lipidValue += " / " + form_lipid + "g";
 
                                 glucidView.setText(glucidValue);
                                 proteinView.setText(proteinValue);
@@ -306,7 +310,7 @@ public class TrackingDiagramActivity extends AppCompatActivity {
                         pieChart.setBackgroundColor(Color.TRANSPARENT);
                         pieChart.setExtraBottomOffset(18f);
                         pieChart.setUsePercentValues(true);
-                        pieChart.setTransparentCircleRadius(35f);
+                        pieChart.setTransparentCircleRadius(45f);
                         pieChart.setHoleRadius(40f);
                         pieChart.invalidate();
                     }
@@ -547,23 +551,11 @@ public class TrackingDiagramActivity extends AppCompatActivity {
             legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER); // căn giữa
             legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
             legend.setDrawInside(false);
-            if (lineData != null && lineData.getDataSetCount() > 0) {
-                IDataSet dataSet = lineData.getDataSetByIndex(0);
-                if (dataSet != null) {
-                    float yMax = dataSet.getYMax();
-                    Log.d("DEBUG", "Y Max: " + yMax);
-                } else {
-                    Log.w("DEBUG", "Dataset is null");
-                }
-            } else {
-                Log.w("DEBUG", "Chart data is null or has no dataset");
-            }
             lineChart.setData(lineData);
             lineChart.getDescription().setEnabled(false);
             lineChart.getDescription().setTypeface(Typeface.DEFAULT_BOLD);
             lineChart.notifyDataSetChanged();
             lineChart.invalidate();
-
         });
     }
 
