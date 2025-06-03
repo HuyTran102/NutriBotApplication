@@ -103,7 +103,7 @@ public class TrackingDiagramActivity extends AppCompatActivity {
 
         LoadLineChartData();
 
-        LoadLineChartRecommendData();
+//        LoadLineChartRecommendData();
 
         LoadPieChartData();
 
@@ -377,6 +377,8 @@ public class TrackingDiagramActivity extends AppCompatActivity {
                 dataSet1.setValueTextColor(getResources().getColor(R.color.darkblue));
                 dataSet1.setValueTextSize(15f);
                 dataSet1.setDrawFilled(true);
+
+                LoadLineChartRecommendData();
             }
         });
     }
@@ -533,29 +535,36 @@ public class TrackingDiagramActivity extends AppCompatActivity {
                 Log.w("Firestore", "Error completing tasks", task.getException());
             }
 
-            dataSet2 = new LineDataSet(entries, "Năng lượng khuyến nghị (Kcal)");
-            dataSet2.setColor(getResources().getColor(R.color.red_color));
-            dataSet2.setHighLightColor(getResources().getColor(R.color.highlight));
-            dataSet2.setLineWidth(2f);
-            dataSet2.setValueTextColor(getResources().getColor(R.color.dot2));
-            dataSet2.setDrawCircles(false);
-            dataSet2.setDrawCircleHole(false);
-            dataSet2.setValueTextSize(15f);
-            dataSet2.setDrawValues(false);
+            if (dataSet1 != null) {
+                dataSet2 = new LineDataSet(entries, "Năng lượng khuyến nghị (Kcal)");
+                dataSet2.setColor(getResources().getColor(R.color.red_color));
+                dataSet2.setHighLightColor(getResources().getColor(R.color.highlight));
+                dataSet2.setLineWidth(2f);
+                dataSet2.setValueTextColor(getResources().getColor(R.color.dot2));
+                dataSet2.setDrawCircles(false);
+                dataSet2.setDrawCircleHole(false);
+                dataSet2.setValueTextSize(15f);
+                dataSet2.setDrawValues(false);
 
-            LineData lineData = new LineData(dataSet1, dataSet2);
-            Legend legend = lineChart.getLegend();
-            legend.setEnabled(true);
-            legend.setTextSize(13f);
-            legend.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM); // căn dưới
-            legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER); // căn giữa
-            legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
-            legend.setDrawInside(false);
-            lineChart.setData(lineData);
-            lineChart.getDescription().setEnabled(false);
-            lineChart.getDescription().setTypeface(Typeface.DEFAULT_BOLD);
-            lineChart.notifyDataSetChanged();
-            lineChart.invalidate();
+                LineData lineData = new LineData(dataSet1, dataSet2);
+
+                Legend legend = lineChart.getLegend();
+                legend.setEnabled(true);
+                legend.setTextSize(13f);
+                legend.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+                legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+                legend.setOrientation(Legend.LegendOrientation.HORIZONTAL);
+                legend.setDrawInside(false);
+
+                lineChart.setData(lineData);
+                lineChart.getDescription().setEnabled(false);
+                lineChart.getDescription().setTypeface(Typeface.DEFAULT_BOLD);
+                lineChart.notifyDataSetChanged();
+                lineChart.invalidate();
+            } else {
+                Log.e("LineChart", "dataSet1 is null, không thể tạo LineData");
+            }
+
         });
     }
 
