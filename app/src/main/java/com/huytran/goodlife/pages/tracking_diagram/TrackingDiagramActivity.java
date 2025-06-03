@@ -101,9 +101,14 @@ public class TrackingDiagramActivity extends AppCompatActivity {
 
 //        Toast.makeText(this, "" + startOfWeek + " " + endOfWeek, Toast.LENGTH_SHORT).show();
 
-        LoadLineChartData();
+//        LoadLineChartData();
 
 //        LoadLineChartRecommendData();
+
+        LoadLineChartData(() -> {
+            LoadLineChartRecommendData(); // Gọi sau khi dataSet1 đã có
+        });
+
 
         LoadPieChartData();
 
@@ -321,66 +326,59 @@ public class TrackingDiagramActivity extends AppCompatActivity {
         });
     }
 
-    public void LoadLineChartData() {
-
+    public void LoadLineChartData(Runnable onDataSet1Ready) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-        firebaseFirestore.collection("GoodLife").document(name).collection("Nhật kí").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    // Loop through all documents
-                    if (!task.getResult().isEmpty()) {
+        firebaseFirestore.collection("GoodLife").document(name).collection("Nhật kí")
+                .get().addOnCompleteListener(task -> {
+                    if (task.isSuccessful() && !task.getResult().isEmpty()) {
+                        entries.clear(); // rất quan trọng nếu gọi nhiều lần
 
                         int dateIndex = 0;
-
                         for (LocalDate date = startOfWeek; !date.isAfter(endOfWeek); date = date.plusDays(1)) {
-
                             int sumKcal = 0;
-
                             dateIndex++;
 
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                String day = document.getString("day"), month = document.getString("month"), year = document.getString("year");
+                                String day = document.getString("day");
+                                String month = document.getString("month");
+                                String year = document.getString("year");
 
-                                if (Integer.parseInt(day) < 10) {
-                                    day = "0" + day;
-                                }
+                                if (day == null || month == null || year == null) continue;
 
-                                if (Integer.parseInt(month) < 10) {
-                                    month = "0" + month;
-                                }
+                                if (Integer.parseInt(day) < 10) day = "0" + day;
+                                if (Integer.parseInt(month) < 10) month = "0" + month;
 
                                 String docDateStr = year + "-" + month + "-" + day;
-
                                 LocalDate docDate = LocalDate.parse(docDateStr, formatter);
 
                                 if (docDate.equals(date)) {
-                                    sumKcal += Integer.parseInt(document.getString("kcal"));
+                                    try {
+                                        sumKcal += Integer.parseInt(document.getString("kcal"));
+                                    } catch (Exception e) {
+                                        Log.w("ParseError", "Lỗi chuyển kcal", e);
+                                    }
                                 }
                             }
 
                             entries.add(new Entry(dateIndex, sumKcal));
-
                         }
                     }
-                } else {
-                    Log.w("Firestore", "Error getting documents", task.getException());
-                }
 
-                dataSet1 = new LineDataSet(entries, "Năng lượng (Kcal)");
-                dataSet1.setColor(getResources().getColor(R.color.purple_color));
-                dataSet1.setHighLightColor(getResources().getColor(R.color.highlight));
-                dataSet1.setCircleColor(getResources().getColor(R.color.dot));
-                dataSet1.setCircleHoleColor(getResources().getColor(R.color.purple_color));
-                dataSet1.setLineWidth(3f);
-                dataSet1.setValueTextColor(getResources().getColor(R.color.darkblue));
-                dataSet1.setValueTextSize(15f);
-                dataSet1.setDrawFilled(true);
+                    dataSet1 = new LineDataSet(entries, "Năng lượng (Kcal)");
+                    dataSet1.setColor(getResources().getColor(R.color.purple_color));
+                    dataSet1.setHighLightColor(getResources().getColor(R.color.highlight));
+                    dataSet1.setCircleColor(getResources().getColor(R.color.dot));
+                    dataSet1.setCircleHoleColor(getResources().getColor(R.color.purple_color));
+                    dataSet1.setLineWidth(3f);
+                    dataSet1.setValueTextColor(getResources().getColor(R.color.darkblue));
+                    dataSet1.setValueTextSize(15f);
+                    dataSet1.setDrawFilled(true);
 
-                LoadLineChartRecommendData();
-            }
-        });
+                    if (onDataSet1Ready != null) {
+                        onDataSet1Ready.run();
+                    }
+                });
     }
 
     public void LoadLineChartRecommendData() {
