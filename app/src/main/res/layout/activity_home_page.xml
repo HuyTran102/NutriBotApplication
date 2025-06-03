@@ -61,8 +61,8 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:layout_width="95dp"
-                            android:layout_height="95dp"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
                             android:layout_gravity="center"
                             android:src="@drawable/weight_ic" />
 
@@ -140,8 +140,8 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:layout_width="95dp"
-                            android:layout_height="95dp"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
                             android:layout_gravity="center"
                             android:src="@drawable/height_ic" />
 
@@ -218,8 +218,8 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:layout_width="95dp"
-                            android:layout_height="95dp"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
                             android:layout_gravity="center"
                             android:src="@drawable/ic_kcal" />
 
@@ -364,8 +364,8 @@
                         app:backgroundTint="@null">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:src="@drawable/nutrition_status" />
 
@@ -414,8 +414,8 @@
                         app:backgroundTint="@null">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:src="@drawable/dietary" />
 
@@ -464,8 +464,8 @@
                         app:backgroundTint="@null">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:src="@drawable/recommend_menu" />
 
@@ -529,8 +529,8 @@
                         app:backgroundTint="@null">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:src="@drawable/physical_activity" />
 
@@ -579,8 +579,8 @@
                         app:backgroundTint="@null">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:src="@drawable/template_menu" />
 
@@ -629,8 +629,8 @@
                         app:backgroundTint="@null">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_gravity="center"
                             android:src="@drawable/water_demand" />
 
