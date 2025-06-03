@@ -1,17 +1,20 @@
 package com.huytran.goodlife.pages.contact;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -54,9 +57,11 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
         phoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:" + "0989631715"));
-                startActivity(intent);
+                if (ContextCompat.checkSelfPermission(ContactWithNutritionistActivity.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    makePhoneCall();
+                } else {
+                    ActivityCompat.requestPermissions(ContactWithNutritionistActivity.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
+                }
             }
         });
 
@@ -128,17 +133,43 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
     }
 
 
-    public String generateRandomRoomName(int length) {
-        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        StringBuilder roomName = new StringBuilder();
-        Random random = new Random();
-
-        for (int i = 0; i < length; i++) {
-            int index = random.nextInt(characters.length());
-            roomName.append(characters.charAt(index));
-        }
-
-        return roomName.toString();
+    private void makePhoneCall() {
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel:" + "0989631715"));
+        startActivity(intent);
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == REQUEST_PHONE_CALL) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                makePhoneCall();
+            } else {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE)) {
+                    new AlertDialog.Builder(this)
+                            .setTitle("Cấp quyền gọi điện")
+                            .setMessage("Ứng dụng cần quyền để gọi điện thoại. Bạn có muốn cấp quyền không?")
+                            .setPositiveButton("Cho phép", (dialog, which) -> {
+                                ActivityCompat.requestPermissions(ContactWithNutritionistActivity.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
+                            })
+                            .setNegativeButton("Từ chối", null)
+                            .show();
+                } else {
+                    new AlertDialog.Builder(this)
+                            .setTitle("Quyền bị từ chối")
+                            .setMessage("Quyền gọi điện đã tắt vĩnh viễn. Vui lòng bật lại trong Cài đặt.")
+                            .setPositiveButton("Mở Cài đặt", (dialog, which) -> {
+                                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                                Uri uri = Uri.fromParts("package", getPackageName(), null);
+                                intent.setData(uri);
+                                startActivity(intent);
+                            })
+                            .setNegativeButton("Hủy", null)
+                            .show();
+                }
+            }
+        }
+    }
 }
