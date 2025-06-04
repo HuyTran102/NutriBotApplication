@@ -3,6 +3,7 @@ package com.huytran.goodlife.splash;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +20,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.home.HomeActivity;
+import com.huytran.goodlife.pages.intro.IntroActivity;
 import com.huytran.goodlife.pages.login.LoginScreenActivity;
 
 import java.io.BufferedReader;
@@ -86,9 +88,25 @@ public class SplashActivity extends AppCompatActivity {
 
                             }
                         }
-                        Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
-                        startActivity(intent);
-                        finish();
+
+                        SharedPreferences prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+                        boolean isIntroShown = prefs.getBoolean("isIntroShown", false);
+
+                        if (isIntroShown) {
+                            // Nếu đã xem intro, vào thẳng Home
+                            Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            // Nếu chưa xem intro, vào Intro
+                            Intent intent = new Intent(SplashActivity.this, IntroActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+//                        Intent intent = new Intent(SplashActivity.this, IntroActivity.class);
+//                        startActivity(intent);
+//                        finish();
                     }
                 }
             }

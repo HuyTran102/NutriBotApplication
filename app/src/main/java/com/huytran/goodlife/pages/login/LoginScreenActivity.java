@@ -24,7 +24,9 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.home.HomeActivity;
+import com.huytran.goodlife.pages.intro.IntroActivity;
 import com.huytran.goodlife.pages.register.RegisterActivity;
+import com.huytran.goodlife.splash.SplashActivity;
 import com.uits.baseproject.widget.PFDialog;
 import com.uits.baseproject.widget.PFLoadingDialog;
 
@@ -202,9 +204,25 @@ public class LoginScreenActivity extends AppCompatActivity {
                                 Toast.makeText(LoginScreenActivity.this, "Lỗi đăng nhập", Toast.LENGTH_SHORT).show();
                             }
                         }
-                        Intent intent = new Intent(LoginScreenActivity.this, HomeActivity.class);
-                        startActivity(intent);
-                        finish();
+
+                        SharedPreferences prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+                        boolean isIntroShown = prefs.getBoolean("isIntroShown", false);
+
+                        if (isIntroShown) {
+                            // Nếu đã xem intro, vào thẳng Home
+                            Intent intent = new Intent(LoginScreenActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            // Nếu chưa xem intro, vào Intro
+                            Intent intent = new Intent(LoginScreenActivity.this, IntroActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+//                        Intent intent = new Intent(LoginScreenActivity.this, HomeActivity.class);
+//                        startActivity(intent);
+//                        finish();
                     } else {
                         editTextPassword.setError("Mật khẩu không đúng!");
                         editTextPassword.requestFocus();
