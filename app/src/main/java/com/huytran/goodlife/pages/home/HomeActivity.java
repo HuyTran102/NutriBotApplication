@@ -52,6 +52,7 @@ import com.huytran.goodlife.pages.calculate_nutritional_status.CalculateNutritio
 import com.huytran.goodlife.pages.chat_bot.ChatBotActivity;
 import com.huytran.goodlife.pages.contact.ContactSupportTeamActivity;
 import com.huytran.goodlife.pages.contact.ContactWithNutritionistActivity;
+import com.huytran.goodlife.pages.contact.NutritionistDataActivity;
 import com.huytran.goodlife.pages.dietary.DietaryActivity;
 import com.huytran.goodlife.pages.login.LoginScreenActivity;
 import com.huytran.goodlife.pages.notification.NotificationActivity;
@@ -225,7 +226,7 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.contact_with_nutritionist) {
-                    Intent intent = new Intent(HomeActivity.this, ContactWithNutritionistActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, NutritionistDataActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.contact_support_team) {
