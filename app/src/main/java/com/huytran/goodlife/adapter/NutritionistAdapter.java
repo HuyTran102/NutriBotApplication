@@ -50,6 +50,10 @@ public class NutritionistAdapter extends RecyclerView.Adapter<NutritionistAdapte
                 // Handle item click, e.g., open a detailed view or start a chat
                 // This can be implemented based on your requirements
                 Intent intent = new Intent(context, NutritionistDataActivity.class);
+                intent.putExtra("nutritionistName", nutritionist.getName());
+                intent.putExtra("nutritionistDescription1", nutritionist.getDescription1());
+                intent.putExtra("nutritionistDescription2", nutritionist.getDescription2());
+                intent.putExtra("nutritionistImage", nutritionist.getImage());
                 context.startActivity(intent);
             }
         });

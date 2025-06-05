@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huytran.goodlife.R;
@@ -25,7 +26,8 @@ import com.huytran.goodlife.pages.home.HomeActivity;
 public class NutritionistDataActivity extends AppCompatActivity {
 
     private static final int REQUEST_PHONE_CALL = 1;
-    private ImageView phoneButton, videoCallButton, textButton, emailButton, backButton;
+    private TextView nutritionistName, nutritionistDescription1, nutritionistDescription2;
+    private ImageView nutritionistImage, phoneButton, videoCallButton, textButton, emailButton, backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,10 @@ public class NutritionistDataActivity extends AppCompatActivity {
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
+        nutritionistImage = findViewById(R.id.nutritionist_image);
+        nutritionistName = findViewById(R.id.nutritionist_name);
+        nutritionistDescription1 = findViewById(R.id.description_1);
+        nutritionistDescription2 = findViewById(R.id.description_2);
         phoneButton = findViewById(R.id.contact_phone);
         videoCallButton = findViewById(R.id.contact_video_call);
         textButton = findViewById(R.id.contact_text);
@@ -52,6 +58,17 @@ public class NutritionistDataActivity extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
         }
+
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("nutritionistName");
+        String description1 = intent.getStringExtra("nutritionistDescription1");
+        String description2 = intent.getStringExtra("nutritionistDescription2");
+        int imageResource = intent.getIntExtra("nutritionistImage", R.drawable.nutritionist);
+
+        nutritionistName.setText(name);
+        nutritionistDescription1.setText(description1);
+        nutritionistDescription2.setText(description2);
+        nutritionistImage.setImageResource(imageResource);
 
         phoneButton.setOnClickListener(new View.OnClickListener() {
             @Override
