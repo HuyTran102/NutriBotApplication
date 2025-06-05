@@ -30,7 +30,7 @@ public class NutritionistDataActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact_with_nutritionist);
+        setContentView(R.layout.activity_nutritionist_data);
 
         // Make status bar fully transparent
         Window window = getWindow();
@@ -86,28 +86,6 @@ public class NutritionistDataActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(intent);
 
-//                String roomName = "Cuoc_hop_tu_van_dinh_duong";
-//
-//                String jitsiUrl = "https://meet.jit.si/" + roomName;
-//
-//                Intent intent = new Intent(Intent.ACTION_SEND);
-//                intent.setType("message/rfc822"); // MIME type dành riêng cho email
-//                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"quynhchiytb@gmail.com"});
-//                intent.putExtra(Intent.EXTRA_SUBJECT, "Tham gia cuộc họp tư vấn dinh dưỡng");
-//                intent.putExtra(Intent.EXTRA_TEXT, "Xin mời tham gia cuộc họp tại đường link sau: " + jitsiUrl);
-//
-//                try {
-//                    startActivity(Intent.createChooser(intent, "Chọn ứng dụng email"));
-//                } catch (android.content.ActivityNotFoundException ex) {
-//                    Toast.makeText(NutritionistDataActivity.this, "Không tìm thấy ứng dụng email nào!", Toast.LENGTH_SHORT).show();
-//                }
-//
-//                // Đợi vài giây rồi mở Jitsi Meet (nếu muốn tách riêng)
-//                new Handler().postDelayed(() -> {
-//                    Intent meetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(jitsiUrl));
-//                    startActivity(meetIntent);
-//                }, 20000); // 20 giây sau mở link
-
             }
         });
 
@@ -124,7 +102,7 @@ public class NutritionistDataActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(NutritionistDataActivity.this, HomeActivity.class);
+                Intent intent = new Intent(NutritionistDataActivity.this, ContactWithNutritionistActivity.class);
                 startActivity(intent);
                 finish();
             }

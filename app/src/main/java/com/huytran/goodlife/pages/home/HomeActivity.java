@@ -226,7 +226,7 @@ public class HomeActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.contact_with_nutritionist) {
-                    Intent intent = new Intent(HomeActivity.this, NutritionistDataActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, ContactWithNutritionistActivity.class);
                     startActivity(intent);
                     finish();
                 } else if (id == R.id.contact_support_team) {

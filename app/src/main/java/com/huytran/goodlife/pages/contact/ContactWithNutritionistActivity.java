@@ -11,22 +11,35 @@ import android.provider.Settings;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.huytran.goodlife.R;
+import com.huytran.goodlife.adapter.ChatAdapter;
+import com.huytran.goodlife.adapter.NutritionistAdapter;
+import com.huytran.goodlife.model.Item;
+import com.huytran.goodlife.model.NutritionistDataView;
 import com.huytran.goodlife.pages.home.HomeActivity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class ContactWithNutritionistActivity extends AppCompatActivity {
-    private static final int REQUEST_PHONE_CALL = 1;
-    private ImageView phoneButton, videoCallButton, textButton, emailButton, backButton;
+    private ImageButton backButton;
+    private NutritionistAdapter adapter;
+    private RecyclerView recyclerView;
+    private List<NutritionistDataView> nutritionistDataViewList = new ArrayList<>();
+    private androidx.appcompat.widget.SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,81 +57,64 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
-        phoneButton = findViewById(R.id.contact_phone);
-        videoCallButton = findViewById(R.id.contact_video_call);
-        textButton = findViewById(R.id.contact_text);
-        emailButton = findViewById(R.id.contact_email);
+        recyclerView = findViewById(R.id.recycleView);
+        searchView = findViewById(R.id.search_bar);
         backButton = findViewById(R.id.back_button);
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
-        }
+        nutritionistDataViewList.add(new NutritionistDataView(
+                R.drawable.nutritionist,
+                "Dr. John Doe",
+                "Expert in Nutrition and Dietetics",
+                "Specializes in weight management and sports nutrition.",
+                "Basic Info: 10 years of experience, PhD in Nutrition"
+        ));
 
-        phoneButton.setOnClickListener(new View.OnClickListener() {
+        nutritionistDataViewList.add(new NutritionistDataView(
+                R.drawable.nutritionist,
+                "Dr. John Doe",
+                "Expert in Nutrition and Dietetics",
+                "Specializes in weight management and sports nutrition.",
+                "Basic Info: 10 years of experience, PhD in Nutrition"
+        ));
+
+        nutritionistDataViewList.add(new NutritionistDataView(
+                R.drawable.nutritionist,
+                "Dr. John Doe",
+                "Expert in Nutrition and Dietetics",
+                "Specializes in weight management and sports nutrition.",
+                "Basic Info: 10 years of experience, PhD in Nutrition"
+        ));
+
+        nutritionistDataViewList.add(new NutritionistDataView(
+                R.drawable.nutritionist,
+                "Dr. John Doe",
+                "Expert in Nutrition and Dietetics",
+                "Specializes in weight management and sports nutrition.",
+                "Basic Info: 10 years of experience, PhD in Nutrition"
+        ));
+
+        nutritionistDataViewList.add(new NutritionistDataView(
+                R.drawable.nutritionist,
+                "Dr. John Doe",
+                "Expert in Nutrition and Dietetics",
+                "Specializes in weight management and sports nutrition.",
+                "Basic Info: 10 years of experience, PhD in Nutrition"
+        ));
+
+        adapter = new NutritionistAdapter(nutritionistDataViewList, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onClick(View view) {
-                if (ContextCompat.checkSelfPermission(ContactWithNutritionistActivity.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-                    makePhoneCall();
-                } else {
-                    ActivityCompat.requestPermissions(ContactWithNutritionistActivity.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
-                }
+            public boolean onQueryTextSubmit(String query) {
+                return true;
             }
-        });
 
-        textButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.fromParts("sms", "0989631715", null));
-                startActivity(intent);
-            }
-        });
-
-        videoCallButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-//                String url = "https://calendar.google.com/calendar/u/0/r/eventedit" +
-//                        "?text=Cuộc+họp+tư+vấn+dinh+dưỡng" +
-//                        "&details=Tham+gia+tại+link+sau" +
-//                        "&location=https://meet.google.com/" +
-//                        "&add=quynhchiytb@gmail.com";
-//
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-//                startActivity(intent);
-
-                String roomName = "Cuoc_hop_tu_van_dinh_duong";
-
-                String jitsiUrl = "https://meet.jit.si/" + roomName;
-
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("message/rfc822"); // MIME type dành riêng cho email
-                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"quynhchiytb@gmail.com"});
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Tham gia cuộc họp tư vấn dinh dưỡng");
-                intent.putExtra(Intent.EXTRA_TEXT, "Xin mời tham gia cuộc họp tại đường link sau: " + jitsiUrl);
-
-                try {
-                    startActivity(Intent.createChooser(intent, "Chọn ứng dụng email"));
-                } catch (android.content.ActivityNotFoundException ex) {
-                    Toast.makeText(ContactWithNutritionistActivity.this, "Không tìm thấy ứng dụng email nào!", Toast.LENGTH_SHORT).show();
-                }
-
-                // Đợi vài giây rồi mở Jitsi Meet (nếu muốn tách riêng)
-                new Handler().postDelayed(() -> {
-                    Intent meetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(jitsiUrl));
-                    startActivity(meetIntent);
-                }, 20000); // 20 giây sau mở link
-
-            }
-        });
-
-        emailButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("message/rfc822");
-                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"quynhchiytb@gmail.com"});
-                startActivity(intent);
+            public boolean onQueryTextChange(String newText) {
+                findData(newText);
+                return true;
             }
         });
 
@@ -132,44 +128,14 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
         });
     }
 
-
-    private void makePhoneCall() {
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:" + "0989631715"));
-        startActivity(intent);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        if (requestCode == REQUEST_PHONE_CALL) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                makePhoneCall();
-            } else {
-                if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE)) {
-                    new AlertDialog.Builder(this)
-                            .setTitle("Cấp quyền gọi điện")
-                            .setMessage("Ứng dụng cần quyền để gọi điện thoại. Bạn có muốn cấp quyền không?")
-                            .setPositiveButton("Cho phép", (dialog, which) -> {
-                                ActivityCompat.requestPermissions(ContactWithNutritionistActivity.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
-                            })
-                            .setNegativeButton("Từ chối", null)
-                            .show();
-                } else {
-                    new AlertDialog.Builder(this)
-                            .setTitle("Quyền bị từ chối")
-                            .setMessage("Quyền gọi điện đã tắt vĩnh viễn. Vui lòng bật lại trong Cài đặt.")
-                            .setPositiveButton("Mở Cài đặt", (dialog, which) -> {
-                                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                                Uri uri = Uri.fromParts("package", getPackageName(), null);
-                                intent.setData(uri);
-                                startActivity(intent);
-                            })
-                            .setNegativeButton("Hủy", null)
-                            .show();
-                }
+    void findData(String name) {
+        List<NutritionistDataView> list = new ArrayList<>();
+        for (NutritionistDataView data : nutritionistDataViewList) {
+            if (data.getName().toLowerCase().contains(name.toLowerCase())) {
+                list.add(data);
             }
         }
+        adapter.updateList(list);
     }
+
 }
