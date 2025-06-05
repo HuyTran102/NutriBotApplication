@@ -1,8 +1,9 @@
-![Screen Shot 2025-06-05 at 3 14 55 PM](https://github.com/user-attachments/assets/5a067da4-1bfc-4d4b-85d7-aef08a18f58f)--------- NutriBot ---------
+--------- NutriBot ---------
 Đây là một ứng dụng được lập trình với mục đích cải thiện tình trạng dinh dưỡng cho lứa tuổi học sinh, nhất là học sinh trung học.
 
 Một số hình ảnh của ứng dụngL 
 ![Uploading Screen Shot 2025-06-05 at 3.14.55 ![Uploading Screen Shot 2025-06-05 at 3.16.26 PM.png…]()
+![Screen Shot 2025-06-05 at 3 14 55 PM](https://github.com/user-attachments/assets/5a067da4-1bfc-4d4b-85d7-aef08a18f58f)
 ![Screen Shot 2025-06-05 at 3 16 17 PM](https://github.com/user-attachments/assets/3890e8fb-c91e-450a-826a-83cd5c0fd94d)
 ![Screen Shot 2025-06-05 at 3 16 06 PM](https://github.com/user-attachments/assets/a4d0b5f8-0a67-4c4b-ba92-df6d6ea6cb3d)
 ![Screen Shot 2025-06-05 at 3 15 52 PM](https://github.com/user-attachments/assets/088b54cb-1007-4e82-8581-7713785b09d1)
