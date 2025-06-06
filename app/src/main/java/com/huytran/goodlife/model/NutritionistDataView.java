@@ -2,11 +2,12 @@ package com.huytran.goodlife.model;
 
 public class NutritionistDataView {
 
-    private int image;
+    private int image, rating;
     private String name, description1, description2, basicInfo;
 
-    public NutritionistDataView(int image, String name, String description1, String description2, String basicInfo) {
+    public NutritionistDataView(int image, int rating, String name, String description1, String description2, String basicInfo) {
         this.image = image;
+        this.rating = rating;
         this.name = name;
         this.description1 = description1;
         this.description2 = description2;
@@ -15,6 +16,14 @@ public class NutritionistDataView {
 
     public NutritionistDataView() {
 
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
     public int getImage() {

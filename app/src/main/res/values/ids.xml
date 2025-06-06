@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="user_gender" type="id" />
+    <item name="rating_bar" type="id" />
+    <item name="nutritionist_rating" type="id" />
+    <item name="ratingBar" type="id" />
 </resources>

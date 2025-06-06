@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,6 +43,8 @@ public class NutritionistAdapter extends RecyclerView.Adapter<NutritionistAdapte
         holder.nameTextView.setText(nutritionist.getName());
         holder.basicInfoTextView.setText(nutritionist.getBasicInfo());
         holder.profileImageView.setImageResource(nutritionist.getImage());
+        holder.ratingBar.setRating(nutritionist.getRating());
+
         // Set other views as needed
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -72,13 +75,14 @@ public class NutritionistAdapter extends RecyclerView.Adapter<NutritionistAdapte
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView profileImageView;
         TextView nameTextView, basicInfoTextView;
+        RatingBar ratingBar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             profileImageView = itemView.findViewById(R.id.imageview);
             nameTextView = itemView.findViewById(R.id.nutritionist_name);
             basicInfoTextView = itemView.findViewById(R.id.nutritionist_basic_description);
-            // Initialize other views as needed
+            ratingBar = itemView.findViewById(R.id.app_rating);
         }
     }
 }

@@ -63,6 +63,7 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
 
         nutritionistDataViewList.add(new NutritionistDataView(
                 R.drawable.nutritionist,
+                5,
                 "Dr. John Doe",
                 "Expert in Nutrition and Dietetics",
                 "Specializes in weight management and sports nutrition.",
@@ -71,6 +72,7 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
 
         nutritionistDataViewList.add(new NutritionistDataView(
                 R.drawable.nutritionist,
+                5,
                 "Dr. John Doe",
                 "Expert in Nutrition and Dietetics",
                 "Specializes in weight management and sports nutrition.",
@@ -79,6 +81,7 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
 
         nutritionistDataViewList.add(new NutritionistDataView(
                 R.drawable.nutritionist,
+                4,
                 "Dr. John Doe",
                 "Expert in Nutrition and Dietetics",
                 "Specializes in weight management and sports nutrition.",
@@ -87,6 +90,7 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
 
         nutritionistDataViewList.add(new NutritionistDataView(
                 R.drawable.nutritionist,
+                3,
                 "Dr. John Doe",
                 "Expert in Nutrition and Dietetics",
                 "Specializes in weight management and sports nutrition.",
@@ -95,6 +99,7 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
 
         nutritionistDataViewList.add(new NutritionistDataView(
                 R.drawable.nutritionist,
+                4,
                 "Dr. John Doe",
                 "Expert in Nutrition and Dietetics",
                 "Specializes in weight management and sports nutrition.",
