@@ -28,6 +28,7 @@ public class NutritionistDataActivity extends AppCompatActivity {
     private static final int REQUEST_PHONE_CALL = 1;
     private TextView nutritionistName, nutritionistDescription1, nutritionistDescription2;
     private ImageView nutritionistImage, phoneButton, videoCallButton, textButton, emailButton, backButton;
+    private String email, phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,8 @@ public class NutritionistDataActivity extends AppCompatActivity {
         String description1 = intent.getStringExtra("nutritionistDescription1");
         String description2 = intent.getStringExtra("nutritionistDescription2");
         int imageResource = intent.getIntExtra("nutritionistImage", R.drawable.nutritionist);
+        email = intent.getStringExtra("nutritionistEmail");
+        phone = intent.getStringExtra("nutritionistPhone");
 
         nutritionistName.setText(name);
         nutritionistDescription1.setText(description1);
@@ -85,7 +88,7 @@ public class NutritionistDataActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.fromParts("sms", "0989631715", null));
+                intent.setData(Uri.fromParts("sms", phone, null));
                 startActivity(intent);
             }
         });
@@ -98,7 +101,7 @@ public class NutritionistDataActivity extends AppCompatActivity {
                         "?text=Cuộc+họp+tư+vấn+dinh+dưỡng" +
                         "&details=Tham+gia+tại+link+sau" +
                         "&location=https://meet.google.com/" +
-                        "&add=quynhchiytb@gmail.com";
+                        "&add="+email;
 
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(intent);
@@ -111,7 +114,7 @@ public class NutritionistDataActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("message/rfc822");
-                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"quynhchiytb@gmail.com"});
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{email});
                 startActivity(intent);
             }
         });
@@ -129,7 +132,7 @@ public class NutritionistDataActivity extends AppCompatActivity {
 
     private void makePhoneCall() {
         Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:" + "0989631715"));
+        intent.setData(Uri.parse("tel:" + phone));
         startActivity(intent);
     }
 

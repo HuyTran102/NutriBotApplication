@@ -148,8 +148,13 @@ public class TrackingDiagramActivity extends AppCompatActivity {
                         String formatted_lipid = String.format("%.1f", sum_lipid);
 
                         glucidValue = formatted_glucid + "g";
-                        proteinValue = formatted_glucid + "g";
-                        lipidValue = formatted_glucid + "g";
+                        proteinValue = formatted_protein + "g";
+                        lipidValue = formatted_lipid + "g";
+
+                        ArrayList<PieEntry> entries = new ArrayList<>();
+                        entries.add(new PieEntry((float) sum_glucid, "Bột"));
+                        entries.add(new PieEntry((float) sum_protein, "Đạm"));
+                        entries.add(new PieEntry((float) sum_lipid, "Béo"));
 
                         // Task 1: Lấy dữ liệu từ Firestore cho "Dinh dưỡng"
                         Task<QuerySnapshot> nutritionTask = firebaseFirestore.collection("GoodLife").document(name).collection("Dinh dưỡng").get();
@@ -292,10 +297,10 @@ public class TrackingDiagramActivity extends AppCompatActivity {
                             }
                         });
 
-                        ArrayList<PieEntry> entries = new ArrayList<>();
-                        entries.add(new PieEntry((float) sum_glucid, "Bột"));
-                        entries.add(new PieEntry((float) sum_protein, "Đạm"));
-                        entries.add(new PieEntry((float) sum_lipid, "Béo"));
+//                        ArrayList<PieEntry> entries = new ArrayList<>();
+//                        entries.add(new PieEntry((float) sum_glucid, "Bột"));
+//                        entries.add(new PieEntry((float) sum_protein, "Đạm"));
+//                        entries.add(new PieEntry((float) sum_lipid, "Béo"));
 
                         PieDataSet dataSet = new PieDataSet(entries, "");
                         dataSet.setColors(

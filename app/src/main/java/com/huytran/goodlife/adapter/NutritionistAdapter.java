@@ -57,6 +57,8 @@ public class NutritionistAdapter extends RecyclerView.Adapter<NutritionistAdapte
                 intent.putExtra("nutritionistDescription1", nutritionist.getDescription1());
                 intent.putExtra("nutritionistDescription2", nutritionist.getDescription2());
                 intent.putExtra("nutritionistImage", nutritionist.getImage());
+                intent.putExtra("nutritionistEmail", nutritionist.getEmail());
+                intent.putExtra("nutritionistPhone", nutritionist.getPhone());
                 context.startActivity(intent);
             }
         });

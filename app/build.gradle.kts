@@ -11,8 +11,8 @@ android {
         applicationId = "com.huytran.goodlifes"
         minSdk = 26
         targetSdk = 34
-        versionCode = 3
-        versionName = "1.1.0"
+        versionCode = 4
+        versionName = "1.1.1"
 
         resConfigs("en", "vi")
 
@@ -64,6 +64,7 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.0")
     implementation("com.github.phuquy2114:Libraries_android:1.0.9")
     implementation("me.relex:circleindicator:2.1.6")
+    implementation("com.getkeepsafe.taptargetview:taptargetview:1.13.3")
     // CameraView for quick camera usage (optional library by Google)
     implementation("com.otaliastudios:cameraview:2.7.2")
     implementation("com.google.mlkit:image-labeling:17.0.9")

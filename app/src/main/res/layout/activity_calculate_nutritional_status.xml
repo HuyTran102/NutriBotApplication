@@ -288,7 +288,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
-                        android:background="#72BCB5" />
+                        android:background="#FFFFFF" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -394,7 +394,7 @@
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
-                        android:background="#72BCB5" />
+                        android:background="#FFFFFF" />
 
                     <LinearLayout
                         android:layout_width="match_parent"

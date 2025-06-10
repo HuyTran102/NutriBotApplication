@@ -31,6 +31,8 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.getkeepsafe.taptargetview.TapTarget;
+import com.getkeepsafe.taptargetview.TapTargetSequence;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -174,6 +176,7 @@ public class HomeActivity extends AppCompatActivity {
                 chatBotButton.startAnimation(bounceAnim);
             }
         });
+
 
         chatBotButton.setOnClickListener(new View.OnClickListener() {
             @Override

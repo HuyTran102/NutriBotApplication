@@ -63,47 +63,57 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
 
         nutritionistDataViewList.add(new NutritionistDataView(
                 R.drawable.nutritionist,
-                5,
-                "Dr. John Doe",
-                "Expert in Nutrition and Dietetics",
-                "Specializes in weight management and sports nutrition.",
-                "Basic Info: 10 years of experience, PhD in Nutrition"
-        ));
-
-        nutritionistDataViewList.add(new NutritionistDataView(
-                R.drawable.nutritionist,
-                5,
-                "Dr. John Doe",
-                "Expert in Nutrition and Dietetics",
-                "Specializes in weight management and sports nutrition.",
-                "Basic Info: 10 years of experience, PhD in Nutrition"
-        ));
-
-        nutritionistDataViewList.add(new NutritionistDataView(
-                R.drawable.nutritionist,
                 4,
-                "Dr. John Doe",
-                "Expert in Nutrition and Dietetics",
-                "Specializes in weight management and sports nutrition.",
-                "Basic Info: 10 years of experience, PhD in Nutrition"
+                "Vũ Thị Quỳnh Chi",
+                "Hơn 15 năm nghiên cứu chuyên sâu về Dnh dưỡng",
+                "Tham gia triển khai các trương trình dinh dưỡng học đường",
+                "15 kinh nghiệm,\nDinh dưỡng lâm sàng, học đường",
+                "quynhchiytb@gmail.com",
+                "0989631715"
         ));
 
         nutritionistDataViewList.add(new NutritionistDataView(
-                R.drawable.nutritionist,
-                3,
-                "Dr. John Doe",
-                "Expert in Nutrition and Dietetics",
-                "Specializes in weight management and sports nutrition.",
-                "Basic Info: 10 years of experience, PhD in Nutrition"
-        ));
-
-        nutritionistDataViewList.add(new NutritionistDataView(
-                R.drawable.nutritionist,
+                R.drawable.nutritionist2,
                 4,
-                "Dr. John Doe",
+                "Lê Thị Hồng Vân",
                 "Expert in Nutrition and Dietetics",
                 "Specializes in weight management and sports nutrition.",
-                "Basic Info: 10 years of experience, PhD in Nutrition"
+                "8 năm kinh nghiệm,\nDinh dưỡng lâm sàng, thể thao",
+                "hongvanle@gmail.com",
+                "0987654321"
+        ));
+
+        nutritionistDataViewList.add(new NutritionistDataView(
+                R.drawable.nutritionist3,
+                4,
+                "Phạm Thị Vy",
+                "Expert in Nutrition and Dietetics",
+                "Specializes in weight management and sports nutrition.",
+                "10 năm kinh nghiệm,\nDinh dưỡng lâm sàng, thể thao",
+                "vypham@gmail.com",
+                "0123456789"
+        ));
+
+        nutritionistDataViewList.add(new NutritionistDataView(
+                R.drawable.nutritionist4,
+                4,
+                "Phan Đức Huy",
+                "Expert in Nutrition and Dietetics",
+                "Specializes in weight management and sports nutrition.",
+                "10 năm kinh nghiệm,\nDinh dưỡng lâm sàng, nội khoa",
+                "huyhuyphan@gmail.com",
+                "0981234567"
+        ));
+
+        nutritionistDataViewList.add(new NutritionistDataView(
+                R.drawable.nutritionist5,
+                4,
+                "Trần Lê Minh Thảo",
+                "Expert in Nutrition and Dietetics",
+                "Specializes in weight management and sports nutrition.",
+                "10 năm kinh nghiệm,\nDinh dưỡng lâm sàng",
+                "thaothao@gmailcom",
+                "0987654321"
         ));
 
         adapter = new NutritionistAdapter(nutritionistDataViewList, this);
