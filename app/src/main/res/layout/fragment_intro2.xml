@@ -43,7 +43,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="40dp"
             android:lineSpacingExtra="8dp"
-            android:text="Xây dựng thực đơn phù hợp với thể trạng và chỉ số sức khoẻ hiện tại của bạn"
+            android:text="Xây dựng thực đơn phù hợp với thể trạng và chỉ số sức khoẻ hiện tại"
             android:textAlignment="center"
             android:textSize="18dp" />
 
