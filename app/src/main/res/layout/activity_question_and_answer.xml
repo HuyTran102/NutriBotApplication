@@ -74,21 +74,23 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
                 <LinearLayout
                     android:id="@+id/basic_nutrition"
                     android:layout_width="wrap_content"
+                    android:layout_marginStart="3dp"
                     android:layout_height="wrap_content">
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/basic" />
 
@@ -108,9 +110,9 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
@@ -118,12 +120,14 @@
                     android:id="@+id/nutrition_school_health"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
                     android:background="#FFFFFF">
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/school_health" />
 
@@ -143,9 +147,9 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
@@ -153,12 +157,14 @@
                     android:id="@+id/exam_season_nutrition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
                     android:background="#FFFFFF">
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/exam_season" />
 
@@ -178,9 +184,9 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
@@ -188,12 +194,14 @@
                     android:id="@+id/nutrition_physical_activity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
                     android:background="#FFFFFF">
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/physical" />
 
@@ -213,9 +221,9 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
@@ -223,12 +231,14 @@
                     android:id="@+id/nutrition_mental_health"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
                     android:background="#FFFFFF">
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/mental_health" />
 
@@ -248,9 +258,9 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
@@ -259,13 +269,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="3dp"
-                    android:layout_marginTop="10dp"
                     android:background="#FFFFFF">
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/puberty" />
 
@@ -285,9 +295,9 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
@@ -295,12 +305,14 @@
                     android:id="@+id/malnutrition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
                     android:background="#FFFFFF">
 
                     <ImageView
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/malnutrition" />
 
@@ -320,9 +332,9 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
                 android:layout_marginBottom="80dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
@@ -338,6 +350,7 @@
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/over_weight" />
 

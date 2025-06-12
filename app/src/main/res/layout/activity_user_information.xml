@@ -36,6 +36,15 @@
             android:padding="8dp"
             android:src="@drawable/back_to_home_button" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Thông tin người dùng"
+            android:textColor="#02947B"
+            android:textSize="27sp"
+            android:textStyle="bold" />
+
     </androidx.appcompat.widget.Toolbar>
 
     <View
