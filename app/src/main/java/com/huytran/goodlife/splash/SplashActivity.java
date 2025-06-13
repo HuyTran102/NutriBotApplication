@@ -69,7 +69,7 @@ public class SplashActivity extends AppCompatActivity {
             checkUserData(username_tmp, password_tmp);
         } else {
             Log.d("wtf", "wtf");
-            Intent intent = new Intent(SplashActivity.this, LoginScreenActivity.class);
+            Intent intent = new Intent(SplashActivity.this, IntroActivity.class);
             startActivity(intent);
             finish();
         }

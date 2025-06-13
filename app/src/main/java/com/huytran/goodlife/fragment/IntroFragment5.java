@@ -16,6 +16,7 @@ import android.widget.Button;
 
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.home.HomeActivity;
+import com.huytran.goodlife.pages.login.LoginScreenActivity;
 
 public class IntroFragment5 extends Fragment {
 
@@ -39,7 +40,7 @@ public class IntroFragment5 extends Fragment {
             SharedPreferences prefs = requireActivity().getSharedPreferences("AppPrefs", Context.MODE_PRIVATE);
             prefs.edit().putBoolean("isIntroShown", true).apply();
 
-            Intent intent = new Intent(getActivity(), HomeActivity.class);
+            Intent intent = new Intent(getActivity(), LoginScreenActivity.class);
             startActivity(intent);
             getActivity().finish();
         });
