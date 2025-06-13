@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +40,7 @@ public class NotificationActivity extends AppCompatActivity {
     private final List<NotificationDataActivity> list_items = new ArrayList<>();
     private String name;
     private ImageButton backButton;
+    private TextView noDataText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class NotificationActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycleView);
         backButton = findViewById(R.id.back_button);
+        noDataText = findViewById(R.id.no_data_view);
 
         firebaseFirestore = FirebaseFirestore.getInstance();
 
@@ -112,9 +115,19 @@ public class NotificationActivity extends AppCompatActivity {
                         });
 //                                Toast.makeText(Notification.this, "" + new_item.name + " " + new_item.information + " " + new_item.time + "", Toast.LENGTH_SHORT).show();
                     }
-                    NotificationAdapter viewAdapter = new NotificationAdapter(NotificationActivity.this, list_items);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(NotificationActivity.this));
-                    recyclerView.setAdapter(viewAdapter);
+
+
+                    if (list_items == null || list_items.isEmpty()) {
+                        recyclerView.setVisibility(View.GONE);
+                        noDataText.setVisibility(View.VISIBLE);
+                    } else {
+                        recyclerView.setVisibility(View.VISIBLE);
+                        noDataText.setVisibility(View.GONE);
+
+                        NotificationAdapter viewAdapter = new NotificationAdapter(NotificationActivity.this, list_items);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(NotificationActivity.this));
+                        recyclerView.setAdapter(viewAdapter);
+                    }
                 } else {
                     Log.w("Firestore", "Error getting documents", task.getException());
                 }
