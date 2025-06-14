@@ -87,7 +87,7 @@
                         android:gravity="center_vertical"
                         android:onClick="openDatePicker"
                         android:text="Ngày sinh"
-                        android:textColor="#D0D0D0"
+                        android:textColor="#6B6B6B"
                         android:textSize="16dp"
                         android:textStyle="bold"
                         app:backgroundTint="@null"

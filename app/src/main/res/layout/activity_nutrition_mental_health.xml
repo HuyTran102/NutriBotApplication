@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Tình trạng dinh dưỡng"
+            android:text="Dinh dưỡng &amp; tâm lý"
             android:textColor="#02947B"
             android:textSize="27sp"
             android:textStyle="bold" />
@@ -91,8 +91,6 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="15dp"
             android:layout_marginTop="5dp"
             android:orientation="vertical">
 
@@ -187,6 +185,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
 
