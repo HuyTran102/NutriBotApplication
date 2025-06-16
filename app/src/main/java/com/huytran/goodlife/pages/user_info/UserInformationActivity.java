@@ -4,30 +4,48 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.home.HomeActivity;
 
+import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class UserInformationActivity extends AppCompatActivity {
     private String name, date, gender, email;
     private ImageButton backButton;
-    private TextView userName, userGender, userDateOfBirth, userEmail;
+    private TextView userName, userGender, userDateOfBirth, userEmail, userPhone, userLocation;
+    private CardView phone, location;
+    private FirebaseFirestore firebaseFirestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +63,17 @@ public class UserInformationActivity extends AppCompatActivity {
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
         backButton = findViewById(R.id.back_button);
         userName = findViewById(R.id.user_name);
         userGender = findViewById(R.id.user_gender);
         userDateOfBirth = findViewById(R.id.user_date_of_birth);
         userEmail = findViewById(R.id.user_email);
+        userPhone = findViewById(R.id.user_phone);
+        userLocation = findViewById(R.id.user_location);
+        phone = findViewById(R.id.phone);
+        location = findViewById(R.id.location);
 
         SharedPreferences sp = getSharedPreferences("Data", Context.MODE_PRIVATE);
 
@@ -79,6 +103,58 @@ public class UserInformationActivity extends AppCompatActivity {
             }
         });
 
+        firebaseFirestore.collection("GoodLife").document(name).collection("Thông tin").document("Phone").get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()) {
+                            String phoneNumber = documentSnapshot.getString("Phone");
+
+                            if (phoneNumber != null) {
+                                userPhone.setText(phoneNumber);
+                            } else {
+                                userPhone.setText("Chưa cập nhật số điện thoại");
+                            }
+
+                        } else {
+                            Log.d("Firestore", "No such document");
+                        }
+                    }
+                });
+
+
+        firebaseFirestore.collection("GoodLife").document(name).collection("Thông tin").document("Location").get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()) {
+                            String locationValue = documentSnapshot.getString("Location");
+
+                            if (locationValue != null) {
+                                userLocation.setText(locationValue);
+                            } else {
+                                userLocation.setText("Chưa cập nhật địa chỉ");
+                            }
+                        } else {
+                            Log.d("Firestore", "No such document");
+                        }
+                    }
+                });
+
+        phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addPhone(UserInformationActivity.this);
+            }
+        });
+
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addLocation(UserInformationActivity.this);
+            }
+        });
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +164,78 @@ public class UserInformationActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void addPhone(Context context) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.input_layout, null);
+
+        EditText input_val = view.findViewById(R.id.input_value);
+
+
+        builder.setView(view)
+                .setTitle("Nhập thông tin")
+                .setPositiveButton("Save", (dialog, which) -> {
+                    String val = input_val.getText().toString().trim();
+
+                    userPhone.setText(val);
+
+                    Map<String, Object> item = new HashMap<>();
+                    item.put("Phone", val);
+
+                    firebaseFirestore.collection("GoodLife").document(name).collection("Thông tin").document("Phone").set(item).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Log.d("Firestore", "Adding item to database successfully");
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.e("Firestore", "Error adding item to database", e);
+                        }
+                    });
+
+                })
+                .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
+                .create()
+                .show();
+    }
+
+    private void addLocation(Context context) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.input_location_layout, null);
+
+        EditText input_val = view.findViewById(R.id.input_value);
+
+
+        builder.setView(view)
+                .setTitle("Nhập thông tin")
+                .setPositiveButton("Save", (dialog, which) -> {
+                    String val = input_val.getText().toString().trim();
+
+                    userLocation.setText(val);
+
+                    Map<String, Object> item = new HashMap<>();
+                    item.put("Location", val);
+
+                    firebaseFirestore.collection("GoodLife").document(name).collection("Thông tin").document("Location").set(item).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Log.d("Firestore", "Adding item to database successfully");
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.e("Firestore", "Error adding item to database", e);
+                        }
+                    });
+                })
+                .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
+                .create()
+                .show();
+    }
+
 
     String getNumberMonthFormat(String month) {
         if (Objects.equals(month, "JAN")) return "1";
