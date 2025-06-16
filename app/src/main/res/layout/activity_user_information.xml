@@ -72,7 +72,7 @@
                 android:id="@+id/avatarIcon"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginTop="55dp"
+                android:layout_marginTop="35dp"
                 android:contentDescription="User Icon"
                 android:src="@drawable/ic_user" />
 
@@ -128,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="5dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
@@ -166,7 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="5dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
@@ -205,7 +205,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="5dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp">
@@ -245,7 +245,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="60dp"
                 app:cardCornerRadius="12dp"
