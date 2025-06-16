@@ -38,7 +38,7 @@ public class ContactWithNutritionistActivity extends AppCompatActivity {
     private ImageButton backButton;
     private NutritionistAdapter adapter;
     private RecyclerView recyclerView;
-    private List<NutritionistDataView> nutritionistDataViewList = new ArrayList<>();
+    private final List<NutritionistDataView> nutritionistDataViewList = new ArrayList<>();
     private androidx.appcompat.widget.SearchView searchView;
 
     @Override

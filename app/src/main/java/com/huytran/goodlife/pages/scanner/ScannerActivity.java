@@ -46,7 +46,7 @@ public class ScannerActivity extends AppCompatActivity {
             new ImageLabelerOptions.Builder()
                     .setConfidenceThreshold(0.7f)
                     .build());
-    private Map<String, String> labelMap = new HashMap<>();
+    private final Map<String, String> labelMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

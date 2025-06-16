@@ -23,8 +23,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class ImageClassifier {
-    private List<String> labels;
-    private Interpreter interpreter;
+    private final List<String> labels;
+    private final Interpreter interpreter;
 
     public ImageClassifier(Context context) throws IOException {
         interpreter = new Interpreter(loadModelFile(context, "model_unquant.tflite"));
