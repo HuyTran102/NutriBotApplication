@@ -54,15 +54,15 @@ import java.util.Objects;
 
 public class CalculateNutritionalStatusActivity extends AppCompatActivity {
     private static final String TAG = "ExcelRead";
+    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    private final boolean changeUnvalidDate = false;
     private Button resultButton;
     private ImageButton backButton;
     private TextInputEditText userHeight, userWeight;
     private String name, signInDate, gender, password, date, height, weight;
     private TextView bmiStatusView, hfaStatusView, heightView, weightView;
     private ImageView bmiAge, heightAge, imgWeightAge, imgHeightAge;
-    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private PFDialog pfDialog;
-    private final boolean changeUnvalidDate = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -43,12 +43,12 @@ public class ChatBotActivity extends AppCompatActivity {
     private static final String API_KEY = "1f33a014eb4f23712e3050d61291119edde7dec0a7d317405e72cddbbb0f25c2";  // Replace with your Together.ai key
     private final String ENDPOINT = "https://api.together.xyz/v1/chat/completions";
     private final MediaType JSON = MediaType.get("application/json; charset=utf-8");
+    private final ArrayList<ChatMessage> chatMessages = new ArrayList<>();
     private OkHttpClient client = new OkHttpClient();
     private ImageButton sendButton, backButton;
     private RecyclerView recyclerView;
     private EditText inputMessage;
     private ChatAdapter adapter;
-    private final ArrayList<ChatMessage> chatMessages = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

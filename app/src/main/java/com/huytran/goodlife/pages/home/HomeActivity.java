@@ -31,8 +31,6 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.getkeepsafe.taptargetview.TapTarget;
-import com.getkeepsafe.taptargetview.TapTargetSequence;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -54,7 +52,6 @@ import com.huytran.goodlife.pages.calculate_nutritional_status.CalculateNutritio
 import com.huytran.goodlife.pages.chat_bot.ChatBotActivity;
 import com.huytran.goodlife.pages.contact.ContactSupportTeamActivity;
 import com.huytran.goodlife.pages.contact.ContactWithNutritionistActivity;
-import com.huytran.goodlife.pages.contact.NutritionistDataActivity;
 import com.huytran.goodlife.pages.dietary.DietaryActivity;
 import com.huytran.goodlife.pages.login.LoginScreenActivity;
 import com.huytran.goodlife.pages.notification.NotificationActivity;
@@ -62,7 +59,6 @@ import com.huytran.goodlife.pages.notification.NotificationReceiverActivity;
 import com.huytran.goodlife.pages.physical.PhysicalActivity;
 import com.huytran.goodlife.pages.question_and_answer.QuestionAndAnswerActivity;
 import com.huytran.goodlife.pages.recommend_menu.RecommendMenuActivity;
-import com.huytran.goodlife.pages.scanner.ScannerActivity;
 import com.huytran.goodlife.pages.scanner.ScannerTensorFlowActivity;
 import com.huytran.goodlife.pages.template_menu.TemplateMenuActivity;
 import com.huytran.goodlife.pages.tracking_diagram.TrackingDiagramActivity;
@@ -76,9 +72,12 @@ import java.text.DecimalFormat;
 import java.util.Calendar;
 
 public class HomeActivity extends AppCompatActivity {
+    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    private final String filename = "Storage.txt";
+    private final String filepath = "Super_mystery_folder";
+    private final String appLink = "https://play.google.com/store/apps/details?id=com.huytran.goodlifes";
     public Boolean ok1 = false, ok2 = false, ok3 = false;
     File myInternalFile;
-    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private Button drawerMenuButton;
     private FloatingActionButton chatBotButton;
     private CardView nutritionalStatusButton, physicalButton, dietaryButton, tempMenuButton, recommendMenuButton, waterDemandButton;
@@ -90,9 +89,6 @@ public class HomeActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private View footerView;
-    private final String filename = "Storage.txt";
-    private final String filepath = "Super_mystery_folder";
-    private final String appLink = "https://play.google.com/store/apps/details?id=com.huytran.goodlifes";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

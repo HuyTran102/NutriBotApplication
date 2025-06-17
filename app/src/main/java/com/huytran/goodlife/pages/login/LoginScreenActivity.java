@@ -26,7 +26,6 @@ import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.pages.intro.IntroActivity;
 import com.huytran.goodlife.pages.register.RegisterActivity;
-import com.huytran.goodlife.splash.SplashActivity;
 import com.uits.baseproject.widget.PFDialog;
 import com.uits.baseproject.widget.PFLoadingDialog;
 
@@ -42,14 +41,14 @@ import java.util.Objects;
 
 public class LoginScreenActivity extends AppCompatActivity {
 
+    private final String filename = "Storage.txt";
+    private final String filepath = "Super_mystery_folder";
     File myInternalFile;
     String username_tmp, password_tmp, islogin = "false";
     private EditText editTextName, editTextPassword;
     private Button loginButton;
     private String signInDate;
-    private final String filename = "Storage.txt";
     private PFDialog pfDialog;
-    private final String filepath = "Super_mystery_folder";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

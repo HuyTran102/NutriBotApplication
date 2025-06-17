@@ -18,8 +18,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineDataSet;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -28,17 +26,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.home.HomeActivity;
 
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -264,6 +256,6 @@ public class UserInformationActivity extends AppCompatActivity {
         int month = Integer.parseInt(getNumberMonthFormat(birth[0]));
         int day = Integer.parseInt(birth[1]);
         int year = Integer.parseInt(birth[2]);
-        return day+ "/" + month + "/" + year;
+        return day + "/" + month + "/" + year;
     }
 }

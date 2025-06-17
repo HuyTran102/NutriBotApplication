@@ -42,16 +42,14 @@ import java.util.List;
 public class ScannerTensorFlowActivity extends AppCompatActivity {
 
     private final int REQUIRED_STABLE_COUNT = 2; // Giả sử 1 frame mỗi ~300ms => 5 lần là khoảng 1.5s
+    private final List<Pair<String, Float>> tempResults = new ArrayList<>();
+    private final Handler handler = new Handler(Looper.getMainLooper());
     private CameraView cameraView;
     private boolean isProcessing;
     private TextView objectName, objectKcalo, objectProtein, objectLipid, objectGlucid;
     private ImageClassifier classifier;
     private ImageButton backButton;
-    private final List<Pair<String, Float>> tempResults = new ArrayList<>();
-    private final Handler handler = new Handler(Looper.getMainLooper());
     private Bitmap tempBitmap = null;
-    private String lastDetectedLabel = "";
-    private int detectionCount = 0;
     private final Runnable resultRunnable = () -> {
         if (tempResults.isEmpty()) return;
 
@@ -75,6 +73,8 @@ public class ScannerTensorFlowActivity extends AppCompatActivity {
 //            // Bắt đầu lại đếm 5 giây
 //            handler.postDelayed((Runnable) ScannerTensorFlowActivity.this, 5000);
     };
+    private String lastDetectedLabel = "";
+    private int detectionCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

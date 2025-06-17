@@ -11,8 +11,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -24,29 +22,24 @@ import com.google.mlkit.vision.label.ImageLabeler;
 import com.google.mlkit.vision.label.ImageLabeling;
 import com.google.mlkit.vision.label.defaults.ImageLabelerOptions;
 import com.huytran.goodlife.R;
-
 import com.huytran.goodlife.pages.home.HomeActivity;
-import com.huytran.goodlife.pages.physical.PhysicalActivity;
 import com.otaliastudios.cameraview.CameraView;
 import com.otaliastudios.cameraview.frame.Frame;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class ScannerActivity extends AppCompatActivity {
 
-    private CameraView cameraView;
-    private boolean isProcessing;
-    private TextView txtLabel;
-    private ImageButton backButton;
     private final ImageLabeler labeler = ImageLabeling.getClient(
             new ImageLabelerOptions.Builder()
                     .setConfidenceThreshold(0.7f)
                     .build());
     private final Map<String, String> labelMap = new HashMap<>();
+    private CameraView cameraView;
+    private boolean isProcessing;
+    private TextView txtLabel;
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

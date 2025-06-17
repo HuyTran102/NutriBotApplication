@@ -33,8 +33,8 @@ import java.util.Objects;
 
 public class FoodFragment extends Fragment {
     private static final String TAG = "ExcelRead";
-    private RecyclerView recyclerView;
     private final List<Item> items = new ArrayList<>();
+    private RecyclerView recyclerView;
     private SearchView searchView;
     private ViewAdapter viewAdapter;
 

@@ -1,27 +1,24 @@
 package com.huytran.goodlife.pages.contact;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.provider.Settings;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.pages.home.HomeActivity;
 
 public class NutritionistDataActivity extends AppCompatActivity {
 
@@ -104,7 +101,7 @@ public class NutritionistDataActivity extends AppCompatActivity {
                         "?text=Cuộc+họp+tư+vấn+dinh+dưỡng" +
                         "&details=Tham+gia+tại+link+sau" +
                         "&location=https://meet.google.com/" +
-                        "&add="+email;
+                        "&add=" + email;
 
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(intent);

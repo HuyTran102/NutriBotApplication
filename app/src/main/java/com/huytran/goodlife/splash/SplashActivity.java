@@ -23,7 +23,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.home.HomeActivity;
 import com.huytran.goodlife.pages.intro.IntroActivity;
-import com.huytran.goodlife.pages.login.LoginScreenActivity;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -35,10 +34,10 @@ import java.io.InputStreamReader;
 import java.util.Objects;
 
 public class SplashActivity extends AppCompatActivity {
-    File myInternalFile;
-    String username_tmp, password_tmp, islogin = "false";
     private final String filename = "Storage.txt";
     private final String filepath = "Super_mystery_folder";
+    File myInternalFile;
+    String username_tmp, password_tmp, islogin = "false";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

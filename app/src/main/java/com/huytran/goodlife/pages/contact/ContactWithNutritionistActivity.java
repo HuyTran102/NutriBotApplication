@@ -1,44 +1,30 @@
 package com.huytran.goodlife.pages.contact;
 
-import android.Manifest;
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.provider.Settings;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.adapter.ChatAdapter;
 import com.huytran.goodlife.adapter.NutritionistAdapter;
-import com.huytran.goodlife.model.Item;
 import com.huytran.goodlife.model.NutritionistDataView;
 import com.huytran.goodlife.pages.home.HomeActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class ContactWithNutritionistActivity extends AppCompatActivity {
+    private final List<NutritionistDataView> nutritionistDataViewList = new ArrayList<>();
     private ImageButton backButton;
     private NutritionistAdapter adapter;
     private RecyclerView recyclerView;
-    private final List<NutritionistDataView> nutritionistDataViewList = new ArrayList<>();
     private androidx.appcompat.widget.SearchView searchView;
 
     @Override

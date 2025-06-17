@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.huytran.goodlife.R;
-import com.huytran.goodlife.model.Item;
 import com.huytran.goodlife.model.NutritionistDataView;
 import com.huytran.goodlife.pages.contact.NutritionistDataActivity;
 

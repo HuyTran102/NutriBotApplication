@@ -20,12 +20,18 @@ public class IntroPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position) {
-            case 0: return new IntroFragment1();
-            case 1: return new IntroFragment2();
-            case 2: return new IntroFragment3();
-            case 3: return new IntroFragment4();
-            case 4: return new IntroFragment5();
-            default: return new IntroFragment1();
+            case 0:
+                return new IntroFragment1();
+            case 1:
+                return new IntroFragment2();
+            case 2:
+                return new IntroFragment3();
+            case 3:
+                return new IntroFragment4();
+            case 4:
+                return new IntroFragment5();
+            default:
+                return new IntroFragment1();
         }
     }
 

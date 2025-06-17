@@ -28,13 +28,11 @@ import android.widget.TimePicker;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.huytran.goodlife.R;
 import com.huytran.goodlife.pages.home.HomeActivity;
 
@@ -45,13 +43,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PhysicalActivity extends AppCompatActivity {
+    private final ArrayList<String> items = new ArrayList<>();
+    private final ArrayList<String> activities = new ArrayList<>();
+    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private TimePickerDialog timePickerDialog;
     private Button pickTimeButton, activityLevel, activitiesOfLevel, addActivity;
     private ImageButton backButton;
     private Dialog dialog;
-    private final ArrayList<String> items = new ArrayList<>();
-    private final ArrayList<String> activities = new ArrayList<>();
-    private final FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private String name;
     private double userWeight, sumUsedEnergy;
     private TextView totalUsedEnergy;

@@ -35,9 +35,9 @@ import java.util.Date;
 import java.util.List;
 
 public class NotificationActivity extends AppCompatActivity {
+    private final List<NotificationDataActivity> list_items = new ArrayList<>();
     private RecyclerView recyclerView;
     private FirebaseFirestore firebaseFirestore;
-    private final List<NotificationDataActivity> list_items = new ArrayList<>();
     private String name;
     private ImageButton backButton;
     private TextView noDataText;

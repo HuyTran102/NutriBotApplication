@@ -21,11 +21,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TemplateMenuActivity extends AppCompatActivity {
+    private final List<TempMenuItem> items = new ArrayList<>();
     private ImageButton backButton;
     private SearchView searchView;
     private RecyclerView recyclerView;
     private TempMenuViewAdapter viewAdapter;
-    private final List<TempMenuItem> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
