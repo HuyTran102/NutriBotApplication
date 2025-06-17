@@ -29,6 +29,8 @@ public class NutritionistDataActivity extends AppCompatActivity {
     private TextView nutritionistName, nutritionistDescription1, nutritionistDescription2;
     private ImageView nutritionistImage, phoneButton, videoCallButton, textButton, emailButton, backButton;
     private String email, phone;
+    private boolean isCallRequested = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,7 @@ public class NutritionistDataActivity extends AppCompatActivity {
                 if (ContextCompat.checkSelfPermission(NutritionistDataActivity.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
                     makePhoneCall();
                 } else {
+                    isCallRequested = true;  // <-- Đánh dấu người dùng yêu cầu gọi
                     ActivityCompat.requestPermissions(NutritionistDataActivity.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
                 }
             }
@@ -142,7 +145,9 @@ public class NutritionistDataActivity extends AppCompatActivity {
 
         if (requestCode == REQUEST_PHONE_CALL) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                makePhoneCall();
+                if (isCallRequested) {
+                    makePhoneCall();  // <-- Chỉ gọi nếu người dùng chủ động yêu cầu
+                }
             } else {
                 if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CALL_PHONE)) {
                     new AlertDialog.Builder(this)
@@ -167,6 +172,7 @@ public class NutritionistDataActivity extends AppCompatActivity {
                             .show();
                 }
             }
+            isCallRequested = false;
         }
     }
 
