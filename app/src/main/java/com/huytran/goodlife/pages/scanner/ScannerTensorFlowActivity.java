@@ -133,6 +133,7 @@ public class ScannerTensorFlowActivity extends AppCompatActivity {
         }
 
         cameraView.setLifecycleOwner(this);
+
         cameraView.addFrameProcessor(frame -> {
             if (isProcessing) return;
             isProcessing = true;
