@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "com.huytran.goodlife"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.huytran.goodlifes"
         minSdk = 26
-        targetSdk = 34
-        versionCode = 7
-        versionName = "1.1.4"
+        targetSdk = 35
+        versionCode = 13
+        versionName = "1.1.7"
 
         resConfigs("en", "vi")
 
@@ -35,7 +35,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    buildToolsVersion = "34.0.0"
+    buildToolsVersion = "35.0.0"
     buildFeatures {
         viewBinding = true
     }
